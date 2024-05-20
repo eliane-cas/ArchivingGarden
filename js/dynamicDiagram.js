@@ -1,0 +1,220 @@
+export class DynamicDiagram {
+    constructor(selector, data, center = { x: null, y: null }) {
+        this.selector = selector;
+        // Selecciona el contenedor y obtén sus dimensiones
+        const container = d3.select(this.selector).node();
+        this.width = container.clientWidth;   // Usa clientWidth y clientHeight para obtener las dimensiones
+        this.height = container.clientHeight;
+
+        // Asegúrate de que el contenedor tiene dimensiones válidas
+        if (this.width === 0 || this.height === 0) {
+            console.error("El contenedor debe tener una anchura y altura mayores a cero");
+        }
+        this.data = data
+        //this.center = center ? center : { x: this.width / 2, y: this.height / 2 };
+        this.center = {
+            x: center.x !== null ? center.x : this.width / 2,
+            y: center.y !== null ? center.y : this.height / 2
+        };
+        this.isDragging = false;
+        this.simulation = null;
+        this.setup();
+    }
+    setup() {
+
+        this.data.nodes.forEach((node, index) => {
+            node.uniqueIndex = index;
+            if (node.type !== 'main-node') {
+                node.x = this.center.x + Math.cos(node.angle) * node.distance;
+                node.y = this.center.y + Math.sin(node.angle) * node.distance;
+            } else {
+                node.x = this.center.x;
+                node.y = this.center.y;
+            }
+        });
+
+        this.data.links.forEach(link => {
+            const sourceNode = this.data.nodes.find(node => node.id === link.source);
+            const targetNode = this.data.nodes.find(node => node.id === link.target);
+            if (!sourceNode || !targetNode) {
+                console.error('Uno de los nodos para el enlace no se encuentra:', link);
+            } else {
+                link.distance = sourceNode.distance + targetNode.distance;
+            }
+        });
+
+        this.data.nodes.forEach(node => {
+            if (node.type === 'main-node') { // Nodo principal en el centro
+                node.fx = this.center.x; // Fijar la posición x
+                node.fy = this.center.y; // Fijar la posición y
+            }
+        });
+        const linkForce = d3.forceLink(this.data.links)
+            .id(d => d.id)
+            .distance(d => d.distance)
+            .strength(1); // Aumenta la fuerza para mantener más firmemente la distancia
+
+        this.simulation = d3.forceSimulation(this.data.nodes)
+            .force("link", linkForce)
+            .force("charge", d3.forceManyBody().strength(d => d.type === 'main-node' ? -500 : -50))
+            .alpha(0.3)
+            .alphaMin(0.02)
+            .alphaDecay(0.1)
+            .force("link", d3.forceLink(this.data.links)
+                .id(d => d.id)
+                .distance(d => d.distance)
+                .strength(1.0));
+
+
+        const svg = d3.select(this.selector).append("svg")
+            .attr("width", this.width)
+            .attr("height", this.height)
+            .style("border", "none");
+
+        const link = svg.append("g")
+            .selectAll("line")
+            .data(this.data.links)
+            .join("line")
+            .attr("stroke", "#999")
+            .attr("stroke-width", d => Math.sqrt(d.value));
+
+        const node = svg.append("g")
+            .selectAll("foreignObject")
+            .data(this.data.nodes)
+            .join("foreignObject")
+            .html(d => d.type != 'main-node' ? `<a href="${d.url}" class="node-content ${d.class}">${d.id}</a>` : `<div class="node-content ${d.class}">${d.id}</div>:`)
+            .call(d3.drag()
+                .on("start", (event, d) => this.dragstarted(event, d))
+                .on("drag", (event, d) => this.dragged(event, d))
+                .on("end", (event, d) => this.dragended(event, d)));
+
+
+        node.each(function (d) {
+            if (node.type !== 'main-node') {
+                // Asignar un ángulo inicial aleatorio
+                node.angle = Math.random() * 10 * Math.PI;
+            }
+            // Espera a que el DOM esté completamente renderizado
+            setTimeout(() => {
+                const div = this.querySelector(".node-content");
+                const bbox = div.getBoundingClientRect();
+                d3.select(this)
+                    .attr("width", bbox.width) // Añade un pequeño margen
+                    .attr("height", bbox.height);
+            }, 0);
+        });
+        const self = this;
+
+        this.simulation.on("tick", () => {
+            const amplitude = /*0.2;*/0.2// Define cuánto se mueve el nodo antes de cambiar dirección
+            const frequency = /*0.4;*/0.4 // Define la rapidez del cambio de dirección
+            const phaseShift = /*0.05;*/0.01// Añade un pequeño cambio gradual en cada tick
+
+            node.each(function (d) {
+                if (d.type === 'child-node' && !d.isDragging) {
+
+                    d.angle += phaseShift * Math.cos(Date.now() / /*5000*/10000 + d.uniqueIndex * frequency);
+
+
+                    d.x += amplitude * Math.cos(d.angle);
+                    d.y += amplitude * Math.sin(d.angle);
+                }
+            });
+
+            if (this.simulation.alpha() < 0.1) {
+                this.simulation.alpha(0.2).restart();
+            }
+
+            link.attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            node.attr("x", d => d.x - 80)
+                .attr("y", d => d.y - 25);
+        });
+
+        /*
+                this.simulation.on("tick", () => {
+                    const increment = 0.005;  // Incremento muy pequeño para el cambio de ángulo
+        
+                    node.each(function (d) {
+                        if (d.type === 'child-node' && !d.isDragging) {
+                            // Ajustar el ángulo gradualmente para cambiar la dirección del movimiento
+                            d.angle += increment * Math.cos(Date.now() / 10000 + d.uniqueIndex); // Uso de coseno para variación suave
+        
+                            // Movimiento basado en el ángulo ajustado
+                            d.x += Math.cos(d.angle) * 0.2;
+                            d.y += Math.sin(d.angle) * 0.2;
+                        }
+        
+                    });
+                    if (this.simulation.alpha() < 0.1) {
+                        this.simulation.alpha(0.2).restart();
+                    }
+                    link.attr("x1", d => d.source.x)
+                        .attr("y1", d => d.source.y)
+                        .attr("x2", d => d.target.x)
+                        .attr("y2", d => d.target.y);
+        
+                    node.attr("x", d => d.x - 80)
+                        .attr("y", d => d.y - 25);
+                });
+        
+        */
+    }
+
+    dragstarted(event) {
+        if (!event.active) this.simulation.alphaTarget(0.3).restart();
+        event.subject.fx = event.subject.x;
+        event.subject.fy = event.subject.y;     // Solo ajustar los enlaces si el nodo principal está siendo arrastrado
+
+
+    }
+    dragged(event) {
+        event.subject.fx = event.x;
+        event.subject.fy = event.y;
+        if (event.subject.type === 'main-node') {
+            this.data.links.forEach(link => {
+                if (link.source.id === event.subject.id || link.target.id === event.subject.id) {
+                    // Reducir la distancia de los enlaces gradualmente
+                    link.distance *= 0.9986;  // Reduce la distancia en un 5% por ejemplo
+                }
+            });
+
+            // Actualizar las fuerzas de enlace para reflejar los cambios en la distancia
+            this.simulation.force("link").distance(link => link.distance);
+            this.simulation.alpha(0.3).restart(); // Reactivar la simulación para que los cambios tengan efecto
+        }
+
+    }
+    dragended(event) {
+        if (!event.active) this.simulation.alphaTarget(0.1);
+        // Solo restablecer la posición fija si es el nodo principal
+        if (event.subject.type === 'main-node') {
+            event.subject.fx = event.x; // Mantén el nodo principal en la posición arrastrada
+            event.subject.fy = event.y;
+        } else {
+            // Libera otros nodos para moverse dinámicamente según la simulación
+            event.subject.fx = null;
+            event.subject.fy = null;
+            // Actualizar las distancias de los enlaces asociados al nodo arrastrado
+            this.data.links.forEach(link => {
+                if (link.source.id === event.subject.id || link.target.id === event.subject.id) {
+                    const sourceNode = this.data.nodes.find(node => node.id === link.source.id);
+                    const targetNode = this.data.nodes.find(node => node.id === link.target.id);
+                    const dx = targetNode.x - sourceNode.x;
+                    const dy = targetNode.y - sourceNode.y;
+                    const currentDistance = Math.sqrt(dx * dx + dy * dy) + 35;
+                    link.distance = currentDistance; // Solo actualizar la distancia real sin añadir extra
+                }
+            });
+
+            // Aplicar suavemente los cambios a la simulación
+            this.simulation.force("link").initialize(this.data.nodes); // Re-inicializar las fuerzas de enlace con los nodos actualizados
+            this.simulation.alpha(0.3).restart(); // Ligeramente aumenta alpha para una transición suave
+
+
+        }
+    }
+}

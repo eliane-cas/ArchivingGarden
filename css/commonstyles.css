@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'ABCDiatype-Regular';
+    src: url('/fonts/ABCDiatype-Regular-Trial.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'ABCDiatypeRounded-Regular';
+    src: url('/fonts/ABCDiatypeRounded-Regular-Trial.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Suisse-Intl-Mono';
+    src: url('/fonts/Suisse-Intl-Mono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/*
+.header{
+    margin-top:37px;
+    margin-left:37px;
+    display: flex;
+    gap: 2em;
+}
+
+.logo{
+    font-family: 'ABC Diatype Rounded Unlicensed Trial';
+    font-size: 23.95px;
+    font-weight: 900;
+    color: black;
+}
+
+.menu{
+    
+    display: flex;
+    gap: 0.5em;
+}
+
+
+.menu-element{
+    width: 134px;
+    height: 32px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 32px;
+    color: black;
+    font-family: 'Dinamo';
+    font-family: 'ABC Diatype Unlicensed Trial';
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}*/
+
+header{
+    width: 100%;
+    margin-top: 76px;
+
+}
+.navigation-bar{
+    display: flex;   
+    flex-direction: column;
+     font-family: 'ABCDiatypeRounded-Regular';
+     font-size: 20px;
+     font-weight: 400;
+     line-height: 42px;
+     text-align: left;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+}
+
+.navigation-top{
+    height: 38px;
+    width: 100%;
+    display: flex;
+}
+#logo{
+    width: 25%;
+    text-align: center;
+    font-family: 'ABCDiatypeRounded-Regular';
+font-size: 20px;
+font-weight: 400;
+letter-spacing: -0.02em;
+text-align: center;
+background-color: rgba(255, 255, 255, 0.5); /* Blanco con 50% de transparencia */
+
+  /* Aplica un filtro de desenfoque */
+  backdrop-filter: blur(2px);
+}
+
+.navigation-top #current-page{
+    width: 75%;
+    color: white;
+    padding-left: 28px;
+background-color: rgba(0, 0, 0, 1);
+
+}
+
+.navigation-bottom{
+    height: 38px;
+    display: flex;
+    width: 100%;
+}
+.menu-item{
+    width: 25%;
+    background-color: rgba(217, 217, 217, 1);
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+
+}
+#item-1{
+    border: 0.5px solid rgba(123, 75, 41, 1);
+}
+#item-2{
+    border: 0.5px solid rgba(116, 125, 3, 1);
+}
+#item-3{
+    border: 0.5px solid rgba(250, 18, 59, 1);
+}
+#item-4{
+    border: 0.5px solid rgba(21, 208, 118, 1);
+}
