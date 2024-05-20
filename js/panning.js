@@ -4,97 +4,97 @@
 function loadHTMLContent() {
     const container = document.querySelector('.horizontal-page');
     const htmlContent = `
-    <div class="example" id="example-1"><img src="/images/examples-1.png" alt=""><a
+    <div class="example" id="example-1"><img src="/images/examples-1.png" alt="" loading="lazy"><a
     href="http://driftingcurriculum.org/">Decolonial Curatorial Agendas for
     a Green New Deal</a>
 </div>
 
-<div class="example" id="example-2"><img src="/images/examples-2.png" alt=""><a
+<div class="example" id="example-2"><img src="/images/examples-2.png" alt="" loading="lazy"><a
     href="https://www.archivalconsciousness.org/">Archival Consciousness</a>
 </div>
 
-<div class="example" id="example-3"><img src="/images/examples-3.png" alt=""><a
+<div class="example" id="example-3"><img src="/images/examples-3.png" alt="" loading="lazy"><a
     href="https://diagram.website/">diagram.website</a>
 </div>
 
-<div class="example" id="example-4"><img src="/images/examples-4.png" alt=""><a
+<div class="example" id="example-4"><img src="/images/examples-4.png" alt="" loading="lazy"><a
     href="https://diagram.website/">PLATZ project</a>
 </div>
 
-<div class="example" id="example-5"><img src="/images/examples-5.png" alt=""><a
+<div class="example" id="example-5"><img src="/images/examples-5.png" alt="" loading="lazy"><a
     href="https://second-shelf.org/books/valie-export-time-and-countertime/">Second
     shelf</a>
 </div>
 
-<div class="example" id="example-6"><img src="/images/examples-6.png" alt=""><a
+<div class="example" id="example-6"><img src="/images/examples-6.png" alt="" loading="lazy"><a
     href="https://liamyoung.org">Liam young</a>
 </div>
 
-<div class="example" id="example-7"><img src="/images/examples-7.png" alt=""><a
+<div class="example" id="example-7"><img src="/images/examples-7.png" alt="" loading="lazy"><a
     href="https://www.noteson.love/submit/">noteson.love</a>
 </div>
 
-<div class="example" id="example-8"><img src="/images/examples-8.png" alt=""><a
+<div class="example" id="example-8"><img src="/images/examples-8.png" alt="" loading="lazy"> <a
     href="https://www.mobilephonemuseum.com/catalogue">mobile phone
     museum</a>
 </div>
-<div class="example" id="example-9"><img src="/images/examples-9.png" alt=""><a
+<div class="example" id="example-9"><img src="/images/examples-9.png" alt="" loading="lazy"><a
     href="https://web.archive.org/web/20140106083717/http://www.cneai.com/evenement/">cneai</a>
 </div>
 
-<div class="example" id="example-10"><img src="/images/examples-10.png" alt=""><a
+<div class="example" id="example-10"><img src="/images/examples-10.png" alt="" loading="lazy"><a
     href="https://www.robidacollective.com/">Robida Collective</a>
 </div>
-<div class="example" id="example-11"><img src="/images/examples-11.png" alt=""><a
+<div class="example" id="example-11"><img src="/images/examples-11.png" alt="" loading="lazy"><a
     href="https://animalsasobjects.org/articles/">animals as objects</a>
 </div>
-<div class="example" id="example-12"><img src="/images/examples-12.png" alt=""><a
+<div class="example" id="example-12"><img src="/images/examples-12.png" alt="" loading="lazy"><a
     href="https://massfiles.net/city/323">massfiles.net</a>
 </div>
-<div class="example" id="example-13"><img src="/images/examples-13.png" alt=""><a
+<div class="example" id="example-13"><img src="/images/examples-13.png" alt="" loading="lazy"><a
     href="https://6mon.hotglue.me/?garden">6mon.hotglue.me</a>
 </div>
-<div class="example" id="example-14"><img src="/images/examples-14.png" alt=""><a
+<div class="example" id="example-14"><img src="/images/examples-14.png" alt="" loading="lazy"><a
     href="https://ortederbonnerrepublik.de">orte der bonner republik</a>
 </div>
-<div class="example" id="example-15"><img src="/images/examples-15.png" alt=""><a
+<div class="example" id="example-15"><img src="/images/examples-15.png" alt="" loading="lazy"><a
     href="https://fact.110west40th.com/">Fact</a>
 </div>
-<div class="example" id="example-16"><img src="/images/examples-16.png" alt=""><a
+<div class="example" id="example-16"><img src="/images/examples-16.png" alt="" loading="lazy"><a
     href="https://canopycanopycanopy.com/issues/parts-of-speech">Parts of
     Speech</a>
 </div>
-<div class="example" id="example-17"><img src="/images/examples-17.png" alt=""><a
+<div class="example" id="example-17"><img src="/images/examples-17.png" alt="" loading="lazy"><a
     href="https://womenwritingarchitecture.org/">Women Writing
     Architecture</a>
 </div>
-<div class="example" id="example-18"><img src="/images/examples-18.png" alt=""><a
+<div class="example" id="example-18"><img src="/images/examples-18.png" alt="" loading="lazy"><a
     href="https://www.mkg-hamburg.de/en/home.html">MK&G</a>
 </div>
-<div class="example" id="example-19"><img src="/images/examples-19.png" alt=""><a
+<div class="example" id="example-19"><img src="/images/examples-19.png" alt="" loading="lazy"><a
     href="https://here-there.ca/">here-there</a>
 </div>
-<div class="example" id="example-20"><img src="/images/examples-20.png" alt=""><a
+<div class="example" id="example-20"><img src="/images/examples-20.png" alt="" loading="lazy"><a
     href="https://www.fuse.kiwi/">fuse.kiwi</a>
 </div>
-<div class="example" id="example-21"><img src="/images/examples-21.png" alt=""><a
+<div class="example" id="example-21"><img src="/images/examples-21.png" alt="" loading="lazy"><a
     href="https://network-matters.xyz/">Network Matters</a>
 </div>
-<div class="example" id="example-22"><img src="/images/examples-22.png" alt=""><a
+<div class="example" id="example-22"><img src="/images/examples-22.png" alt="" loading="lazy"><a
     href="https://www.suvatypefoundry.ee/?ref=fuse-kiwi">suva type
     foundry</a>
 </div>
-<div class="example" id="example-23"><img src="/images/examples-23.png" alt=""><a
+<div class="example" id="example-23"><img src="/images/examples-23.png" alt="" loading="lazy"><a
     href="https://s-n-d.si/index.html">Soot</a>
 </div>
-<div class="example" id="example-24"><img src="/images/examples-24.png" alt=""><a
+<div class="example" id="example-24"><img src="/images/examples-24.png" alt="" loading="lazy"><a
     href="https://offf24.soot.com/?sootid=uid-am613n2vvq-e5dkxksx1n">s-n-d.
     index</a>
 </div>
-<div class="example" id="example-25"><img src="/images/examples-25.png" alt=""><a
+<div class="example" id="example-25"><img src="/images/examples-25.png" alt="" loading="lazy"><a
     href="https://www.millermaranta.ch/index">miller & maranta</a>
 </div>
-<div class="example" id="example-26"><img src="/images/examples-26.png" alt=""><a
+<div class="example" id="example-26"><img src="/images/examples-26.png" alt="" loading="lazy"><a
     href="https://kioskkiosk.com/">KIOSK</a>
 </div>
 <a class="url-example" id="url-example-1"
@@ -214,119 +214,3 @@ container.addEventListener('wheel', function (e) {
     posY = Math.max(Math.min(posY, maxPosY), minPosY);
     inner.style.transform = `translate(${posX}px, ${posY}px)`;
 }, { passive: false });
-//});
-
-
-/* var container = document.querySelector('.horizontal-container');
-var hammertime = new Hammer(container);
-
-var contentWidth = 5800;  // Usar directamente el valor conocido o calcular dinámicamente si cambia
-
-var centerPosition = 1990;
-container.scrollLeft = centerPosition;
-
-var isPanning = false;
-var startX = 0;
-var deltaX = 0;
-var previousDeltaX = 0;
-var lastDeltaX = 0;
-var sensitivity = 0.3;
-
-hammertime.on('panstart', function (ev) {
-    isPanning = true;
-    startX = ev.center.x;
-    deltaX = 0;
-    previousDeltaX = 0;
-    lastDeltaX = 0;
-});
-
-hammertime.on('panmove', function (ev) {
-    if (!isPanning) return;
-
-    deltaX = (ev.center.x - startX) * sensitivity;
-    container.scrollLeft -= deltaX - previousDeltaX;
-
-    previousDeltaX = deltaX;
-});
-
-hammertime.on('panend', function (ev) {
-    isPanning = false;
-    lastDeltaX = deltaX;
-
-    // Aplicar inercia
-    var momentum = 0.8; // Factor de inercia
-    var animationId;
-
-    function inertiaScroll() {
-        if (Math.abs(lastDeltaX) > 0.5) {
-            container.scrollLeft -= lastDeltaX;
-            lastDeltaX *= momentum;
-            animationId = requestAnimationFrame(inertiaScroll);
-        } else {
-            cancelAnimationFrame(animationId);
-        }
-    }
-
-    inertiaScroll();
-});
-
-container.addEventListener('wheel', function (event) {
-    event.preventDefault();  // Prevenir el comportamiento predeterminado
-    var horizontalScrollAmount = event.deltaY; // Suma de ambos deltas para mover horizontalmente
-    container.scrollTop += horizontalScrollAmount;
-}, { passive: false });
-});*/
-
-/*document.addEventListener('DOMContentLoaded', function () {
-    var container = document.querySelector('.horizontal-container');
-
-    var isDragging = false;
-    var startX = 0;
-    var startY = 0;
-    var scrollLeftStart = 0;
-    var scrollTopStart = 0;
-
-    container.addEventListener('mousedown', function (event) {
-        isDragging = true;
-        startX = event.clientX;
-        startY = event.clientY;
-        scrollLeftStart = container.scrollLeft;
-        scrollTopStart = container.scrollTop;
-        container.style.cursor = 'grabbing';
-        event.preventDefault(); // Prevenir cualquier selección de texto durante el arrastre
-    });
-
-    window.addEventListener('mousemove', function (event) {
-        if (!isDragging) return;
-        var x = event.clientX;
-        var y = event.clientY;
-        var walkX = (x - startX); // Cuánto se ha movido horizontalmente
-        var walkY = (y - startY); // Cuánto se ha movido verticalmente
-        container.scrollLeft = scrollLeftStart - walkX;
-        container.scrollTop = scrollTopStart - walkY;
-    });
-
-    window.addEventListener('mouseup', function () {
-        isDragging = false;
-        container.style.cursor = 'grab';
-    });
-
-    // Añadir el soporte para mobile usando Hammer.js
-    var hammertime = new Hammer(container);
-    hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-
-    hammertime.on('panstart', function (ev) {
-        startX = ev.center.x;
-        startY = ev.center.y;
-        scrollLeftStart = container.scrollLeft;
-        scrollTopStart = container.scrollTop;
-    });
-
-    hammertime.on('panmove', function (ev) {
-        var deltaX = ev.center.x - startX;
-        var deltaY = ev.center.y - startY;
-        container.scrollLeft = scrollLeftStart - deltaX;
-        container.scrollTop = scrollTopStart - deltaY;
-    });
-});
-*/
