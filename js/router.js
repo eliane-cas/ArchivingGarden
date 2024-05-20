@@ -107,13 +107,12 @@ const locationHandler = async () => {
     currentPageDisplay.textContent = route.title + '→';
 
     // Cargar nuevo contenido HTML
-    const html = await fetch(route.template).then(response => response.text());
-    document.getElementById("app").innerHTML = html;
-    window.scrollTo(0, 0);
-
     // Manejar estilos y scripts
     document.querySelectorAll('link[rel="stylesheet"]:not(#common-styles)').forEach(link => link.remove());
     loadStyles(route.styles);
+    const html = await fetch(route.template).then(response => response.text());
+    document.getElementById("app").innerHTML = html;
+    window.scrollTo(0, 0);
     loadScripts(route.scripts);
 };
 
