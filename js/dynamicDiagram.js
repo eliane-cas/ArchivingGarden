@@ -102,6 +102,29 @@ export class DynamicDiagram {
         });
         const self = this;
 
+        function updateNodePositions() {
+            node.each(function (d) {
+                const div = this.querySelector(".node-content");
+                const bbox = div.getBoundingClientRect();
+                d.width = bbox.width;
+                d.height = bbox.height;
+
+                // Centrar el nodo en el SVG
+                d3.select(this)
+                    .attr("x", d.x - d.width / 2)
+                    .attr("y", d.y - d.height / 2);
+            });
+
+            // Ajusta las posiciones de los enlaces
+            link
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+        }
+
+        // Llama a updateNodePositions cuando añadas nodos o actualices el contenido
+        updateNodePositions();
         this.simulation.on("tick", () => {
             const amplitude = /*0.2;*/0.2// Define cuánto se mueve el nodo antes de cambiar dirección
             const frequency = /*0.4;*/0.4 // Define la rapidez del cambio de dirección
@@ -122,13 +145,14 @@ export class DynamicDiagram {
                 this.simulation.alpha(0.2).restart();
             }
 
-            link.attr("x1", d => d.source.x)
+            node
+                .attr("x", d => d.x - d.width / 2)
+                .attr("y", d => d.y - d.height / 2);
+            link
+                .attr("x1", d => d.source.x)
                 .attr("y1", d => d.source.y)
                 .attr("x2", d => d.target.x)
                 .attr("y2", d => d.target.y);
-
-            node.attr("x", d => d.x - 80)
-                .attr("y", d => d.y - 25);
         });
 
         /*

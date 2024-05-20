@@ -88,6 +88,7 @@ async function loadScripts(scripts) {
 }
 function setupLazyLoading() {
     const lazyImages = document.querySelectorAll('img.lazy-load:not([src])');
+    console.log(lazyImages)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
