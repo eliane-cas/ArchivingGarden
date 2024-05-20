@@ -86,6 +86,25 @@ async function loadScripts(scripts) {
         }
     }
 }
+function setupLazyLoading() {
+    const lazyImages = document.querySelectorAll('img.lazy-load:not([src])');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy-load');
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '100px',
+        threshold: 0.01
+    });
+
+    lazyImages.forEach(img => observer.observe(img));
+}
+
 const locationHandler = async () => {
     const location = window.location.hash.replace("#", "") || '/';
     const pathSegments = location.split('?')[0];
@@ -113,7 +132,8 @@ const locationHandler = async () => {
     const html = await fetch(route.template).then(response => response.text());
     document.getElementById("app").innerHTML = html;
     window.scrollTo(0, 0);
-    loadScripts(route.scripts);
+    await loadScripts(route.scripts);
+    setupLazyLoading();
 };
 
 function displayCategoryName(categoryName) {
