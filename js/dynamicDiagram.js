@@ -94,14 +94,11 @@ export class DynamicDiagram {
                 // Asignar un ángulo inicial aleatorio
                 node.angle = Math.random() * 10 * Math.PI;
             }
-            // Espera a que el DOM esté completamente renderizado
-            setTimeout(() => {
-                const div = this.querySelector(".node-content");
-                const bbox = div.getBoundingClientRect();
-                d3.select(this)
-                    .attr("width", bbox.width) // Añade un pequeño margen
-                    .attr("height", bbox.height);
-            }, 0);
+            const div = this.querySelector(".node-content");
+            const bbox = div.getBoundingClientRect();
+            d3.select(this)
+                .attr("width", bbox.width) // Añade un pequeño margen
+                .attr("height", bbox.height);
         });
         const self = this;
 
