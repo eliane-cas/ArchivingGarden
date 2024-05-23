@@ -51,7 +51,16 @@ const routes = [
         description: "Information page",
         scripts: [],
         styles: []
+    },
+    {
+        path: '/shop',
+        template: '/html/shop.html',
+        title: "Shop",
+        description: "Shop page",
+        scripts: [],
+        styles: []
     }
+
 
 ];
 
@@ -88,7 +97,6 @@ async function loadScripts(scripts) {
 }
 function setupLazyLoading() {
     const lazyImages = document.querySelectorAll('img.lazy-load:not([src])');
-    console.log(lazyImages)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

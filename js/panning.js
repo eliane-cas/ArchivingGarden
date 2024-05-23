@@ -126,9 +126,6 @@ href="http://skylerbrickley.com/archive-list">[http://skylerbrickley.com/archive
 <a class="url-example" id="url-example-9"
 href="https://walbaum-archiv">[https://walbaum-archiv.ch/]</a>
 
-<p class="submit-here" id="submit-here-1">submit your archival project here</p>
-
-<span class="submit-here" id="submit-here-2">submit your archival project here</span>
 </div>
     `;
 
@@ -137,7 +134,7 @@ href="https://walbaum-archiv">[https://walbaum-archiv.ch/]</a>
 
 loadHTMLContent();
 
-
+var isScrollingWithinBounds = true;
 
 //document.addEventListener('DOMContentLoaded', function () {
 console.log("fds");
@@ -205,12 +202,23 @@ hammer.on('panend', function (e) {
     })();
 });
 
-// Opcional: Añade desplazamiento con el ratón de manera horizontal y vertical
 container.addEventListener('wheel', function (e) {
     e.preventDefault();
-    posX -= e.deltaX * 2.5; // Sensibilidad al scroll
-    posY -= e.deltaY * 2.5; // Sensibilidad al scroll vertical
-    posX = Math.max(Math.min(posX, maxPosX), minPosX);
-    posY = Math.max(Math.min(posY, maxPosY), minPosY);
+
+    var scrollThreshold = 0.1; // Umbral de sensibilidad del scroll para determinar la intención
+    var scrollDeltaY = e.deltaY;
+
+    // Verifica si el movimiento predominante es vertical y si se encuentra en los límites del contenedor
+    if (Math.abs(scrollDeltaY) > scrollThreshold) {
+        if ((scrollDeltaY > 0 && posY <= minPosY) || (scrollDeltaY < 0 && posY >= maxPosY)) {
+            window.scrollBy(0, scrollDeltaY); // Hace scroll de la página
+            return;
+        }
+    }
+
+    var deltaX = e.deltaX * 2.5;
+    var deltaY = e.deltaY * 2.5;
+    posX = Math.max(Math.min(posX - deltaX, maxPosX), minPosX);
+    posY = Math.max(Math.min(posY - deltaY, maxPosY), minPosY);
     inner.style.transform = `translate(${posX}px, ${posY}px)`;
 }, { passive: false });
