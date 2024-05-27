@@ -1,26 +1,14 @@
-export class DynamicDiagram {
-    constructor(selector, data, center = { x: null, y: null }) {
-        this.selector = selector;
-        // Selecciona el contenedor y obtén sus dimensiones
-        const container = d3.select(this.selector).node();
-        this.width = container.clientWidth;   // Usa clientWidth y clientHeight para obtener las dimensiones
-        this.height = container.clientHeight;
-
-        // Asegúrate de que el contenedor tiene dimensiones válidas
-        if (this.width === 0 || this.height === 0) {
-            console.error("El contenedor debe tener una anchura y altura mayores a cero");
-        }
-        this.data = data
-        //this.center = center ? center : { x: this.width / 2, y: this.height / 2 };
+export class DynamicDiagrams {
+    constructor(svg, data, center = { x: null, y: null }) {
+        this.svg = svg;  // SVG ya creado y pasado como argumento
+        this.data = data;
         this.center = {
-            x: center.x !== null ? center.x : this.width / 2,
-            y: center.y !== null ? center.y : this.height / 2
+            x: center.x !== null ? center.x : parseFloat(svg.attr('width')) / 2,
+            y: center.y !== null ? center.y : parseFloat(svg.attr('height')) / 2
         };
         this.isDragging = false;
-        this.simulation = null;
         this.setup();
     }
-
 
     setup() {
 
@@ -63,19 +51,14 @@ export class DynamicDiagram {
             .alphaMin(0.02)
             .alphaDecay(0.1)
 
-        const svg = d3.select(this.selector).append("svg")
-            .attr("width", this.width)
-            .attr("height", this.height)
-            .style("border", "none");
-
-        const link = svg.append("g")
+        const link = this.svg.append("g")
             .selectAll("line")
             .data(this.data.links)
             .join("line")
             .attr("stroke", "#999")
             .attr("stroke-width", d => Math.sqrt(d.value));
 
-        const node = svg.append("g")
+        const node = this.svg.append("g")
             .selectAll("foreignObject")
             .data(this.data.nodes)
             .join("foreignObject")
@@ -126,9 +109,9 @@ export class DynamicDiagram {
         // Llama a updateNodePositions cuando añadas nodos o actualices el contenido
         updateNodePositions();
         this.simulation.on("tick", () => {
-            const amplitude = /*0.2;*/0.2// Define cuánto se mueve el nodo antes de cambiar dirección
+            const amplitude = 0.2;/*0.2*/// Define cuánto se mueve el nodo antes de cambiar dirección
             const frequency = /*0.4;*/0.4 // Define la rapidez del cambio de dirección
-            const phaseShift = /*0.05;*/0.01// Añade un pequeño cambio gradual en cada tick
+            const phaseShift = 0.05;/*0.01*/// Añade un pequeño cambio gradual en cada tick
 
             node.each(function (d) {
                 if (d.type === 'child-node' && !d.isDragging) {

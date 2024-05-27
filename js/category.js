@@ -2,37 +2,33 @@ import { DynamicDiagram } from "/js/DynamicDiagram.js";
 
 export async function initCategoryPage() {
     const urlParams = new URLSearchParams(window.location.hash.split('?')[1]);
-    const categoryName = urlParams.get('category').replace(/_/g, ' ');  // Asegúrate de manejar correctamente los espacios y caracteres especiales
+    let categoryName = urlParams.get('category').replace(/_/g, ' ');  // Reemplaza los guiones bajos con espacios
+
+    if (categoryName == "Code and Develop") {
+        categoryName = "Code & Develop";
+    }
+    // Obtener los datos del archivo JSON
     const data = await fetch('/data/links.json')
         .then(response => response.json());
 
-    if (data["main-node"] !== categoryName) {
-        displayCategoryName('Category not found');
+    // Buscar el objeto correcto en el arreglo que coincida con la categoría
+    const categoryData = data.find(item => item["main-node"] === categoryName);
+
+    if (!categoryData) {
+        console.log(categoryName);
         return;
     }
 
-    const categoryNode = data.nodes.find(node => node.id === categoryName);
-
-    if (categoryNode) {
-        generateCategoryDiagram(categoryNode, data.links, data.nodes);
-    }
+    generateCategoryDiagram(categoryData);
 }
 
+function generateCategoryDiagram(categoryData) {
 
-function generateCategoryDiagram(categoryNode, links, nodes) {
-    const filteredLinks = links.filter(link => link.source === categoryNode.id || link.target === categoryNode.id);
-    const relatedNodesIds = new Set(filteredLinks.map(link => link.target));
-    relatedNodesIds.add(categoryNode.id);
-    const filteredNodes = nodes.filter(node => relatedNodesIds.has(node.id));
-
-    new DynamicDiagram('#app', {
-        nodes: filteredNodes,
-        links: filteredLinks
-    }, { x: null, y: 499 });
+    new DynamicDiagram('#app', categoryData, categoryData.position);
 }
 
-if (document.readyState === 'complete') {
-    initCategoryPage();
-} else {
+if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCategoryPage);
+} else {
+    initCategoryPage();
 }

@@ -28,7 +28,7 @@ const routes = [
         styles: ['/css/usefulLinks.css']
     },
     {
-        path: '/useful-links/category',
+        path: '/useful-links/categories',
         template: '/html/links_category.html',
         title: "Useful Links",
         description: "Useful links and resources",
@@ -36,12 +36,12 @@ const routes = [
         styles: ['/css/usefulLinks.css']
     },
     {
-        path: '/useful-links/all-links',
+        path: '/useful-links/categories/all-links',
         template: '/html/all_links.html',
         title: "Useful Links",
         description: "Useful links and resources",
-        scripts: [],
-        styles: ['/css/usefulLinks.css']
+        scripts: ['https://d3js.org/d3.v7.min.js', '/js/allLinks.js'],
+        styles: ['/css/allLinks.css']
     },
 
     {
@@ -125,7 +125,6 @@ const locationHandler = async () => {
         scripts: [],
         styles: []
     };
-
     // Limpiar el contenido existente
     document.getElementById("app").innerHTML = '';
     document.title = route.title;
@@ -141,6 +140,16 @@ const locationHandler = async () => {
     const html = await fetch(route.template).then(response => response.text());
     document.getElementById("app").innerHTML = html;
     window.scrollTo(0, 0);
+
+    //Quita o pone la barra de navegacion de categorias
+    const nav = document.querySelector(".category-navbar");
+    if (pathSegments != "/useful-links/categories" && pathSegments != "/useful-links/categories/all-links") {
+        nav.classList.add("hidden");
+    } else {
+        nav.classList.remove("hidden");
+
+    }
+
     await loadScripts(route.scripts);
     setupLazyLoading();
 };
