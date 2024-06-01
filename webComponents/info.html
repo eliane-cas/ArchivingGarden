@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desplazamiento y Zoom Extendido</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #content {
+            width: 2000px;
+            height: 1500px;
+            background: red;
+            cursor: grab;
+            position: absolute;
+            transform-origin: 0 0;
+        }
+
+        #zoom-in,
+        #zoom-out {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #zoom-out {
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="content"></div>
+    <div id="zoom-in">Zoom In</div>
+    <div id="zoom-out">Zoom Out</div>
+
+    <script>
+        const content = document.getElementById('content');
+        let isDragging = false;
+        let start = { x: 0, y: 0 };
+        let translate = { x: 0, y: 0 };
+        let scale = 1;
+
+        content.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            start.x = e.clientX - translate.x;
+            start.y = e.clientY - translate.y;
+            content.style.cursor = 'grabbing';
+            e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', function (e) {
+            if (isDragging) {
+                translate.x = e.clientX - start.x;
+                translate.y = e.clientY - start.y;
+                updateTransform();
+            }
+        });
+
+        window.addEventListener('mouseup', function () {
+            isDragging = false;
+            content.style.cursor = 'grab';
+        });
+
+        content.addEventListener('wheel', function (e) {
+            e.preventDefault();
+            adjustZoom(e.deltaY < 0 ? 1.1 : 0.9);
+        });
+
+        function adjustZoom(factor) {
+            const oldScale = scale;
+            scale = Math.max(0.1, Math.min(scale * factor, 4));
+            updateTransform();
+        }
+
+        function updateTransform() {
+            content.style.transform = `translate(${translate.x}px, ${translate.y}px) scale(${scale})`;
+        }
+
+        document.getElementById('zoom-in').addEventListener('click', function () {
+            adjustZoom(1.1);
+        });
+
+        document.getElementById('zoom-out').addEventListener('click', function () {
+            adjustZoom(0.9);
+        });
+    </script>
+</body>
+
+</html>

@@ -49,8 +49,8 @@ const routes = [
         template: '/html/info.html',
         title: "Info",
         description: "Information page",
-        scripts: [],
-        styles: []
+        scripts: ['/js/hammer.js', '/js/info.js'],
+        styles: ['/css/info.css']
     },
     {
         path: '/shop',

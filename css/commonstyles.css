@@ -18,7 +18,18 @@
     font-weight: normal;
     font-style: normal;  font-display: swap;
   }
-  
+  @font-face {
+    font-family: 'Suisse-Intl-mono';
+    src: url('/fonts/Suisse-Intl-Mono.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;  font-display: swap;
+  }
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/helveticaneue-extended.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;  font-display: swap;
+  }
 
 *{
     margin: 0;
