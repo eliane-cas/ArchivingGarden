@@ -9,7 +9,14 @@ const routes = [
         scripts: [],
         styles: []
     },
-
+    {
+        path: '/how',
+        template: '/html/howto.html',
+        title: "How to archive your work digitally",
+        description: "How to archive your work digitally",
+        scripts: ['/js/hammer.js', '/js/howto.js',],
+        styles: ['/css/howto.css']
+    },
     {
         path: '/examples',
         template: '/html/examples.html',

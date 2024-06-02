@@ -37,6 +37,7 @@
             left: 100px;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 </head>
 
 <body>
@@ -47,54 +48,76 @@
 
     <script>
         const content = document.getElementById('content');
-        let isDragging = false;
-        let start = { x: 0, y: 0 };
-        let translate = { x: 0, y: 0 };
         let scale = 1;
+        let lastScale = 1;
+        let lastPosX = 0;
+        let lastPosY = 0;
+        let posX = 0;
+        let posY = 0;
 
-        content.addEventListener('mousedown', function (e) {
-            isDragging = true;
-            start.x = e.clientX - translate.x;
-            start.y = e.clientY - translate.y;
-            content.style.cursor = 'grabbing';
-            e.preventDefault();
-        });
+        const mc = new Hammer.Manager(content);
+        const pinch = new Hammer.Pinch();
+        const pan = new Hammer.Pan({ threshold: 0, pointers: 0 });
 
-        window.addEventListener('mousemove', function (e) {
-            if (isDragging) {
-                translate.x = e.clientX - start.x;
-                translate.y = e.clientY - start.y;
-                updateTransform();
+        mc.add([pinch, pan]);
+        pinch.recognizeWith(pan);
+
+        mc.on('panstart panmove', function (e) {
+            if (e.type === 'panstart') {
+                lastPosX = posX;
+                lastPosY = posY;
             }
+
+            posX = e.deltaX + lastPosX;
+            posY = e.deltaY + lastPosY;
+
+            updateTransform();
         });
 
-        window.addEventListener('mouseup', function () {
-            isDragging = false;
-            content.style.cursor = 'grab';
+        mc.on('pinchstart pinchmove', function (e) {
+            if (e.type === 'pinchstart') {
+                lastScale = scale;
+            }
+
+            scale = Math.max(0.1, Math.min(lastScale * e.scale, 4));
+            updateTransform();
         });
+
+        function updateTransform() {
+            content.style.transform = `translate3d(${posX}px, ${posY}px, 0) scale(${scale})`;
+        }
 
         content.addEventListener('wheel', function (e) {
             e.preventDefault();
-            adjustZoom(e.deltaY < 0 ? 1.1 : 0.9);
-        });
+            const rect = content.getBoundingClientRect(); // Obtén las dimensiones y la posición del contenedor
+            const zoomFactor = 0.1;
 
-        function adjustZoom(factor) {
+            // Calcula la posición del cursor relativa al contenedor
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Calcula el nuevo nivel de zoom
             const oldScale = scale;
-            scale = Math.max(0.1, Math.min(scale * factor, 4));
+            scale += e.deltaY < 0 ? zoomFactor : -zoomFactor;
+            scale = Math.max(0.1, Math.min(scale, 4));
+
+            // Ajusta posX y posY para que el zoom se centre en la posición del cursor
+            posX -= (x * (scale - oldScale));
+            posY -= (y * (scale - oldScale));
+
             updateTransform();
-        }
-
-        function updateTransform() {
-            content.style.transform = `translate(${translate.x}px, ${translate.y}px) scale(${scale})`;
-        }
-
-        document.getElementById('zoom-in').addEventListener('click', function () {
-            adjustZoom(1.1);
         });
 
-        document.getElementById('zoom-out').addEventListener('click', function () {
-            adjustZoom(0.9);
-        });
+        /*
+                document.getElementById('zoom-in').addEventListener('click', function () {
+                    scale = Math.min(scale * 1.1, 4);
+                    updateTransform();
+                });
+        
+                document.getElementById('zoom-out').addEventListener('click', function () {
+                    scale = Math.max(scale * 0.9, 0.1);
+                    updateTransform();
+                });*/
     </script>
 </body>
 
