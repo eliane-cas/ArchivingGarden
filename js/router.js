@@ -6,7 +6,7 @@ const routes = [
         template: '/html/home_page.html',
         title: "Home Page",
         description: "This is the home page",
-        scripts: [],
+        scripts: ['/js/lineFix.js'],
         styles: ['/css/homepage.css']
     },
     {
