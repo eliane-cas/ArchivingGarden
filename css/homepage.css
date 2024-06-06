@@ -6,7 +6,7 @@
     position: relative;
     width: 100%;
     margin-top: 50.51px;
-    height: 970px;
+    height: 825px;
 }
 
 
@@ -29,7 +29,7 @@ background-position: center;
     position: absolute;
 width: 577px;
 height: 174.944px;
-left: 189.82px;
+left: 183.82px;
 margin-top: 50px;
 border-radius: 15.64px;
 background-color: #E6E6E6;
@@ -44,7 +44,7 @@ background-color: #E6E6E6;
 font-size: 11px;
 font-style: normal;
 font-weight: 400;
-line-height: 15px; /* 136.364% */
+line-height: 15px; 
 margin-left: 38px;
 margin-top: 18.29px;
 margin-bottom: 8px;
@@ -87,7 +87,7 @@ border-radius: 19px;
     font-style: normal;
     font-weight: 400;
     margin-left: 33.31px;
-    margin-top: 12.74px;/* 136.364% */
+    margin-top: 12.74px;
 }
 #thedate #date{
     display: block;
@@ -101,14 +101,14 @@ font-size: 16px;
 }
 
 .card-title1::before{
-    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    content: ""; 
     position: absolute;
-    top: -7px; /* Ajusta según necesites */
-    left: -14px; /* Ajusta según necesites */
-    width: 8px; /* Ancho del círculo */
-    height: 8px; /* Altura del círculo */
-    background-color: black; /* Color de fondo del círculo */
-    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+    top: -7px;
+    left: -14px;
+    width: 8px;
+    height: 8px; 
+    background-color: black;
+    border-radius: 50%; 
 }
 
 .card-title, .card-title1{
@@ -128,20 +128,20 @@ line-height: 19px;
 text-align: left;
 }
 .sub-card-subtitle::before{
-    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    content: ""; 
     position: absolute;
-    top: 26px; /* Ajusta según necesites */
-    left: 16px; /* Ajusta según necesites */
-    width: 8px; /* Ancho del círculo */
-    height: 8px; /* Altura del círculo */
-    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+    top: 26px; 
+    left: 16px;
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
 }
 
 .sub-card-subtitle.white::before{
-    background-color: white; /* Color de fondo del círculo */
+    background-color: white; 
 }
 .sub-card-subtitle.blue::before{
-    background-color: #007AFF; /* Color de fondo del círculo */
+    background-color: #007AFF;
 }
 #archiveNumbers{
     position: absolute;
@@ -291,20 +291,19 @@ background-position: center;
 }
 
 #podcast .sub-card-subtitle::before{
-    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    content: ""; 
     position: absolute;
-    top: 31px; /* Ajusta según necesites */
-    left: 30px; /* Ajusta según necesites */
-    width: 8px; /* Ancho del círculo */
-    height: 8px; /* Altura del círculo */
-    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+    top: 31px; 
+    left: 30px;     width: 8px; 
+    height: 8px; 
+    border-radius: 50%;
 }
 
 #podcast .sub-card-subtitle.white::before{
-    background-color: white; /* Color de fondo del círculo */
+    background-color: white; 
 }
 #podcast .sub-card-subtitle.blue::before{
-    background-color: #007AFF; /* Color de fondo del círculo */
+    background-color: #007AFF; 
 }
 
 #howtoarchive{
@@ -331,13 +330,13 @@ background-position: center;
 }
 
 #howtoarchive .sub-card-subtitle::before{
-    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    content: ""; 
     position: absolute;
-    top: 29px; /* Ajusta según necesites */
-    left: 21px; /* Ajusta según necesites */
-    width: 8px; /* Ancho del círculo */
-    height: 8px; /* Altura del círculo */
-    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+    top: 29px;
+    left: 21px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%; 
 }
 
 #documentsvg{
@@ -345,7 +344,7 @@ background-position: center;
     height: 128.81px;
     margin-top: 8.35px;
     float: right;
-    background: url('/images/home5.svg');
+    background: url('/images/home5.png');
 
 background-position: center;
     background-size: cover; 
@@ -377,33 +376,40 @@ margin-left: 42px;
 }
 
 #archiveOfTheDay .sub-card-subtitle::before{
-    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    content: ""; 
     position: absolute;
-    top: 30px; /* Ajusta según necesites */
-    left: 26px; /* Ajusta según necesites */
-    width: 8px; /* Ancho del círculo */
-    height: 8px; /* Altura del círculo */
+    top: 30px; 
+    left: 26px;
+    width: 8px; 
+    height: 8px; 
     background-color: black;
-    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+    border-radius: 50%;
 }
 
 #archiveOfTheDay #archiveOfDay{
-    
-    background: url('/images/home6.png');
-background-position: center;
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    width: 440.96px;
-height: 249.49px;
-border-radius: 6.13px;
-
-margin: auto;
-margin-top: 20px;
+   
 display: flex;
 justify-content: center;
 align-items: center;
+
 }
 
+#archiveOfTheDay #archiveOfDay img{
+    border-radius: 6.13px;
+background-blend-mode: normal;
+filter: drop-shadow(6.13px rgba(0, 0, 0, 0.15));
+
+border-radius: 6.13px;
+background: linear-gradient(0deg, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0.54) 100%), #262626;
+background-blend-mode: normal;
+backdrop-filter: blur(12.260747909545898px);
+
+    width: 440.96px;
+    height: 249.494px;
+margin-top: 20px;
+
+}
+    
 #quotes{
     position: absolute;
     width: 505px;
@@ -432,11 +438,55 @@ background: #000000;
 }
 
 #quotes .sub-card-subtitle::before{
-    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    content: "";
     position: absolute;
-    top: 34px; /* Ajusta según necesites */
-    left: 22px; /* Ajusta según necesites */
-    width: 8px; /* Ancho del círculo */
-    height: 8px; /* Altura del círculo */
-    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+    top: 34px; 
+    left: 22px; 
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+}
+
+#section2 h2{
+    margin-left:99.92px;
+    margin-top: 128.31px;
+    color: #000;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px; /* 118.75% */
+    text-transform: uppercase;
+}
+
+#section2 p{
+    margin-left:99.92px;
+    margin-top: 32px;
+    color: #000;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 19px; /* 118.75% */
+width: 471px;
+height: 95px;
+}
+
+#section2-img{    
+    margin-left:81.2px;
+    width: 495.557px;
+    height: 291.096px;
+    background-repeat: no-repeat;
+}
+
+.section2-h3{
+    color: #000;
+    margin-left: 99.92px;
+    margin-top: 120px;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px; /* 118.75% */
+    text-transform: uppercase;
 }
