@@ -7,7 +7,7 @@ const routes = [
         title: "Home Page",
         description: "This is the home page",
         scripts: [],
-        styles: []
+        styles: ['/css/homepage.css']
     },
     {
         path: '/how',

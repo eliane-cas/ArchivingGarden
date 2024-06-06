@@ -1,0 +1,442 @@
+*{
+    margin: 0;
+}
+
+.section1{
+    position: relative;
+    width: 100%;
+    margin-top: 50.51px;
+    height: 970px;
+}
+
+
+#archiveLogo{
+    background-image: url('/images/home1.svg');
+    position: absolute;
+    left: 40.32px;
+    top: 50.57px;
+    width: 142.799px;
+height: 122.437px;
+background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#welcometo{
+    position: absolute;
+width: 577px;
+height: 174.944px;
+left: 189.82px;
+margin-top: 50px;
+border-radius: 15.64px;
+background-color: #E6E6E6;
+}
+
+#welcometo span{
+    display: block;
+    width: 174px;
+    height: 11px;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 11px;
+font-style: normal;
+font-weight: 400;
+line-height: 15px; /* 136.364% */
+margin-left: 38px;
+margin-top: 18.29px;
+margin-bottom: 8px;
+}
+
+#welcometo .card-title1{
+    position: relative;
+    display: block;
+    margin-left: 38px;
+    margin-bottom: 8px;
+    color: black;
+}
+#welcometo p{
+    margin-left: 37.07px;
+    margin-right: 24.93px;
+    margin-bottom: 13.07px;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 11px;
+font-weight: 400;
+line-height: 15px;
+text-align: left;
+
+}
+#thedate{
+    position: absolute;
+    left: 552.57px;
+    top: 229.45px;
+    width: 214.25px;
+height: 64.38px;
+background: #7B4B29;
+border-radius: 19px;
+
+}
+
+#thedate .sub-card-subtitle{
+    display: block;
+    color: rgba(255, 255, 255, 0.50);
+    font-family: 'ABCDiatype-Regular', sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 33.31px;
+    margin-top: 12.74px;/* 136.364% */
+}
+#thedate #date{
+    display: block;
+color: white;   
+margin-left: 33.31px ;
+margin-top: 1px;
+font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.card-title1::before{
+    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    position: absolute;
+    top: -7px; /* Ajusta según necesites */
+    left: -14px; /* Ajusta según necesites */
+    width: 8px; /* Ancho del círculo */
+    height: 8px; /* Altura del círculo */
+    background-color: black; /* Color de fondo del círculo */
+    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+}
+
+.card-title, .card-title1{
+    display: block;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 19px;
+text-align: left;
+}
+
+.sub-card-subtitle{
+font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 11px;
+font-weight: 400;
+line-height: 19px;
+text-align: left;
+}
+.sub-card-subtitle::before{
+    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    position: absolute;
+    top: 26px; /* Ajusta según necesites */
+    left: 16px; /* Ajusta según necesites */
+    width: 8px; /* Ancho del círculo */
+    height: 8px; /* Altura del círculo */
+    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+}
+
+.sub-card-subtitle.white::before{
+    background-color: white; /* Color de fondo del círculo */
+}
+.sub-card-subtitle.blue::before{
+    background-color: #007AFF; /* Color de fondo del círculo */
+}
+#archiveNumbers{
+    position: absolute;
+    width: 278px;
+height: 158px;
+top: 445px;
+left: 40.42px;
+border-radius: 19px;
+background-color: #747D03;
+}
+
+#archiveNumbers .sub-card-subtitle{
+display: block;
+color: #FFFFFF80;
+margin-left: 32px;
+margin-top: 14px;
+}
+
+
+#archiveNumbers .card-title{
+    display: block;
+    margin-left: 33px;
+    margin-top: 3px;
+color:#FAFAFA;
+
+}
+
+#archiveNumbers .numbers{
+    margin-left: 27px;
+    margin-top: 13.27px;
+    background-image: url('/images/home2.svg');
+    width: 228px;
+    height: 32.33px;
+background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#archiveNumbers p{
+    color: #FAFAFA;
+    margin-top: 10px;
+    margin-left: 28px;
+/* BODY */
+font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 11px;
+font-style: normal;
+font-weight: 400;
+}
+#archiveNumbers .cross{
+    display: block;
+    color: #FAFAFA;
+    margin-top: 8px;
+    margin-left: 20px;
+/* BODY */
+font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+}
+
+#archivesNews{
+    position: absolute;
+    width: 278px;
+    height: 212.34px;
+    top: 608px;
+    left: 41.25px;
+    gap: 0px;
+    border-radius: 19px;
+    opacity: 0px;
+    background-color: #D4FD7D;
+}
+#archivesNews .sub-card-subtitle{
+color: #007AFF80;
+
+display: block;
+    margin-left: 32px;
+    margin-top: 14px;
+}
+
+#archivesNews .card-title{color: #007AFF;
+
+    margin-left: 32px;
+}
+
+#archivesNews a{
+    display: block;
+    color: #1F7900;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration-line: underline;
+    line-height: 16px;
+}
+#archivesNews a:nth-of-type(1) {
+    margin-left: 21.02px;
+    margin-top: 12.17px;
+}
+#archivesNews a:nth-of-type(2) {
+    margin-left: 21.02px;
+    margin-top: 12.17px;
+}
+#archivesNews a:nth-of-type(3) {
+    margin-left: 21.02px;
+    margin-top: 12.17px;width: 229px;
+}
+
+#podcast{
+    position: absolute;
+    width: 483px;
+height: 239.05px;
+top: 35.05px;
+right: 41px;
+border-radius: 19px;
+background: url('/images/home3.png');
+
+background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+
+#podcast #musicPlayer{
+    background: url('/images/home4.svg');
+width: 442px;
+height: 91.79px;
+margin: auto;
+margin-top: 60px;
+background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+#podcast .sub-card-subtitle{
+    display: block;
+    color: rgba(255, 255, 255, 0.50);
+    margin-left: 48.42px;
+    margin-top: 15.95px;
+}
+#podcast .card-title{
+    display: block;
+    margin-left: 48.42px;
+    margin-top: 3px;
+    color: #FFFFFF;
+
+}
+
+#podcast .sub-card-subtitle::before{
+    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    position: absolute;
+    top: 31px; /* Ajusta según necesites */
+    left: 30px; /* Ajusta según necesites */
+    width: 8px; /* Ancho del círculo */
+    height: 8px; /* Altura del círculo */
+    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+}
+
+#podcast .sub-card-subtitle.white::before{
+    background-color: white; /* Color de fondo del círculo */
+}
+#podcast .sub-card-subtitle.blue::before{
+    background-color: #007AFF; /* Color de fondo del círculo */
+}
+
+#howtoarchive{
+    position: absolute;width: 339px;
+    height: 200.595px;
+    border-radius: 19px;
+    background-color: #007AFF;
+    right: 41px;
+    top: 279px;
+}
+
+#howtoarchive .sub-card-subtitle{
+    display: block;
+    margin-top: 15px;
+    margin-left: 39px;
+    color: #FFFFFF80;
+}
+
+#howtoarchive .card-title{
+    margin-top: 0px;
+    margin-left: 39px;
+    color: #FFFFFF;
+    ;
+}
+
+#howtoarchive .sub-card-subtitle::before{
+    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    position: absolute;
+    top: 29px; /* Ajusta según necesites */
+    left: 21px; /* Ajusta según necesites */
+    width: 8px; /* Ancho del círculo */
+    height: 8px; /* Altura del círculo */
+    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+}
+
+#documentsvg{
+    width: 128.81px;
+    height: 128.81px;
+    margin-top: 8.35px;
+    float: right;
+    background: url('/images/home5.svg');
+
+background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    
+}
+
+#archiveOfTheDay{
+    position: absolute;width: 474px;
+    height: 340.52px;
+    top: 484.49px;
+    right: 41px;
+    background-color: #15D076;
+    border-radius: 19px;
+
+}
+
+#archiveOfTheDay .sub-card-subtitle{
+    color: rgba(0, 0, 0, 0.50);
+    
+    display: block;
+margin-top: 17.37px;
+margin-left: 42px;
+
+}
+
+#archiveOfTheDay .card-title{
+    margin-left: 42px;
+}
+
+#archiveOfTheDay .sub-card-subtitle::before{
+    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    position: absolute;
+    top: 30px; /* Ajusta según necesites */
+    left: 26px; /* Ajusta según necesites */
+    width: 8px; /* Ancho del círculo */
+    height: 8px; /* Altura del círculo */
+    background-color: black;
+    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+}
+
+#archiveOfTheDay #archiveOfDay{
+    
+    background: url('/images/home6.png');
+background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    width: 440.96px;
+height: 249.49px;
+border-radius: 6.13px;
+
+margin: auto;
+margin-top: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#quotes{
+    position: absolute;
+    width: 505px;
+height: 228px;
+top: 470.86px;
+right: 520px;
+border-radius: 19px;
+background: #000000;
+
+}
+
+#quotes .sub-card-subtitle{
+    display: block;
+    margin-left: 39px;
+    margin-top: 21px;
+    color: #FFFFFF80;
+
+}
+
+
+#quotes .card-title{
+    display: block;
+    margin-left: 39px;
+    color: #FFFFFF;
+
+}
+
+#quotes .sub-card-subtitle::before{
+    content: ""; /* Necesario para que el pseudoelemento se muestre */
+    position: absolute;
+    top: 34px; /* Ajusta según necesites */
+    left: 22px; /* Ajusta según necesites */
+    width: 8px; /* Ancho del círculo */
+    height: 8px; /* Altura del círculo */
+    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto */
+}
