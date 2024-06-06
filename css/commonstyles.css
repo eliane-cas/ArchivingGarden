@@ -39,6 +39,9 @@
     text-decoration: none;
 }
 
+body{
+    background-color: #FAFAFA ;
+}
 .hidden{
     visibility: hidden;
 }
