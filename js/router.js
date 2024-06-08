@@ -167,12 +167,17 @@ function displayCategoryName(categoryName) {
         categoryDisplay.textContent = categoryName || 'Category not found';
     }
 }
+let isPageInitialized = false;
+
 document.addEventListener("DOMContentLoaded", function () {
-    locationHandler().then(() => {
-        console.log("Todos los scripts y contenidos han sido cargados correctamente.");
-    }).catch(error => {
-        console.error("Error durante la carga inicial: ", error);
-    });
+    if (!isPageInitialized) {
+        locationHandler().then(() => {
+            isPageInitialized = true;
+            console.log("Todos los scripts y contenidos han sido cargados correctamente.");
+        }).catch(error => {
+            console.error("Error durante la carga inicial: ", error);
+        });
+    }
 });
 
 window.addEventListener("hashchange", locationHandler);
