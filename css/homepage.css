@@ -969,11 +969,13 @@ position: absolute;
     height:912px;
     border-radius: 52px;
     position: relative;
+    width: 100%;
 }
 
 #lines3{
     display: block;
     position: absolute;
+    width: 100%;
     top: 140.47px;
 }
 
@@ -1007,6 +1009,12 @@ position: absolute;
     top: 267.47px;
     left: 616px;
 }
+
+#svg4{
+    display: block;
+    position: absolute;
+    top: 0px;
+}
 .lines3-bor{
     position: absolute;
     width: 118px;
@@ -1019,4 +1027,164 @@ line-height: 33px;
 letter-spacing: 0.5px;
 text-align: center;
 
+}
+#section5-span1{
+    position: absolute;
+    left: 143px;
+    top: 358.47px;
+    color: #000;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+
+#section5-span2{
+    position: absolute;
+    right: 124px;
+    top: 358.47px;
+    color: #000;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+
+#artificialI{
+    position: absolute;
+    width: 367px;
+    height: 180px;
+    top: 442.47px;
+    left: 59px;
+    display: flex;
+}
+
+#artificialI-1,#artificialI-2,#artificialI-3,#artificialI-4{
+ width: 10px;
+ height: 180px;
+ border: 0.5px solid  #747D03;
+background:  #D4FD7D;   
+}
+#artificialI-5{
+    display: block;
+    width: 298px;
+    height: 180px;
+ border: 0.5px solid  #747D03;
+ background:  #D4FD7D;
+}
+#artificialI-6{
+    width: 29px;
+    height: 180px;
+ border: 0.5px solid  #747D03;
+ background:  #D4FD7D;
+}
+#artificialI-text{
+    position: absolute;
+    left: 60px;
+    top: 50px;
+    color: #000;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 50px;
+font-style: normal;
+font-weight: 400;
+text-transform: capitalize;
+}
+
+
+#digitalGarden{
+    position: absolute;
+    right: 60px;
+    top: 442.47px;
+    width: 368px;
+    height: 346px;
+    display: flex;
+}
+
+#digitalGarden-1{
+    width: 12.33px;
+height: 346px;
+border: 0.5px solid  #747D03;
+background: #D4FD7D;
+}
+#digitalGarden-2{
+    width: 18px;
+height: 346px;
+border: 0.5px solid  #747D03;
+background: #D4FD7D;
+}
+#digitalGarden-3{
+    width: 279px;
+height: 346px;
+border: 0.5px solid  #747D03;
+background: #D4FD7D;
+}
+#digitalGarden-4{
+    width: 58.804px;
+height: 346px;
+border: 0.5px solid  #747D03;
+background: #D4FD7D;
+}
+#digitalGarden-text{
+    width: 246px;
+    position: absolute;
+    left: 44px;
+    top: 212px;
+    color: #000;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 50px;
+font-style: normal;
+font-weight: 400;
+text-transform: capitalize;
+}
+#svg5{
+    display: block;
+    position: absolute;
+    top: 715.47px;
+}
+#ecosystems{
+    position: absolute;
+    width: 555px;
+height: 42px;
+background: #D4FD7D;
+top: 785.47px;
+left: 62px;
+text-align: left;
+color: #000;
+font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+letter-spacing: 0.5px;
+text-transform: capitalize;
+line-height: 45px;
+padding-left: 17px;
+border-top: 1.5px solid black;
+}
+
+#section5-numbers{
+    z-index: 1;
+    position: absolute;
+    top: 749.47px;
+    left: 61px;
+    width: 517px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'ABCDiatypeRounded-Regular';
+    font-size: 16px;
+font-style: normal;
+margin-left: 18px;
+margin-right: 18px;
+font-weight: 400;
+line-height: 45px; /* 281.25% */
+}
+
+#section5-numbers span{
+    color: black;
+}
+#section5-numbers span:hover{
+    color: #007AFF;
 }

@@ -120,7 +120,7 @@ background: #007AFF;
     width: 100%;
     position: fixed;
     top: 0px;
-    z-index: 1;
+    z-index: 3;
 }
 
 .navigation-top{
@@ -188,4 +188,14 @@ background-color: rgba(0, 0, 0, 1);
     width: 100%;
     height:1200px;
     margin-top:56px ;
+}
+
+
+#section5img{
+    width: 254.448px;
+height: 240px;
+top: 620.47px;
+position: absolute;
+left: 715.58px;
+z-index: 1;
 }

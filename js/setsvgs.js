@@ -30,13 +30,16 @@ function main() {
         <line id="line4" x1="322.218" y1="10.3613" x2="1472" y2="10.3613" stroke="black" />
         <line x1="322.5" y1="0.361328" x2="322.5" y2="19.3613" stroke="black" />
         <line x1="156.5" y1="784.361" x2="156.5" y2="803.361" stroke="black" />
+
+
+        
     </svg>`;
 
     section3.insertAdjacentHTML('beforeend', svgHTML2);
 
     const section5 = document.getElementById('section5');
 
-    var svgHTML3 = `<svg id="lines3" width="1159" height="145" fill="none" xmlns="http://www.w3.org/2000/svg">
+    var svgHTML3 = `<svg id="lines3" width="100%" height="145" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Convertido del primer path con margen izquierdo añadido -->
   <line x1="64.42188" y1="21.3516" x2="64.42188" y2="65.3516" stroke="black"/>
   <line x1="64.42188" y1="65.3516" x2="534.422" y2="65.3516" stroke="black"/>
@@ -53,7 +56,40 @@ function main() {
 `;
     section5.insertAdjacentHTML('beforeend', svgHTML3);
 
-    // Inserta el SVG justo antes del cierre del contenedor
+    var svgHTML4 = `<svg id="svg4" width="100%" height="973"  fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line id="svg4-2" x1="1408.42" y1="342.352" x2="1408.42" y2="389.045" stroke="black"/>
+    <line id="svg4-3" x2="1408.42" y1="389.045" x1="1325.75" y2="389.045" stroke="black"/>
+    <line id="svg4-4" x1="1325.75" y1="389.045" x2="1325.75" y2="443.352" stroke="black"/>
+    <!-- Segundo path convertido en línea -->
+    <line id="svg4-1" x2="1405.42" y1="342.352" x1="123.422" y2="342.352" stroke="black"/>
+    <line x1="123.422" y1="342.352" x2="123.422" y2="388.583" stroke="black"/>
+    <line x1="123.422" y1="388.583" x2="229.909" y2="388.583" stroke="black"/>
+    <line x1="229.909" y1="388.583" x2="229.909" y2="442.352" stroke="black"/>
+</svg>
+`;
+    section5.insertAdjacentHTML('beforeend', svgHTML4);
+
+
+    var svgHTML5 = `<svg  id="svg5" width="100%" height="165" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Primer path convertido en líneas -->
+        <line x1="61.42188" y1="30.4898" x2="452.15" y2="30.4898" stroke="black"/>
+        <line x1="452.15" y1="30.4898" x2="452.15" y2="1.35059" stroke="black"/>
+        <line x1="452.15" y1="1.35059" x2="616.422" y2="1.35059" stroke="black"/>
+        <line x1="616.422" y1="1.35059" x2="616.422" y2="143.301" stroke="black"/>
+        <line x1="616.422" y1="143.301" x2="139.5022" y2="143.301" stroke="black"/>
+        <line x1="139.5022" y1="143.301" x2="139.5022" y2="164.351" stroke="black"/>
+        <line x1="139.5022" y1="164.351" x2="121.3471" y2="164.351" stroke="black"/>
+        <line x1="121.3471" y1="164.351" x2="121.3471" y2="113.169" stroke="black"/>
+        <line x1="121.3471" y1="113.169" x2="61.42188" y2="113.169" stroke="black"/>
+        <line x1="61.42188" y1="113.169" x2="61.42188" y2="30.4898" stroke="black"/>
+        <!-- Segundo path convertido en línea -->
+        <line id="svg4-5" x1="616.422" x2="1086.42" y1="26.3516" y2="26.3516" stroke="black"/>
+    </svg>
+    
+    `;
+
+    section5.insertAdjacentHTML('beforeend', svgHTML5);
+
 }
 
 if (document.readyState === 'complete') {
