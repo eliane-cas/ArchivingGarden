@@ -6,7 +6,7 @@ const routes = [
         template: '/html/home_page.html',
         title: "Home Page",
         description: "This is the home page",
-        scripts: ['/js/lineFix.js'],
+        scripts: ['/js/setsvgs.js', '/js/lineFix.js'],
         styles: ['/css/homepage.css']
     },
     {
@@ -167,10 +167,13 @@ function displayCategoryName(categoryName) {
         categoryDisplay.textContent = categoryName || 'Category not found';
     }
 }
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    locationHandler();
+    locationHandler().then(() => {
+        console.log("Todos los scripts y contenidos han sido cargados correctamente.");
+    }).catch(error => {
+        console.error("Error durante la carga inicial: ", error);
+    });
 });
 
 window.addEventListener("hashchange", locationHandler);
+window.addEventListener("load", locationHandler);  // Asegura que se manejen las cargas completas de la página
