@@ -180,5 +180,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-window.addEventListener("hashchange", locationHandler);
+window.addEventListener("hashchange", function () {
+    if (!isPageInitialized) {
+        locationHandler();
+    }
+});
 window.addEventListener("load", locationHandler);  // Asegura que se manejen las cargas completas de la página
