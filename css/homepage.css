@@ -3,7 +3,6 @@
 }
 
 #app{
-    height: 7599px !important;
 }
 
 .section1{
@@ -1187,4 +1186,221 @@ line-height: 45px; /* 281.25% */
 }
 #section5-numbers span:hover{
     color: #007AFF;
+}
+
+#section5img{
+    width: 254.448px;
+height: 240px;
+top: 620.47px;
+position: absolute;
+left: 715.58px;
+z-index: 1;
+}
+#section6{
+    height: 1500px;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 151px;
+}
+
+#section6-h1{
+    display: block;
+    color: #000;
+text-align: center;
+font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 200px;
+font-style: normal;
+font-weight: 400;
+line-height: 156px; /* 78% */
+text-transform: uppercase;
+width: 1207px;
+position: absolute;
+top: 142px;
+    left: 50%; /* Centra el H1 horizontalmente respecto al contenedor */
+    transform: translateX(-50%); /* Ajusta la posición horizontal exacta al centro */
+}
+#section6-p{
+    position: absolute;
+    color: #000;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+    font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 26px; /* 130% */
+text-transform: uppercase;
+top: 1008.52px;
+left: 50%; /* Centra el H1 horizontalmente respecto al contenedor */
+transform: translateX(-50%); /* Ajusta la posición horizontal exacta al centro */
+}
+
+#folders{
+    position: absolute;
+    width: 100%;
+    top: 1192.8px;
+    display: flex;
+    justify-content: center;
+    gap: 50.35px;
+}
+
+#folder1,#folder2,#folder3{
+position: relative;
+width: fit-content;
+height: fit-content;
+}
+
+#folder1 .folder-circle{
+    background-color: #007AFF;
+}
+#folder2 .folder-circle{
+    background-color: #747D03;
+}
+#folder3 .folder-circle{
+    background-color: #F7FF6E;
+}
+.folder-circle{
+    position: absolute;
+    width: 31px;
+    height: 31px;
+border-radius: 50%;
+top: 220.75px;
+left: 30px;
+}
+
+.section6link{
+    text-decoration: none;
+    color: #000;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 52px; /* 325% */
+position: absolute;
+top: 281.04px;
+left: 50%; /* Centra el H1 horizontalmente respecto al contenedor */
+transform: translateX(-50%);
+
+}
+#folder2 .section6link{
+    width: 236px;
+}
+#lastSVG{
+display: block;
+    width: 95%;
+    height: auto;
+  margin: auto;
+margin-bottom: 81.7px;
+}
+#footer{
+    position: relative;
+    width: 100%;
+    border-top-left-radius: 88.849px;
+    border-top-right-radius: 88.849px;
+background: #D6FF80;
+height: 168.64px;
+}
+
+#footer-logo{
+    position: absolute;
+    top: 47px;
+    left: 41.42px;
+    color: #000;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 24.091px;
+font-style: normal;
+font-weight: 400;
+letter-spacing: -0.482px;
+}
+#designer{
+    font-family: 'ABCDiatype-Regular', sans-serif;
+
+    position: absolute;
+    top: 91px;
+    left: 41px;
+    color: #000;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+
+#developer{    
+    font-family: 'ABCDiatype-Regular', sans-serif;
+    position: absolute;
+    top: 111px;
+    left: 41px;
+    color: #000;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+
+
+#contact{
+    position: absolute;
+    top: 47px;
+    left: 356px;
+    color: #000;
+    font-family: 'ABCDiatype-Regular';
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+text-transform: capitalize;
+}
+#nofiContact, #franContact{
+    color: #000;
+    font-family: 'ABCDiatype-Regular';
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+letter-spacing: 0.5px;
+}
+#nofiContact{
+position: absolute;
+top: 88px;
+left: 356px;
+}
+#franContact{
+position: absolute;
+top: 107px;
+left: 356px;
+}
+#rights{
+    position: absolute;
+    right: 137.45px;
+    top: 138.48px;
+    color: #000;
+    font-family: 'ABCDiatype-Regular';
+font-size: 11px;
+font-style: normal;
+font-weight: 400;
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+
+#footerimg{
+    display: block;
+    position: absolute;
+    right: 53.45px;
+    top: 119.54px;
+}
+
+#footerMenu{
+    position: absolute;
+    top: 47px;
+    right: 55px;
+    width: 565px;
+    display: flex;
+    justify-content: space-between;
+}
+#footerMenu a{
+    color: #000;
+    font-family: 'ABCDiatype-Regular';
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+text-decoration-line: underline;
 }
