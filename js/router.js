@@ -167,18 +167,10 @@ function displayCategoryName(categoryName) {
         categoryDisplay.textContent = categoryName || 'Category not found';
     }
 }
-let isPageInitialized = false;
+
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (!isPageInitialized) {
-        locationHandler().then(() => {
-            isPageInitialized = true;
-            console.log("Todos los scripts y contenidos han sido cargados correctamente.");
-        }).catch(error => {
-            console.error("Error durante la carga inicial: ", error);
-        });
-    }
+    locationHandler();
 });
 
 window.addEventListener("hashchange", locationHandler);
-window.addEventListener("load", locationHandler);  // Asegura que se manejen las cargas completas de la página
