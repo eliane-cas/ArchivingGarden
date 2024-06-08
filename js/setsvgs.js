@@ -34,6 +34,25 @@ function main() {
 
     section3.insertAdjacentHTML('beforeend', svgHTML2);
 
+    const section5 = document.getElementById('section5');
+
+    var svgHTML3 = `<svg id="lines3" width="1159" height="145" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Convertido del primer path con margen izquierdo añadido -->
+  <line x1="64.42188" y1="21.3516" x2="64.42188" y2="65.3516" stroke="black"/>
+  <line x1="64.42188" y1="65.3516" x2="534.422" y2="65.3516" stroke="black"/>
+
+  <!-- Convertido del segundo path con margen izquierdo añadido -->
+  <line id="l3-1" x1="535.422" y1="1.35156" x2="1158.42" y2="1.35156" stroke="black"/>
+  <line x1="535.422" y1="1.35156" x2="535.422" y2="127.352" stroke="black"/>
+
+  <!-- Convertido del tercer path con margen izquierdo añadido -->
+  <line x1="594.422" y1="144.352" x2="615.922" y2="144.352" stroke="black"/>
+</svg>
+
+
+`;
+    section5.insertAdjacentHTML('beforeend', svgHTML3);
+
     // Inserta el SVG justo antes del cierre del contenedor
 }
 

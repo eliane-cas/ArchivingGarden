@@ -24,6 +24,12 @@ function adjustLine() {
         const line4 = document.getElementById('line4');
         line4.setAttribute('x2', svgWidth2 - 41);
 
+
+        const svgWidth3 = document.getElementById('lines3').clientWidth;
+
+        const line6 = document.getElementById('l3-1');
+        line6.setAttribute('x2', svgWidth2 - 355);
+
     } catch {
 
     }

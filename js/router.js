@@ -72,13 +72,18 @@ const routes = [
 ];
 
 function loadStyles(styles) {
-    styles.forEach(style => {
-        const linkElement = document.createElement('link');
-        linkElement.rel = 'stylesheet';
-        linkElement.href = style;
-        document.head.appendChild(linkElement);
-    });
+    return Promise.all(styles.map(style => {
+        return new Promise((resolve, reject) => {
+            const linkElement = document.createElement('link');
+            linkElement.rel = 'stylesheet';
+            linkElement.href = style;
+            linkElement.onload = resolve;
+            linkElement.onerror = () => reject(new Error(`Failed to load style: ${style}`));
+            document.head.appendChild(linkElement);
+        });
+    }));
 }
+
 
 async function loadScripts(scripts) {
     // Eliminar cualquier script anterior
@@ -120,7 +125,6 @@ function setupLazyLoading() {
 
     lazyImages.forEach(img => observer.observe(img));
 }
-
 const locationHandler = async () => {
     const location = window.location.hash.replace("#", "") || '/';
     const pathSegments = location.split('?')[0];
@@ -132,34 +136,33 @@ const locationHandler = async () => {
         scripts: [],
         styles: []
     };
+
     // Limpiar el contenido existente
     document.getElementById("app").innerHTML = '';
     document.title = route.title;
 
-    // Actualizar el elemento current-page con el título de la página
-    const currentPageDisplay = document.getElementById("current-page");
-    currentPageDisplay.textContent = route.title + '→';
-
-    // Cargar nuevo contenido HTML
-    // Manejar estilos y scripts
+    // Quitar estilos antiguos y cargar nuevos
     document.querySelectorAll('link[rel="stylesheet"]:not(#common-styles)').forEach(link => link.remove());
-    loadStyles(route.styles);
+    await loadStyles(route.styles);
+
+    // Cargar nuevo contenido HTML después de que los estilos estén listos
     const html = await fetch(route.template).then(response => response.text());
     document.getElementById("app").innerHTML = html;
     window.scrollTo(0, 0);
 
-    //Quita o pone la barra de navegacion de categorias
+    // Manejar la barra de navegación de categorías
     const nav = document.querySelector(".category-navbar");
-    if (pathSegments != "/useful-links/categories" && pathSegments != "/useful-links/categories/all-links") {
+    if (pathSegments !== "/useful-links/categories" && pathSegments !== "/useful-links/categories/all-links") {
         nav.classList.add("hidden");
     } else {
         nav.classList.remove("hidden");
-
     }
 
+    // Cargar scripts después de que el HTML y CSS estén en su lugar
     await loadScripts(route.scripts);
     setupLazyLoading();
 };
+
 
 function displayCategoryName(categoryName) {
     const categoryDisplay = document.getElementById('category-name');
