@@ -87,7 +87,30 @@ background: #7B4B29;
 border-radius: 19px;
 
 }
+#hiddenDate{
+    display: none;
+    color: var(--BLUE, #007AFF);
+    font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+text-align: center;
+margin-top: 15px;
+}
 
+#thedate:hover #hiddenDate{
+    display: block;
+}
+#thedate:hover{
+    background-color: #BAECB7;
+}
+
+#thedate:hover .sub-card-subtitle{
+    display: none;
+}
+#thedate:hover #date{
+    display: none;
+}
 #thedate .sub-card-subtitle{
     display: block;
     color: rgba(255, 255, 255, 0.50);
@@ -528,6 +551,7 @@ bottom: 40.13px;
     top: 60px;
     right: 630px;
 }
+
 #section2 h2{
     margin-left:99.92px;
     margin-top: 31.05px;
