@@ -1258,13 +1258,14 @@ background:  #D4FD7D;
 #artificialI-text{
     position: absolute;
     left: 60px;
-    top: 50px;
+    top: 75px;
     color: #000;
     font-family: 'ABCDiatype-Regular', sans-serif;
 font-size: 50px;
 font-style: normal;
 font-weight: 400;
 text-transform: capitalize;
+line-height: 45px;
 }
 
 
@@ -1305,13 +1306,14 @@ background: #D4FD7D;
     width: 246px;
     position: absolute;
     left: 44px;
-    top: 212px;
+    top: 240px;
     color: #000;
     font-family: 'ABCDiatype-Regular', sans-serif;
 font-size: 50px;
 font-style: normal;
 font-weight: 400;
 text-transform: capitalize;
+line-height: 45px;
 }
 #svg5{
     display: block;

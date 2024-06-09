@@ -6,7 +6,7 @@ const routes = [
         template: '/html/home_page.html',
         title: "Home Page",
         description: "This is the home page",
-        scripts: ['/js/setsvgs.js', '/js/lineFix.js', '/js/homeInteractions.js'],
+        scripts: ['/js/setsvgs.js', '/js/lineFix.js', '/js/homeInteractions.js', "https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js", '/js/svgIntersection.js'],
         styles: ['/css/homepage.css']
     },
     {
