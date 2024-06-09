@@ -593,7 +593,21 @@ bottom: 40.13px;
     position: absolute;
     top: 60px;
     right: 630px;
+     animation-name: rotar;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1; /* Realiza una rotación por ciclo */
+    animation-fill-mode: forwards;
 }
+
+ @keyframes rotar {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
 
 #section2 h2{
     margin-left:99.92px;
