@@ -523,7 +523,11 @@ bottom: 40.13px;
     height: 1613.14px;
 }
 
-
+#home0{
+    position: absolute;
+    top: 60px;
+    right: 630px;
+}
 #section2 h2{
     margin-left:99.92px;
     margin-top: 31.05px;
