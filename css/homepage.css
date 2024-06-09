@@ -2,8 +2,6 @@
     margin: 0;
 }
 
-#app{
-}
 
 .section1{
     position: relative;
@@ -27,7 +25,14 @@ background-position: center;
     justify-content: center;
     align-content: center;
 }
+#archiveLogo:hover{
+    background-image: url('/images/home1hover.svg');
+}
 
+#archivesNews{
+    overflow: auto;
+  scrollbar-width: none; /* Para Firefox */
+}
 #welcometo{
     position: absolute;
 width: 577px;
@@ -241,6 +246,8 @@ display: block;
     font-weight: 400;
     text-decoration-line: underline;
     line-height: 16px;
+    margin-left: 21.02px;
+    margin-top: 12.17px;
 }
 #archivesNews a:nth-of-type(1) {
     margin-left: 21.02px;
@@ -254,7 +261,9 @@ display: block;
     margin-left: 21.02px;
     margin-top: 12.17px;width: 229px;
 }
-
+#archivesNews a:nth-of-type(7) {
+    width: 229px;
+}
 #podcast{
     position: absolute;
     width: 483px;
@@ -355,6 +364,14 @@ background-position: center;
     
 }
 
+#howtoarchive:hover #documentsvg{
+    background: url('/images/home5hover.png');
+
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+
 #archiveOfTheDay{
     position: absolute;width: 474px;
     height: 340.52px;
@@ -436,8 +453,6 @@ background: #000000;
 #quotes .card-title{
     display: block;
     margin-left: 39px;
-    color: #FFFFFF;
-
 }
 
 #quotes .sub-card-subtitle::before{
@@ -448,6 +463,53 @@ background: #000000;
     width: 8px; 
     height: 8px; 
     border-radius: 50%; 
+}
+
+#quoteContainer{
+    position: relative; width: 505px;
+    height: 210px;
+}
+
+#quote-p{
+    width: 402px;
+    font-family: 'ABCDiatype-Regular', sans-serif;
+    color:  #FFF;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px; /* 136.364% */
+    margin-left: 38px;
+    margin-top: 22px;
+}
+
+#quote-author{
+    font-family: 'ABCDiatype-Regular', sans-serif;
+    color: var#FFF;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px; /* 136.364% */
+    display: block;
+position: absolute;
+bottom: 0px;
+left: 33px;
+
+bottom: 40.13px;
+
+}
+
+
+#quote-reference{
+    font-family: 'ABCDiatype-Regular', sans-serif;
+    color:  #FFF;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px; /* 136.364% */   
+    display: block;
+    left: 33px;
+    position: absolute;
+    bottom: 26.13px;
 }
 
 #section2{
@@ -496,7 +558,17 @@ line-height: 19px;
     margin-left:81.2px;
     width: 495.557px;
     height: 291.096px;
-    background-repeat: no-repeat;
+    background-image: url('/images/home7.svg');
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+
+#section2-img:hover{
+    background-image: url('/images/home7hover.svg');
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
 }
 
 .section2-h3{
@@ -1404,3 +1476,4 @@ font-style: normal;
 font-weight: 400;
 text-decoration-line: underline;
 }
+

@@ -20,7 +20,7 @@ async function main() {
     // Buscar el objeto correcto en el arreglo que coincida con la categoría
     const categoryData = data.find(item => item["main-node"] === "Useful links");
 
-    new DynamicDiagram('#app', categoryData, { x: 777, y: 552 });
+    new DynamicDiagram('#app', categoryData, { x: null, y: null }, { right: 100, top: 200 });
 
 }
 

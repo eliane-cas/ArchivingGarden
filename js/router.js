@@ -6,7 +6,7 @@ const routes = [
         template: '/html/home_page.html',
         title: "Home Page",
         description: "This is the home page",
-        scripts: ['/js/setsvgs.js', '/js/lineFix.js'],
+        scripts: ['/js/setsvgs.js', '/js/lineFix.js', '/js/homeInteractions.js'],
         styles: ['/css/homepage.css']
     },
     {
@@ -65,7 +65,7 @@ const routes = [
         title: "Shop",
         description: "Shop page",
         scripts: [],
-        styles: []
+        styles: ['/css/shop.css']
     }
 
 
@@ -140,6 +140,10 @@ const locationHandler = async () => {
     // Limpiar el contenido existente
     document.getElementById("app").innerHTML = '';
     document.title = route.title;
+
+    const currentPage = document.getElementById("current-page");
+
+    currentPage.innerHTML = route.title + "→";
 
     // Quitar estilos antiguos y cargar nuevos
     document.querySelectorAll('link[rel="stylesheet"]:not(#common-styles)').forEach(link => link.remove());
