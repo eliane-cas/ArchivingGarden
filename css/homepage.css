@@ -25,6 +25,7 @@ background-position: center;
     justify-content: center;
     align-content: center;
 }
+
 #archiveLogo:hover{
     background-image: url('/images/home1hover.svg');
 }
@@ -155,7 +156,7 @@ text-align: left;
     position: absolute;
     width: 278px;
 height: 158px;
-top: 445px;
+top: 298.47px;
 left: 40.42px;
 border-radius: 19px;
 background-color: #747D03;
@@ -217,7 +218,7 @@ font-weight: 400;
     position: absolute;
     width: 278px;
     height: 212.34px;
-    top: 608px;
+    top: 461.47px;
     left: 41.25px;
     gap: 0px;
     border-radius: 19px;
@@ -263,6 +264,7 @@ display: block;
 }
 #archivesNews a:nth-of-type(7) {
     width: 229px;
+    margin-bottom: 30px;
 }
 #podcast{
     position: absolute;
@@ -319,6 +321,7 @@ background-position: center;
 }
 
 #howtoarchive{
+    display: block;
     position: absolute;width: 339px;
     height: 200.595px;
     border-radius: 19px;
@@ -434,10 +437,11 @@ margin-top: 20px;
     position: absolute;
     width: 505px;
 height: 228px;
-top: 470.86px;
+top: 361.97px;
 right: 520px;
 border-radius: 19px;
 background: #000000;
+cursor: pointer;
 
 }
 
@@ -455,14 +459,15 @@ background: #000000;
     margin-left: 39px;
 }
 
-#quotes .sub-card-subtitle::before{
+#quotes div .card-title::before{
     content: "";
     position: absolute;
-    top: 34px; 
+    top: 14px; 
     left: 22px; 
     width: 8px; 
     height: 8px; 
     border-radius: 50%; 
+    background-color: currentColor;
 }
 
 #quoteContainer{
