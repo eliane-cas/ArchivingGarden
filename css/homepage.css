@@ -523,6 +523,7 @@ bottom: 40.13px;
     height: 1613.14px;
 }
 
+
 #section2 h2{
     margin-left:99.92px;
     margin-top: 31.05px;
@@ -561,14 +562,14 @@ line-height: 19px;
     margin-left:81.2px;
     width: 670.027px;
 height: 393.582px;
-    background-image: url('/images/home7.svg');
+    background-image: url('/images/home7.png');
     background-position: center;
     background-size: cover; 
     background-repeat: no-repeat; 
 }
 
 #section2-img:hover{
-    background-image: url('/images/home7hover.svg');
+    background-image: url('/images/home7hover.png');
     background-position: center;
     background-size: cover; 
     background-repeat: no-repeat; 
