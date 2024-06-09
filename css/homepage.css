@@ -808,9 +808,9 @@ top: 200.62px;
 
 #section3img{
     position: absolute;
-top: 30.54px;
+top: -70px;
 right: 132.38px;
-height: 222.89px;
+width: 507.857px;
 z-index: 0;
 }
 
@@ -1401,15 +1401,13 @@ transform: translateX(-50%); /* Ajusta la posición horizontal exacta al centro 
 }
 
 #folder1,#folder2,#folder3{
+    cursor: pointer;
 position: relative;
 width: fit-content;
 height: fit-content;
 display: block;
 }
 
-.folder{
-
-}
 .folder:hover{
     animation: jump-shaking 0.83s infinite;
 }
@@ -1487,6 +1485,7 @@ font-style: normal;
 font-weight: 400;
 letter-spacing: -0.482px;
 }
+
 #designer{
     font-family: 'ABCDiatype-Regular', sans-serif;
 
@@ -1514,7 +1513,6 @@ letter-spacing: 0.5px;
 text-transform: capitalize;
 }
 
-
 #contact{
     position: absolute;
     top: 47px;
@@ -1526,6 +1524,7 @@ font-style: normal;
 font-weight: 700;
 text-transform: capitalize;
 }
+
 #nofiContact, #franContact{
     color: #000;
     font-family: 'ABCDiatype-Regular';
