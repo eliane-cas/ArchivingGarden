@@ -111,6 +111,7 @@ async function loadScripts(scripts) {
         }
     }
 }
+
 function setupLazyLoading() {
     const lazyImages = document.querySelectorAll('img.lazy-load:not([src])');
     const observer = new IntersectionObserver((entries) => {
@@ -169,9 +170,33 @@ const locationHandler = async () => {
     // Cargar scripts después de que el HTML y CSS estén en su lugar
     await loadScripts(route.scripts);
     setupLazyLoading();
+
+    if (pathSegments === "/" || pathSegments === "#/") {
+        // Eliminar el script de Paper.js del head
+        const script = document.getElementById('paperScript');
+        if (script) {
+            script.parentNode.removeChild(script);
+        }
+        // Cargar el nuevo script de Paper.js
+        try {
+            await loadScript('https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js');
+            await loadScript('/js/svgIntersection.js');
+        } catch (error) {
+            console.error('Error al cargar el script de Paper.js:', error);
+        }
+    }
+
 };
 
-
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
+}
 function displayCategoryName(categoryName) {
     const categoryDisplay = document.getElementById('category-name');
     if (categoryDisplay) {
