@@ -1,6 +1,4 @@
-var imagen = document.getElementById('home0');
-
-function iniciarRotacion() {
+function iniciarRotacion(imagen) {
     imagen.style.animation = 'none'; // Resetea la animación
     imagen.offsetHeight; // Provoca un reflow para que la animación pueda reiniciarse
     imagen.style.animation = null; // Quita el estilo para permitir reiniciar la animación
@@ -9,12 +7,16 @@ function iniciarRotacion() {
     imagen.style.animation = 'rotar 2s ease-in-out forwards';
 
     // Programa el próximo ciclo después de 3 segundos (2 segundos girando + 1 segundo pausa)
-    setTimeout(iniciarRotacion, 3000);
+    setTimeout(() => iniciarRotacion(imagen), 3000);
 }
 
-function main() {
-    iniciarRotacion();
 
+function main() {
+    var imagen1 = document.getElementById('home0');
+    var imagen2 = document.getElementById('section3img');
+
+    iniciarRotacion(imagen1);
+    iniciarRotacion(imagen2);
     // script.js
     var flipper = document.querySelector('.flipper');
     setInterval(function () {
