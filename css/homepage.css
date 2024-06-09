@@ -1404,8 +1404,12 @@ transform: translateX(-50%); /* Ajusta la posición horizontal exacta al centro 
 position: relative;
 width: fit-content;
 height: fit-content;
+display: block;
 }
 
+.folder{
+
+}
 .folder:hover{
     animation: jump-shaking 0.83s infinite;
 }
