@@ -1,4 +1,10 @@
 function main() {
+
+    // script.js
+    var flipper = document.querySelector('.flipper');
+    setInterval(function () {
+        flipper.classList.toggle('flipped');
+    }, 3000);
     let indice = 0;
     const estilos = [
         { color: "#000000", texto: "And why is this back and forth another word for which is sharing; another phrase for which is mutual aid the gardener's disposition or maybe more to the point, practice? Because a garden a healthy, thriving garden-tells us to. I suspect, whether we know it or not, we're just emulating the garden, which is a repository of sharing.", autor: "Ross Gay,", reference: "Repository of sharing", colorTexto: "white" },
