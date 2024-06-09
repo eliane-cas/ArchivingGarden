@@ -1,15 +1,21 @@
+document.addEventListener("DOMContentLoaded", function () {
+    // Esperar a que Paper.js esté completamente cargado
+    if (typeof paper !== 'undefined') {
+        initializePaperJS();
+    } else {
+        // Cargar Paper.js si no está disponible
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js';
+        script.onload = initializePaperJS;
+        document.head.appendChild(script);
+    }
+});
 
-
-if (document.readyState === 'complete') {
-    initializePaperJS();
-} else {
-    document.addEventListener('DOMContentLoaded', initializePaperJS);
-}
 function initializePaperJS() {
     paper.setup('myCanvas');
 
     // Import SVG
-    var words = paper.project.importSVG(document.getElementById('intersect'), {
+    var words = paper.project.importSVG(document.getElementById('svg'), {
         expandShapes: true // This option ensures all shapes are converted to paths
     });
     words.visible = true;
@@ -31,15 +37,8 @@ function initializePaperJS() {
     words.fitBounds(paper.view.bounds);
     words.scale(0.8);
 
-    // Center horizontally and set vertical position for the static group
-    var desiredYesY = 450; // Set your desired vertical position here for yesGroup
-    yesGroup.position = new paper.Point(paper.view.center.x, desiredYesY);
-
-    // Set initial position for the moving group
-    var initialRelativeX = 0.5; // 25% from the left of the canvas width
-    var fixedNoY = 275; // Set your desired fixed vertical position here for noGroup
-    var initialX = paper.view.bounds.width * initialRelativeX;
-    noGroup.position = new paper.Point(initialX, fixedNoY);
+    yesGroup.position = paper.view.center;
+    noGroup.position = paper.view.bounds.bottomRight.subtract([noGroup.bounds.width / 2, noGroup.bounds.height / 2]); // Initially off-screen
 
     // Define the tool
     var tool = new paper.Tool();
@@ -68,8 +67,7 @@ function initializePaperJS() {
     paper.view.onResize = function () {
         words.fitBounds(paper.view.bounds);
         words.scale(0.8);
-        yesGroup.position = new paper.Point(paper.view.center.x, desiredYesY);
-        initialX = paper.view.bounds.width * initialRelativeX;
-        noGroup.position = new paper.Point(initialX, fixedNoY); // Reset to initial position on resize
+        yesGroup.position = paper.view.center;
+        noGroup.position = paper.view.bounds.bottomRight.subtract([noGroup.bounds.width / 2, noGroup.bounds.height / 2]); // Initially off-screen
     };
 }
