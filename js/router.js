@@ -71,8 +71,6 @@ const routes = [
         scripts: [],
         styles: ['/css/shop.css']
     }
-
-
 ];
 
 function loadStyles(styles) {
