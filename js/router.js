@@ -146,7 +146,12 @@ const locationHandler = async () => {
 
     const currentPage = document.getElementById("current-page");
 
-    currentPage.innerHTML = route.title + "→";
+    if (!(pathSegments === "/" || pathSegments === "#/")) {
+        currentPage.innerHTML = route.title + "→";
+    } else {
+        currentPage.innerHTML = "";
+
+    }
 
     // Quitar estilos antiguos y cargar nuevos
     document.querySelectorAll('link[rel="stylesheet"]:not(#common-styles)').forEach(link => link.remove());
