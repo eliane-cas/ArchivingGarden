@@ -7,6 +7,18 @@ export async function initCategoryPage() {
     if (categoryName == "Code and Develop") {
         categoryName = "Code & Develop";
     }
+
+    var imagenes = document.querySelectorAll('.categoryImage');
+    imagenes.forEach(function (imagen) {
+        if (!imagen.classList.contains('hidden')) {
+            imagen.classList.add('hidden');
+        }
+        // Correcto acceso al atributo data-category usando dataset.category
+        if (imagen.dataset.category == categoryName) {
+            imagen.classList.remove('hidden');
+        }
+    });
+
     // Obtener los datos del archivo JSON
     const data = await fetch('/data/links.json')
         .then(response => response.json());
@@ -15,7 +27,6 @@ export async function initCategoryPage() {
     const categoryData = data.find(item => item["main-node"] === categoryName);
 
     if (!categoryData) {
-        console.log(categoryName);
         return;
     }
 
@@ -23,8 +34,8 @@ export async function initCategoryPage() {
 }
 
 function generateCategoryDiagram(categoryData) {
-
-    new DynamicDiagram('#app', categoryData, categoryData.position);
+    let positions = { left: categoryData.position.left, right: categoryData.position.right, top: categoryData.position.top }
+    new DynamicDiagram('#app', categoryData, { x: null, y: null }, positions, true);
 }
 
 if (document.readyState === 'loading') {

@@ -1,12 +1,50 @@
 export class DynamicDiagrams {
-    constructor(svg, data, center = { x: null, y: null }) {
+    constructor(selector, svg, data, center = { x: null, y: null }, positions = { left: null, right: null, top: null }) {
         this.svg = svg;  // SVG ya creado y pasado como argumento
         this.data = data;
-        this.center = {
-            x: center.x !== null ? center.x : parseFloat(svg.attr('width')) / 2,
-            y: center.y !== null ? center.y : parseFloat(svg.attr('height')) / 2
-        };
+        this.selector = selector;
+        const container = d3.select(this.selector).node();
+        this.width = container.clientWidth;
+        this.height = container.clientHeight;
+
+        // Asegúrate de que el contenedor tiene dimensiones válidas
+        if (this.width === 0 || this.height === 0) {
+            console.log(this.width, this.hieght);
+            console.error("El contenedor debe tener una anchura y altura mayores a cero");
+            return;  // Retorna si el contenedor no tiene tamaño válido
+        }
+        this.data = data;
+        this.positions = positions;
+
+        // Configuración inicial de center a null para evitar uso no intencionado
+        center.x = null;
+        center.y = null;
+
+        // Ajustar center.x basado exclusivamente en positions.left o positions.right
+        if (positions.left !== null) {
+            center.x = positions.left;
+        }
+        if (positions.right !== null) { // Asegura que right solo se use si left no está definido
+            center.x = this.width - positions.right;
+        }
+
+        // Ajustar center.y basado en positions.top
+        if (positions.top !== null) {
+            center.y = positions.top;
+        }
+
+        // Si después de intentar establecer con positions aún son null, usa el centro
+        /*
+          if (center.x === null) {
+              center.x = this.width / 2;
+          }
+          if (center.y === null) {
+              center.y = this.height / 2;
+          }*/
+
+        this.center = center;
         this.isDragging = false;
+        this.simulation = null;
         this.setup();
     }
 

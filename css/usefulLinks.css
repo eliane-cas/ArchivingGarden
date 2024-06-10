@@ -1,5 +1,8 @@
 
-  
+#app{
+    height: 926px; 
+    width: 100%;
+  }
   
 html{
     overflow: auto;
@@ -99,12 +102,11 @@ z-index: -1;
 #usefulLinks1{
     z-index: -1;
     position: absolute;
-    width: 557px;
-height: 341px;
-top: 594px;
+    width: 685.381px;
+    height: 404.459px;
+top :480px;
 left: 61px;
 gap: 0px;
 opacity: 0px;
 
 }
-

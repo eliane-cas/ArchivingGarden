@@ -56,6 +56,7 @@ body{
     font-family: 'ABCDiatype-Regular', sans-serif;
     font-weight: 400;
     font-size: 14px;
+    z-index: 1;
 }
 .category-navbar a{
     flex: content;
@@ -71,7 +72,85 @@ body{
 background: #007AFF;
 }
 
+.categoryImage{
+    position: absolute;
+    z-index: -1;
+}
+#creative1{
+    top: 498px;
+    left:396px ;
+    width: 604.716px;
+height: 374.07px;
+}
+#creative2{
+    top: 562px;
+    left:963px ;
+    width: 374.461px;
+    height: 271.685px;
+}
+#reading{
+    right: 61px;
+    top: 516.11px;width: 432.521px;
+    height: 418.563px;
+}
+#AI1{
+left: 67.97px;
+top: 149.67px;width: 371.305px;
+height: 276.24px;
+}
+#AI2{
+left: 67.97px;
+top: 437.48px;width: 363.032px;
+height: 418.563px;
+flex-shrink: 0;
 
+}
+#resource1{
+top: 142.2px;
+left: 48px;
+width: 406.531px;
+height: 529.154px;
+}
+#resource2{
+    top: 512.46px;
+    left: 322.36px;width: 290.642px;
+    height: 410.379px;
+}
+#web1{
+    right: 50.51px;
+    top: 132.06px;
+    width: 453.125px;
+height: 703.208px;
+}
+#web2{
+    width: 256.32px;
+    height: 300px;
+    right: 417.68px;
+    top: 612.91px;
+    z-index: -2;
+}
+#code1{
+right: 467.62px;
+top: 389.94px;width: 343px;
+height: 300px;
+}
+#code2{
+right: 53.78px;
+top: 257.21px;
+z-index: -2;width: 515.288px;
+height: 565.462px;
+flex-shrink: 0;
+}
+#potential1{
+left: 60.74px;
+top: 363.66px;width: 442.653px;
+height: 533.404px;
+}
+#potential2{
+left: 360.11px;
+top: 556.94px;width: 293.895px;
+height: 239.364px;
+}
 /*
 .header{
     margin-top:37px;
@@ -186,7 +265,6 @@ background-color: rgba(0, 0, 0, 1);
 
 #app{
     width: 100%;
-    height:1200px;
     margin-top:56px ;
 }
 

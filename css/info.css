@@ -1,6 +1,8 @@
 :root {
     --container-margin: 80px;
   }
+
+
 .columns{
     display: flex;
     flex-direction: row;

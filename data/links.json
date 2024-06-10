@@ -30,12 +30,14 @@
     ],
     
     "position": {
-      "x": 500,
-      "y": 500
+      "left":450,
+      "right":null,
+      "top":410
     },
     "allposition":{
-      "x": 400,
-      "y": 500
+      "left":450,
+    "right":null,
+    "top":500
     }
 }
 ,
@@ -54,8 +56,8 @@
         "id": "Web Typography",
         "group": 2,
         "type": "child-node",
-        "angle": 0.75,
-        "distance": 280,
+        "angle": 1.64,
+        "distance": 350,
         "class": "category",
         "url": "#/useful-links/categories?category=Web_Typography"
       },
@@ -63,8 +65,8 @@
         "id": "Code & Develop",
         "group": 2,
         "type": "child-node",
-        "angle": 0.34,
-        "distance": 300,
+        "angle": 2.1293,
+        "distance": 430,
         "class": "category",
         "url": "#/useful-links/categories?category=Code_and_Develop"
       },
@@ -72,8 +74,8 @@
         "id": "Potential Archiving Platforms",
         "group": 2,
         "type": "child-node",
-        "angle": 6.2,
-        "distance": 440,
+        "angle": 2.36,
+        "distance": 370,
         "class": "category",
         "url": "#/useful-links/categories?category=Potential_Archiving_Platforms"
       },
@@ -81,8 +83,8 @@
         "id": "Creative Tools",
         "group": 2,
         "type": "child-node",
-        "angle": 6.1,
-        "distance": 500,
+        "angle": 2.36,
+        "distance": 460,
         "class": "category",
         "url": "#/useful-links/categories?category=Creative_Tools"
       },
@@ -90,8 +92,8 @@
         "id": "Reading Materials",
         "group": 2,
         "type": "child-node",
-        "angle": 5.75,
-        "distance": 200,
+        "angle": 2.79253,
+        "distance": 410,
         "class": "category",
         "url": "#/useful-links/categories?category=Reading_Materials"
       },
@@ -99,8 +101,8 @@
         "id": "AI Tools",
         "group": 2,
         "type": "child-node",
-        "angle": 5.3,
-        "distance": 250,
+        "angle": 2.98451,
+        "distance": 460,
         "class": "category",
         "url": "#/useful-links/categories?category=Ai_Tools"
       },
@@ -108,8 +110,8 @@
         "id": "Resource",
         "group": 2,
         "type": "child-node",
-        "angle": 5.58,
-        "distance": 400,
+        "angle": 2.9,
+        "distance": 360,
         "class": "category",
         "url": "#/useful-links/categories?category=Resource"
       }
@@ -180,14 +182,16 @@
         { "source": "Resource", "target": "Image Atlas ↗", "value": 1 },
         { "source": "Resource", "target": "fiverr ↗", "value": 1 }
     ],
-    "position": {
-      "x": 1100,
-      "y": 450
-    },
+   "position": {
+    "left":null,
+    "right":200,
+    "top":420
+  },
     "allposition":{
-      "x": 1284,
-      "y": 2808
-    }
+    "left":null,
+  "right":250,
+  "top":2727
+  }
 },
 {
   "main-node":"Reading Materials",
@@ -217,13 +221,15 @@
       { "source": "Reading Materials", "target": "The Right To Design↗", "value": 1 },
       { "source": "Reading Materials", "target":  "How To Prioritize Your Project Ideas↗", "value": 1 }
   ],
-  "position": {
-    "x": 400,
-    "y": 700
+ "position": {
+    "left":350,
+    "right":null,
+    "top":750
   },
-  "allposition":{
-    "x": 98,
-    "y": 2596
+ "allposition":{
+    "left":200,
+  "right":null,
+  "top":2515
   }
 }
 ,
@@ -247,13 +253,16 @@
       { "source": "Creative Tools", "target":"Boockup↗", "value": 1 },
       { "source": "Creative Tools", "target":"Material Palette↗", "value": 1 }
   ],
+    
   "position": {
-    "x": 650,
-    "y": 300
+    "left":650,
+    "right":null,
+    "top":120
   },
   "allposition":{
-    "x": 600,
-    "y": 1650
+    "left":650,
+  "right":null,
+  "top":1550
   }
 }
 ,
@@ -262,7 +271,7 @@
   "nodes": [
       { "id": "Potential Archiving Platforms", "group": 1, "type": "main-node", "distance": 0, "class": "category" },
       { "id": "Small Victories↗", "group": 2, "type": "child-node", "angle":0.523599, "distance": 160, "class": "link", "url": "https://www.smallvictori.es/category/herramientas/" },
-      { "id": "Pinterest↗", "group": 2, "type": "child-node", "angle":0.261799, "distance": 270, "class": "link", "url": "https://www.pinterest.es/" },
+      { "id": "Pinterest↗", "group": 2, "type": "child-node", "angle":0.261799, "distance": 250, "class": "link", "url": "https://www.pinterest.es/" },
       { "id": "Wix↗", "group": 2, "type": "child-node", "angle": 0, "distance": 200, "class": "link", "url": "https://es.wix.com/studio" },
       { "id": "Are.Na↗", "group": 2, "type": "child-node", "angle": 5.95195, "distance": 300, "class": "link", "url": "https://www.are.na/" },
       { "id": "Miro↗", "group": 2, "type": "child-node", "angle":5.89921, "distance": 390, "class": "link", "url": "https://miro.com/es/" },
@@ -301,13 +310,15 @@
       { "source": "Potential Archiving Platforms", "target":  "Plaza↗", "value": 1 },
       { "source": "Potential Archiving Platforms", "target":  "Hyper↗", "value": 1 }
   ],
-  "position": {
-    "x": 650,
-    "y": 800
+ "position": {
+    "left":null,
+    "right":520,
+    "top":730
   },
   "allposition":{
-    "x": 1000,
-    "y": 1301
+    "left":null,
+  "right":500,
+  "top":1221
   }
 },
 {
@@ -319,13 +330,15 @@
   "links": [
       
   ],
-  "position": {
-    "x": 600,
-    "y": 300
+ "position": {
+    "left":350,
+    "right":null,
+    "top":800
   },
   "allposition":{
-    "x": 110,
-    "y": 2835
+    "left":117,
+  "right":null,
+  "top":2755
   }
 },
 {
@@ -350,13 +363,15 @@
       { "source":  "Code & Develop", "target":"Sandbox↗", "value": 1 }
   ],
   "position": {
-    "x": 350,
-    "y": 400
+    "left":170,
+    "right":null,
+    "top":450
   },
   "allposition":{
-    "x": 150,
-    "y": 1038
-  }
+      "left":150,
+    "right":null,
+    "top":954
+    }
 }
   
 ]

@@ -13,7 +13,8 @@ export async function initCategoryPage() {
 
     data.forEach(categoryData => {
         if (categoryData.mainnode != "Useful links") {
-            new DynamicDiagrams(svg, categoryData, categoryData.allposition);
+            let positions = { left: categoryData.allposition.left, right: categoryData.allposition.right, top: categoryData.allposition.top }
+            new DynamicDiagrams('#app', svg, categoryData, { x: null, y: null }, positions);
         }
     });
 

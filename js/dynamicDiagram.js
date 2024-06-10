@@ -1,27 +1,6 @@
 export class DynamicDiagram {
-    /*
-    constructor(selector, data, center = { x: null, y: null }, positions = { left: null, right: null, top: null }) {
-        this.selector = selector;
-        // Selecciona el contenedor y obtén sus dimensiones
-        const container = d3.select(this.selector).node();
-        this.width = container.clientWidth;   // Usa clientWidth y clientHeight para obtener las dimensiones
-        this.height = container.clientHeight;
-
-        // Asegúrate de que el contenedor tiene dimensiones válidas
-        if (this.width === 0 || this.height === 0) {
-            console.error("El contenedor debe tener una anchura y altura mayores a cero");
-        }
-        this.data = data
-        //this.center = center ? center : { x: this.width / 2, y: this.height / 2 };
-        this.center = {
-            x: center.x !== null ? center.x : this.width / 2,
-            y: center.y !== null ? center.y : this.height / 2
-        };
-        this.isDragging = false;
-        this.simulation = null;
-        this.setup();
-    }
-*/constructor(selector, data, center = { x: null, y: null }, positions = { left: null, right: null, top: null }) {
+    constructor(selector, data, center = { x: null, y: null }, positions = { left: null, right: null, top: null }, lowMovement) {
+        this.lowMovement = lowMovement;
         this.selector = selector;
         const container = d3.select(this.selector).node();
         this.width = container.clientWidth;
@@ -29,6 +8,7 @@ export class DynamicDiagram {
 
         // Asegúrate de que el contenedor tiene dimensiones válidas
         if (this.width === 0 || this.height === 0) {
+            console.log(this.width, this.hieght);
             console.error("El contenedor debe tener una anchura y altura mayores a cero");
             return;  // Retorna si el contenedor no tiene tamaño válido
         }
@@ -172,9 +152,20 @@ export class DynamicDiagram {
         // Llama a updateNodePositions cuando añadas nodos o actualices el contenido
         updateNodePositions();
         this.simulation.on("tick", () => {
-            const amplitude = /*0.2;*/0.2// Define cuánto se mueve el nodo antes de cambiar dirección
-            const frequency = /*0.4;*/0.4 // Define la rapidez del cambio de dirección
-            const phaseShift = /*0.05;*/0.01// Añade un pequeño cambio gradual en cada tick
+
+            let amplitude, frequency, phaseShift;
+            if (this.lowMovement) {
+                amplitude = 0.2;/*0.2*/// Define cuánto se mueve el nodo antes de cambiar dirección
+                frequency = /*0.4;*/0.4 // Define la rapidez del cambio de dirección
+                phaseShift = 0.01;/*0.01*/// Añade un pequeño cambio gradual en cada tick
+
+            }
+            else {
+                amplitude = /*0.2;*/0.2// Define cuánto se mueve el nodo antes de cambiar dirección
+                frequency = /*0.4;*/0.4 // Define la rapidez del cambio de dirección
+                phaseShift = /*0.05;*/0.01// Añade un pequeño cambio gradual en cada tick
+
+            }
 
             node.each(function (d) {
                 if (d.type === 'child-node' && !d.isDragging) {
