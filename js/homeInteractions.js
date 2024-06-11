@@ -1,22 +1,25 @@
 function iniciarRotacion(imagen) {
-    imagen.style.animation = 'none'; // Resetea la animación
-    imagen.offsetHeight; // Provoca un reflow para que la animación pueda reiniciarse
-    imagen.style.animation = null; // Quita el estilo para permitir reiniciar la animación
-
-    // Inicia la animación
+    imagen.style.animation = 'none';
+    imagen.offsetHeight; // Fuerza reflow
+    imagen.style.animation = '';
     imagen.style.animation = 'rotar 2s ease-in-out forwards';
-
-    // Programa el próximo ciclo después de 3 segundos (2 segundos girando + 1 segundo pausa)
     setTimeout(() => iniciarRotacion(imagen), 3000);
 }
 
+function tonteria(imagen) {
+    imagen.style.animation = 'none';
+    imagen.offsetHeight; // Fuerza reflow
+    imagen.style.animation = '';
+    imagen.style.animation = 'rotar 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+    setTimeout(() => tonteria(imagen), 3000);
+}
 
 function main() {
     var imagen1 = document.getElementById('home0');
     var imagen2 = document.getElementById('section3img');
 
     iniciarRotacion(imagen1);
-    iniciarRotacion(imagen2);
+    tonteria(imagen2);
     // script.js
     var flipper = document.querySelector('.flipper');
     setInterval(function () {
