@@ -598,7 +598,7 @@ bottom: 40.13px;
 
     animation-name: rotar;
     animation-duration: 2s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in;
     animation-iteration-count: 1; /* Realiza una rotación por ciclo */
     animation-fill-mode: forwards;
 }
@@ -825,9 +825,9 @@ top: 200.62px;
 
 #section3img{
     position: absolute;
-top: -70px;
+top: -50px;
 right: 132.38px;
-width: 507.857px;
+width: 400px;
 z-index: 0;
 }
 

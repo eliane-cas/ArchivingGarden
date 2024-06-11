@@ -83,7 +83,7 @@ function initializePaperJS() {
         if (noGroup) {
             // Restringe el movimiento dentro de un área específica del canvas
             var minY = paper.view.size.height * 0.15;
-            var maxY = paper.view.size.height * 0.85;
+            var maxY = paper.view.size.height * 0.65;
 
             // Ajustar y si está fuera de los límites
             if (y < minY) y = minY;
@@ -96,7 +96,7 @@ function initializePaperJS() {
 
 
     tool.onMouseMove = function (event) {
-        if (event.point.y < paper.view.size.height * 0.85 && event.point.y > paper.view.size.height * 0.15) {
+        if (event.point.y < paper.view.size.height * 0.65 && event.point.y > paper.view.size.height * 0.15) {
             noGroup.position = event.point;
             for (var i = 0; i < yesGroup.children.length; i++) {
                 for (var j = 0; j < noGroup.children.length; j++) {
