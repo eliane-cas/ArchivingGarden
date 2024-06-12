@@ -625,7 +625,7 @@ font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 19px; /* 118.75% */
-width: 471px;
+width: 472px;
 height: 95px;
 }
 
@@ -724,22 +724,6 @@ border-radius: 22px;
 background: #000;
 }
 
-@keyframes fadeInUpScale {
-    0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.timeCard {
-    animation: fadeInUpScale 0.8s ease-out forwards;
-    display: none; /* Start with cards hidden */
-    opacity: 0; /* Start with cards fully transparent */
-}
 
 .timeCard .timeCard-separator{
     width: 100%;
@@ -801,28 +785,8 @@ height: 267px;
     color: #007AFF; 
 }
 
-@keyframes fadeInMoveScale {
-    0% {
-        opacity: 0.2;
-        transform: translateX(-30px)
-    }
-    50% {
-        opacity: 0.7;
-
-        transform: translateX(10px) scale(1.05);
-    }
-    75% {
-        transform: translateX(-5px) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-    }
-}
-
 .timeCard {
-    animation: fadeInMoveScale 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;    display: none; 
-    opacity: 0; 
+    display: none; 
 }
 
 .hidden {

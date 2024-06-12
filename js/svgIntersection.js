@@ -129,8 +129,6 @@ function initializePaperJS() {
     }
 
     paper.view.onResize = function () {
-        words.fitBounds(paper.view.bounds);
-        words.scale(0.9);
         yesGroup.position = new paper.Point(paper.view.center.x, desiredYesY);
         initialX = paper.view.bounds.width * initialRelativeX;
         noGroup.position = new paper.Point(initialX, fixedNoY); // Reset to initial position on resize
