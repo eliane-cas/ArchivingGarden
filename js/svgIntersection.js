@@ -127,15 +127,5 @@ function initializePaperJS() {
             }
         }
     }
-    paper.view.onResize = function () {
-        var canvasWidth = Math.min(paper.view.bounds.width, maxCanvasWidth);
-        var scaleFactor = canvasWidth / maxCanvasWidth;
-        words.scale(scaleFactor);
-        words.position = paper.view.center;
-        yesGroup.position = new paper.Point(paper.view.center.x, desiredYesY);
-        initialX = paper.view.bounds.width * initialRelativeX;
-        noGroup.position = new paper.Point(initialX, fixedNoY); // Reset to initial position on resize
-        showIntersections();
-    };
 }
 
