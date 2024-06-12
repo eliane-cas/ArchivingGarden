@@ -15,41 +15,41 @@ function tonteria(imagen) {
 }
 
 function timeline() {
-    // Attach click event listeners to each year span
     const yearSpans = document.querySelectorAll('.year');
     const allCards = document.querySelectorAll('.timeCard');
 
-    // Initially hide all cards except for the first one
+    // Initially hide all cards except the first and set the first year as active
     allCards.forEach(card => card.classList.add('hidden'));
-    allCards[0].classList.remove('hidden'); // Show only the first card
+    allCards[0].classList.remove('hidden');
+    allCards[0].style.display = 'block';
+
+    yearSpans[0].classList.add('active');
 
     yearSpans.forEach(span => {
         span.onclick = function () {
-            // Hide all cards
-            allCards.forEach(card => card.classList.add('hidden'));
+            allCards.forEach(card => {
+                card.classList.add('hidden');
+                card.style.display = 'none'; // Hide card
+            });
 
-            // Show the card that matches the clicked year
             const selectedCard = document.querySelector(`.timeCard[data-year="${this.dataset.year.trim()}"]`);
             if (selectedCard) {
                 selectedCard.classList.remove('hidden');
+                selectedCard.style.display = 'block'; // Show card and ensure it’s visible
+                // Force restart of animation
+                selectedCard.style.animation = 'none';
+                requestAnimationFrame(() => {
+                    selectedCard.style.animation = '';
+                });
             }
 
-            // Reset the color of all year spans to default
-            yearSpans.forEach(s => s.style.color = '#000');
+            yearSpans.forEach(s => {
+                s.classList.remove('active');
+            });
 
-            // Highlight the clicked year
-            this.style.color = '#007AFF';
+            this.classList.add('active');
         };
     });
-
-    // Set the initial active year style
-    yearSpans[0].style.color = '#007AFF'; // First year is selected by default
-
-
-
-
-
-
 }
 function main() {
 
