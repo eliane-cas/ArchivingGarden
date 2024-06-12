@@ -33,7 +33,7 @@ function initializePaperJS() {
     words.scale(0.8);
 
     // Center horizontally and set vertical position for the static group
-    var desiredYesY = 450; // Set your desired vertical position here for yesGroup
+    var desiredYesY = 400; // Set your desired vertical position here for yesGroup
     yesGroup.position = new paper.Point(paper.view.center.x, desiredYesY);
 
     // Set initial position for the moving group
@@ -82,8 +82,8 @@ function initializePaperJS() {
         var noGroup = paper.project.getItem({ name: 'no' });  // Asume que noGroup es el grupo que quieres mover
         if (noGroup) {
             // Restringe el movimiento dentro de un área específica del canvas
-            var minY = paper.view.size.height * 0.24;
-            var maxY = paper.view.size.height * 0.53;
+            var minY = paper.view.size.height * 0.35;
+            var maxY = paper.view.size.height * 0.80;
 
             // Ajustar y si está fuera de los límites
             if (y < minY) y = minY;
@@ -96,7 +96,7 @@ function initializePaperJS() {
 
 
     tool.onMouseMove = function (event) {
-        if (event.point.y < paper.view.size.height * 0.53 && event.point.y > paper.view.size.height * 0.24) {
+        if (event.point.y < paper.view.size.height * 0.80 && event.point.y > paper.view.size.height * 0.35) {
             noGroup.position = event.point;
             for (var i = 0; i < yesGroup.children.length; i++) {
                 for (var j = 0; j < noGroup.children.length; j++) {
@@ -127,11 +127,15 @@ function initializePaperJS() {
             }
         }
     }
-
     paper.view.onResize = function () {
+        var canvasWidth = Math.min(paper.view.bounds.width, maxCanvasWidth);
+        var scaleFactor = canvasWidth / maxCanvasWidth;
+        words.scale(scaleFactor);
+        words.position = paper.view.center;
         yesGroup.position = new paper.Point(paper.view.center.x, desiredYesY);
         initialX = paper.view.bounds.width * initialRelativeX;
         noGroup.position = new paper.Point(initialX, fixedNoY); // Reset to initial position on resize
+        showIntersections();
     };
 }
 
