@@ -14,7 +14,48 @@ function tonteria(imagen) {
     setTimeout(() => tonteria(imagen), 3000);
 }
 
+function timeline() {
+    // Attach click event listeners to each year span
+    const yearSpans = document.querySelectorAll('.year');
+    const allCards = document.querySelectorAll('.timeCard');
+
+    // Initially hide all cards except for the first one
+    allCards.forEach(card => card.classList.add('hidden'));
+    allCards[0].classList.remove('hidden'); // Show only the first card
+
+    yearSpans.forEach(span => {
+        span.onclick = function () {
+            // Hide all cards
+            allCards.forEach(card => card.classList.add('hidden'));
+
+            // Show the card that matches the clicked year
+            const selectedCard = document.querySelector(`.timeCard[data-year="${this.dataset.year.trim()}"]`);
+            if (selectedCard) {
+                selectedCard.classList.remove('hidden');
+            }
+
+            // Reset the color of all year spans to default
+            yearSpans.forEach(s => s.style.color = '#000');
+
+            // Highlight the clicked year
+            this.style.color = '#007AFF';
+        };
+    });
+
+    // Set the initial active year style
+    yearSpans[0].style.color = '#007AFF'; // First year is selected by default
+
+
+
+
+
+
+}
 function main() {
+
+
+    timeline();
+
     var imagen1 = document.getElementById('home0');
     var imagen2 = document.getElementById('section3img');
 
