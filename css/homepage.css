@@ -714,6 +714,21 @@ line-height: 30.477px; /* 217.694% */
     75% { transform: translate(-3px, 3px) rotate(-2deg); }
     100% { transform: translate(0, 0) rotate(0deg); }
   }
+  @keyframes fadeInScaleUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.95);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
 .timeCard{
    position: absolute;
     left: 123px;
@@ -721,7 +736,9 @@ line-height: 30.477px; /* 217.694% */
     width: 328px;
 height: 267px;
 border-radius: 22px;
-background: #000;
+background: #000;  animation: fadeInScaleUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+opacity: 0;
+
 }
 
 
@@ -1442,7 +1459,7 @@ background: #D4FD7D;
     position: absolute;
     width: 100%;
     max-width: 1718px;
-    height: 700px;
+    height: 750px;
     display: block;
     top: 333px;
     margin: 0 auto; /* Centrarse horizontalmente */top: 50%;

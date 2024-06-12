@@ -29,7 +29,6 @@ function initializePaperJS() {
     });
 
     // Resize the words to fit snugly inside the view:
-    words.fitBounds(paper.view.bounds);
     words.scale(0.8);
 
     // Center horizontally and set vertical position for the static group
@@ -82,8 +81,8 @@ function initializePaperJS() {
         var noGroup = paper.project.getItem({ name: 'no' });  // Asume que noGroup es el grupo que quieres mover
         if (noGroup) {
             // Restringe el movimiento dentro de un área específica del canvas
-            var minY = paper.view.size.height * 0.35;
-            var maxY = paper.view.size.height * 0.80;
+            var minY = paper.view.size.height * 0.30;
+            var maxY = paper.view.size.height * 0.75;
 
             // Ajustar y si está fuera de los límites
             if (y < minY) y = minY;
@@ -96,7 +95,7 @@ function initializePaperJS() {
 
 
     tool.onMouseMove = function (event) {
-        if (event.point.y < paper.view.size.height * 0.80 && event.point.y > paper.view.size.height * 0.35) {
+        if (event.point.y < paper.view.size.height * 0.75 && event.point.y > paper.view.size.height * 0.30) {
             noGroup.position = event.point;
             for (var i = 0; i < yesGroup.children.length; i++) {
                 for (var j = 0; j < noGroup.children.length; j++) {
