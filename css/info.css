@@ -4,49 +4,27 @@
 
 
 .columns{
+  width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 40px;
-    margin: auto;
+    margin-left: 26.13px;
     margin-top: 104px;
-    width: calc(100% - var(--container-margin));
     justify-content: center;
     align-items: center;
-}
-#g1,#g2{
-    display: flex;
-    flex-direction: row;
-    flex:1;
-    height: 100px;
-    gap: 40px;
 }
 
 .column{
     flex: 1;
-    max-width: 329px;
 }
-  
-@media (max-width: 1000px) {
-    .columns{
-        flex-direction: column;
-    width: calc(100% - var(2em));
-    }
-  }
-  @media (max-width: 600px) {
-    .columns{
-        gap: 1em;
-    }
-    #g1,#g2{
-        flex-direction: column;
-    }
-    .column{
-    gap: 1em;
-    max-width: 280px;
-    }
-  }
+#cell1 p{
+  width: 329px;
+
+}
 
   .cell{
     margin-bottom: 44px;
+    padding-left: 15.87px;
+    padding-right: 23.45px;
   }
 
   .cell h2{
@@ -72,13 +50,13 @@ text-align: left;
   #cell-2{
     margin-bottom: 90px;
   }
+  
 
   #info-1{
-    position: absolute;
+    position: relative;
     width: 87px;
 height: 86px;
-top: 454px;
-left: 245px;
+bottom: 0;
 
   }
 
@@ -92,9 +70,8 @@ font-weight: 400;
 line-height: 202.6px;
 letter-spacing: 7.235867977142334px;
 color: #007AFF;
-position: absolute;
-top: 880px;
-left: 287px;
+position: relative;
+top: 0;
   }
 
   #cell-6{
@@ -103,19 +80,18 @@ left: 287px;
   #info-6{
     position: absolute;
     width: 351.79px;
-top: 1140px;
-left: 9px;
+    position: relative;
+    top: 0;
 
   }
   #cell-7{
     margin-bottom: 280px;
   }
   #info-7{
-    position: absolute;
     width: 264px;
 height: 204px;
-top: 218px;
-left: 410px;
+position: relative;
+top: 0;
   }
 
   #cell-9{
@@ -126,8 +102,8 @@ left: 410px;
     position: absolute;
     width: 271.18px;
 height: 271.18px;
-top: 850px;
-left: 432.47px;
+    position: absolute;
+top: 0;
 transform: rotate(12.23deg);
   }
 
@@ -135,11 +111,10 @@ transform: rotate(12.23deg);
     margin-bottom: 210px;
   }
   #info-13{
-    position: absolute;
+    position: relative;
     width: 259px;
 height: 249px;
-top: 740px;
-left: 802px;
+top: 0;
   }
 
   
@@ -147,11 +122,10 @@ left: 802px;
     margin-bottom: 97px;
   }
   #info-15{
-    position: absolute;
+    position: relative;
     width: 110px;
 height: 110px;
-top: 1470px;
-left: 919px;
+top: 0;
 
   }
 
@@ -159,11 +133,10 @@ left: 919px;
     margin-bottom: 113px;
   }
   #info-17{
-    position: absolute;
+    position: relative;
+    top: 0;
     width: 226px;
 height: 222.57px;
-top: 196px;
-left: 1247px;
 
   }
 
@@ -171,21 +144,19 @@ left: 1247px;
     margin-bottom: 145px;
   }
   #info-20{
-    position: absolute;
-    width: 121px;
+
+    position: relative;
+    top: 0;    width: 121px;
 height: 121px;
-top: 1122px;
-left: 1348px;
 
   }
 
 
   #info-21{
-    position: absolute;
-    width: 229.67px;
+
+    position: relative;
+    top: 0;    width: 229.67px;
     height: 234px;
-    top: 1424px;
-    left: 1149.31px;
   }
 
   .movable-element {

@@ -737,7 +737,7 @@ line-height: 30.477px; /* 217.694% */
 height: 267px;
 border-radius: 22px;
 background: #000;  animation: fadeInScaleUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-opacity: 0;
+opacity: 1;
 
 }
 
@@ -1401,7 +1401,7 @@ text-transform: capitalize;
 }
 
 #artificialI-back #artificialI-text {
-    font-family: "ABC Diatype Rounded Unlicensed Trial";
+    font-family: 'ABCDiatypeRounded-Regular';
     font-size: 20px;
     line-height: 26px;
     align-self: center;
@@ -1419,39 +1419,99 @@ text-transform: capitalize;
     transform: rotateY(180deg);
 }
 
-
-#digitalGarden{
+#digitalGarden {
     position: absolute;
     right: 60px;
     top: 442.47px;
     width: 368px;
     height: 346px;
     display: flex;
+    perspective: 1000px;    z-index: 1;
+
+}
+
+#digitalGarden-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+#digitalGarden-front, #digitalGarden-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+}
+
+#digitalGarden-front div {
+    height: 100%;
+    background: #D4FD7D; /* Bright Yellow para todos los divs en el frente */
+    border: 0.5px solid #747D03; /* Mud Green para los bordes en el frente */
 }
 
 #digitalGarden-1{
     width: 12.33px;
-height: 346px;
-border: 0.5px solid  #747D03;
-background: #D4FD7D;
 }
+
 #digitalGarden-2{
     width: 18px;
-height: 346px;
-border: 0.5px solid  #747D03;
-background: #D4FD7D;
 }
+
 #digitalGarden-3{
     width: 279px;
-height: 346px;
-border: 0.5px solid  #747D03;
-background: #D4FD7D;
 }
-#digitalGarden-4{
+
+#digitalGarden-4 {
     width: 58.804px;
-height: 346px;
-border: 0.5px solid  #747D03;
-background: #D4FD7D;
+}
+
+#digitalGarden-back div {
+    height: 100%;
+    border: 0.5px solid #15D076; /* Green Dark para los bordes en el reverso */
+}
+
+#digitalGarden-back #digitalGarden-1 {
+   border: 0.5px solid var(--MUD-GREEN, #747D03);
+background: var(--GREEN_MINTH, #BAECB7);
+}
+
+#digitalGarden-back #digitalGarden-2 {
+border: 0.5px solid var(--MUD-GREEN, #747D03);
+background: var(--GREEN_DARK, #15D076);}
+
+#digitalGarden-back #digitalGarden-3 {
+ border: 0.5px solid var(--BROWN, #7B4B29);
+background: var(--BROWN, #7B4B29);
+}
+
+#digitalGarden-back #digitalGarden-4 {
+  border: 0.5px solid var(--BRIGHAT-YELLOW, #D4FD7D);
+background: var(--BLUE, #007AFF);
+}
+
+
+#digitalGarden-back #digitalGarden-text {
+    font-size: 20px;
+    line-height: 26px;
+    text-align: left;
+    color: #000;
+    font-family: 'ABCDiatypeRounded-Regular';
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 26px; /* 130% */
+width: 254px;
+height: 77px;
+}
+
+#digitalGarden-back {
+    transform: rotateY(180deg);
+}
+
+#digitalGarden:hover #digitalGarden-inner {
+    transform: rotateY(-180deg);
 }
 
 
@@ -1490,7 +1550,6 @@ line-height: 45px;
     position: absolute;
     width: 555px;
 height: 42px;
-background: #D4FD7D;
 top: 785.47px;
 left: 62px;
 text-align: left;
@@ -1524,11 +1583,18 @@ line-height: 45px; /* 281.25% */
 }
 
 #section5-numbers span{
-    color: black;
+    cursor: pointer;
 }
 #section5-numbers span:hover{
     color: #007AFF;
 }
+
+
+
+.active-eco {
+   color: #007AFF; /* Active state when clicked */
+}
+
 
 #section5img{
     width: 254.448px;

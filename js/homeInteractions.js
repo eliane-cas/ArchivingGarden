@@ -51,9 +51,33 @@ function timeline() {
         };
     });
 }
+
+function mapa() {
+    const firstItem = document.querySelector('#section5-numbers span');
+    if (firstItem) {
+        firstItem.classList.add('active-eco'); // Ensures first item is active
+        document.getElementById('ecosystems').textContent = firstItem.getAttribute('data-text');
+        document.getElementById('ecosystems').style.backgroundColor = firstItem.getAttribute('data-color');
+    }
+    document.querySelectorAll('#section5-numbers span').forEach(item => {
+        item.addEventListener('click', function () {
+            // Remove active class from all and add to the clicked one
+            document.querySelectorAll('#section5-numbers span').forEach(innerItem => {
+                innerItem.classList.remove('active-eco');
+            });
+            item.classList.add('active-eco');
+
+            // Change the content of the ecosystems container
+            document.getElementById('ecosystems').textContent = item.getAttribute('data-text');
+
+            // Change the background color of the ecosystems container
+            document.getElementById('ecosystems').style.backgroundColor = item.getAttribute('data-color');
+        });
+    });
+}
 function main() {
 
-
+    mapa();
     timeline();
 
     var imagen1 = document.getElementById('home0');
