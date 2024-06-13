@@ -166,7 +166,6 @@ export class DynamicDiagram {
                 phaseShift = /*0.05;*/0.01// Añade un pequeño cambio gradual en cada tick
 
             }
-
             node.each(function (d) {
                 if (d.type === 'child-node' && !d.isDragging) {
 

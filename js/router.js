@@ -68,10 +68,12 @@ const routes = [
         template: '/html/shop.html',
         title: "Shop",
         description: "Shop page",
-        scripts: [],
+        scripts: ['/js/shop.js'],
         styles: ['/css/shop.css']
     }
 ];
+
+
 
 function loadStyles(styles) {
     return Promise.all(styles.map(style => {
@@ -170,7 +172,6 @@ const locationHandler = async () => {
         nav.classList.remove("hidden");
     }
 
-    // Cargar scripts después de que el HTML y CSS estén en su lugar
     await loadScripts(route.scripts);
     setupLazyLoading();
 
@@ -197,7 +198,8 @@ function loadScript(src) {
         script.src = src;
         script.onload = resolve;
         script.onerror = reject;
-        document.head.appendChild(script);
+
+        document.body.appendChild(script);
     });
 }
 function displayCategoryName(categoryName) {

@@ -105,12 +105,11 @@ line-height: 25px; /* 125% */
     border-radius: 100px;
     background: rgba(0, 0, 0, 0.10);
     backdrop-filter: blur(3px);    position: absolute;
-    top: 791.94px;
+    top: 849.44px;
     left: 41px;
     padding: 9.5px 16.18px;
-    width: 250px;
-height: 32px;
-padding: 9.5px 16.178px;
+    width: 335px;
+    height: 32px;
 font-size: 13px;
 font-style: normal;
 font-weight: 400;
@@ -118,12 +117,15 @@ line-height: 14px; /* 107.692% */
 letter-spacing: 0.5px;
 text-transform: capitalize;
 text-align: center;
+display: flex;
+justify-content: center;
 }
+
 
 #author{
 width: 615px;
 left: 41px;
-top: 844.94px;
+top: 900px;
 }
 #author, #emailus{
     position: absolute;
@@ -135,13 +137,13 @@ top: 844.94px;
 }
 #emailus{
     width: 401px;
-    top: 868.94px;
     left: 41px;
-    top:866px;
+    
+    top:922px;
 }
 #n-product{
     position: absolute;
-  top: 872px;
+  top: 930px;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 33px 0px;
@@ -167,3 +169,89 @@ text-transform: uppercase;
 right: 29px;
 top: 726px;
 }
+
+.swiper {
+    width: 100%;
+    height:924px;
+    overflow: hidden; /* Asegura que no hay desbordamiento visible */
+    position:relative;
+  }
+  .swiper-slide {
+    position:relative;
+    top:100px;
+    height:100vh;
+    width: 100%; /* Asegúrate de que cada slide tenga el 100% del ancho del contenedor de Swiper */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center;
+    perspective-origin: center; /* Origen de la perspectiva ajustado */}
+
+  .product-container{
+    position: relative;
+  }
+  .product {
+    /* Centrar el producto dentro del slide si hay más espacio disponible */
+    margin: auto;
+  }
+  #product1{
+    width: 744.668px;
+height: 744.668px;
+position: absolute;
+  top: -42px;
+  left: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  }
+  #product2{
+    width: 1120.35px;
+position: absolute;
+  top: 132px;
+  left: 50%;
+  transform: translateX(-50%);
+  }
+  #product3{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1082px;
+height: 540px;
+top: 65px;
+  }
+
+  #product4{
+    width: 651px;
+position: absolute;
+transform: translateX(-50%);
+top: 10px;
+  }
+
+  #product5{
+    width: 562.806px;
+    height: 567.998px;
+position: absolute;
+transform: translateX(-60%);
+top: 10px;
+  }
+  #product6{
+    width: 1145.148px;
+    position: absolute;
+transform: translateX(-50%);
+top: 95px;
+  }
+
+  #product7{
+    width: 651.5px;
+    height: 651.5px;    position: absolute;
+transform: translateX(-50%);
+top: 10px;
+  }
+
+  #product8{
+    width: 1081.533px;
+height: 542.93px;
+     position: absolute;
+transform: translateX(-50%);
+top: 65px;
+  }
+
