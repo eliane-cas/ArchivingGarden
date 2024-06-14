@@ -23,11 +23,11 @@ const routes = [
     },
     {
         path: '/examples',
-        template: '/html/examples.html',
+        template: '/html/examples2.html',
         title: "Examples",
         description: "Examples",
-        scripts: ['/js/hammer.js', '/js/panning.js'],
-        styles: ['/css/examples.css']
+        scripts: ['/js/examples2.js'],
+        styles: ['/css/examples2.css']
     },
 
     {
