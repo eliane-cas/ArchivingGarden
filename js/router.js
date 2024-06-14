@@ -154,7 +154,6 @@ const locationHandler = async () => {
         currentPage.innerHTML = "";
 
     }
-
     // Quitar estilos antiguos y cargar nuevos
     document.querySelectorAll('link[rel="stylesheet"]:not(#common-styles)').forEach(link => link.remove());
     await loadStyles(route.styles);
@@ -164,6 +163,43 @@ const locationHandler = async () => {
     document.getElementById("app").innerHTML = html;
     window.scrollTo(0, 0);
 
+
+
+    if (location.split('?')[0].split("/").includes("all-links")) {
+
+        try {
+            let menu_items_c = document.querySelectorAll(".category-navbar a");
+            menu_items_c.forEach((item) => {
+                if (item.classList.contains("category-active")) {
+                    item.classList.remove("category-active");
+                }
+            });
+            let menu_item_c = document.querySelector(`[category-name="${location.split('?')[0].split("/")[3]}"]`);
+            menu_item_c.classList.add("category-active");
+
+        } catch (error) {
+
+        }
+
+    }
+
+
+
+    let menu_items = document.querySelectorAll(".menu-item");
+    menu_items.forEach((item) => {
+        if (item.classList.contains("menu-item-active")) {
+            item.classList.remove("menu-item-active");
+        }
+    });
+    try {
+        let menu_item = document.querySelector(`[page-name="${route.title}"]`);
+        menu_item.classList.add("menu-item-active");
+
+    } catch (error) {
+
+    }
+
+
     // Manejar la barra de navegación de categorías
     const nav = document.querySelector(".category-navbar");
     if (pathSegments !== "/useful-links/categories" && pathSegments !== "/useful-links/categories/all-links") {
@@ -171,9 +207,7 @@ const locationHandler = async () => {
     } else {
         nav.classList.remove("hidden");
     }
-
     await loadScripts(route.scripts);
-    setupLazyLoading();
 
     if (pathSegments === "/" || pathSegments === "#/") {
         // Eliminar el script de Paper.js del head

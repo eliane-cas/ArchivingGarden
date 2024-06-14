@@ -99,6 +99,10 @@ text-transform: capitalize;
 font-family: 'ABCDiatype-Regular', sans-serif;
 
 }
+.vertical-container a:hover{
+   color: #007AFF;
+
+}
 .vertical-container a:last-of-type{
     margin-bottom: 98.22px;
 }

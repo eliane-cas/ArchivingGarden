@@ -485,17 +485,14 @@ align-items: center;
 
 #archiveOfTheDay #archiveOfDay img{
     border-radius: 6.13px;
-background-blend-mode: normal;
-filter: drop-shadow(6.13px rgba(0, 0, 0, 0.15));
 
-border-radius: 6.13px;
-background: linear-gradient(0deg, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0.54) 100%), #262626;
-background-blend-mode: normal;
-backdrop-filter: blur(12.260747909545898px);
+    filter: drop-shadow(6.13px rgba(0, 0, 0, 0.15));
 
-    width: 440.96px;
-    height: 249.494px;
+
+    width: 433.143px;
+    height: 245.071px;
 margin-top: 20px;
+
 
 }
     
@@ -593,6 +590,8 @@ bottom: 40.13px;
     position: absolute;
     top: 60px;
     right: 630px;
+    width: 221.993px;
+height: 218.621px;
 }
 
  @keyframes rotar {

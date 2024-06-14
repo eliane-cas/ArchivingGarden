@@ -58,6 +58,12 @@ body{
     font-size: 14px;
     z-index: 1;
 }
+.category-active{
+    background: #007AFF !important;
+    color: #FFF !important;
+
+}
+
 .category-navbar a{
     flex: content;
     background-color: black;
@@ -100,15 +106,10 @@ height: 374.07px;
 height: 276.24px;
 }
 #AI1{
-left: 67.97px;
-top: 149.67px;width: 371.305px;
-height: 276.24px;
-}
-#AI2{
-left: 67.97px;
-top: 437.48px;width: 363.032px;
-height: 418.563px;
-flex-shrink: 0;
+left: 64.15px;
+top: 149.67px;
+width: 532.16px;
+height: 635.392px;
 
 }
 #resource1{
@@ -123,18 +124,12 @@ height: 529.154px;
     height: 410.379px;
 }
 #web1{
-    right: 50.51px;
-    top: 132.06px;
-    width: 453.125px;
-height: 703.208px;
+    right:19.84px;
+    top: 158.13px;
+    width: 654.157px;
+    height: 780.852px;
 }
-#web2{
-    width: 256.32px;
-    height: 300px;
-    right: 417.68px;
-    top: 612.91px;
-    z-index: -2;
-}
+
 #code1{
 right: 467.62px;
 top: 389.94px;width: 343px;
@@ -148,14 +143,10 @@ height: 565.462px;
 flex-shrink: 0;
 }
 #potential1{
-left: 60.74px;
-top: 363.66px;width: 442.653px;
+left: 84.12px;
+top: 363.66px;
+width: 593.265px;
 height: 533.404px;
-}
-#potential2{
-left: 360.11px;
-top: 556.94px;width: 293.895px;
-height: 239.364px;
 }
 /*
 .header{
@@ -254,7 +245,12 @@ background-color: rgba(0, 0, 0, 1);
     color: rgba(0, 0, 0, 1);
     padding-left: 52px;
     line-height: 32px;
-
+}
+.menu-item:hover{
+    background-color: #007AFF;
+}
+.menu-item-active{
+    background-color: #007AFF;
 }
 #item-1{
     border: 0.5px solid rgba(123, 75, 41, 1);

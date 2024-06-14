@@ -63,3 +63,14 @@ background-color: rgba(230, 230, 230, 1);
     line-height: 37.48px;
     text-align: center; 
 }
+
+
+#all-links-background{
+    position: fixed;
+    z-index: -1;
+    width: 928.756px;
+height: 556.083px;
+top: 221.47px;
+left: 50%;
+transform: translateX(-50%);
+}
