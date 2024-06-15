@@ -8,10 +8,10 @@ if (document.readyState === 'complete') {
 function initializePaperJS() {
 
     paper.setup('myCanvas');
-
+    let canvas = document.querySelector('#myCanvas');
     // Import SVG
     var words = paper.project.importSVG(document.getElementById('intersect'), {
-        expandShapes: true // This option ensures all shapes are converted to paths
+        expandShapes: true, // This option ensures all shapes are converted to paths
     });
     words.visible = true;
 
@@ -29,7 +29,7 @@ function initializePaperJS() {
     });
 
     // Resize the words to fit snugly inside the view:
-    words.scale(0.8);
+    words.scale(0.9);
 
     // Center horizontally and set vertical position for the static group
     var desiredYesY = 400; // Set your desired vertical position here for yesGroup

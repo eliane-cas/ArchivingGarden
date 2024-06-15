@@ -148,6 +148,19 @@ top: 363.66px;
 width: 593.265px;
 height: 533.404px;
 }
+#contribute{
+    display: block;
+    position: absolute;
+    left: 41px;
+    top: 107.47px;
+    color: #000;
+font-size: 11px;
+font-style: normal;
+font-weight: 400;
+text-decoration-line: underline;
+font-family: 'ABCDiatype-Regular', sans-serif;
+
+}
 /*
 .header{
     margin-top:37px;
@@ -206,9 +219,8 @@ height: 533.404px;
 }
 #logo{
     width: 25%;
-text-align: center;
+    padding-left: 52px;
    font-family: 'ABCDiatypeRounded-Regular';
-   text-align: center;
    background-color: rgba(255, 255, 255, 0.5); 
   color: rgba(0, 0, 0, 1);
   backdrop-filter: blur(2px);

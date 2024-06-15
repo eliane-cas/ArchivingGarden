@@ -149,7 +149,7 @@ const locationHandler = async () => {
     const currentPage = document.getElementById("current-page");
 
     if (!(pathSegments === "/" || pathSegments === "#/")) {
-        currentPage.innerHTML = route.title + "→";
+        currentPage.innerHTML = route.title;
     } else {
         currentPage.innerHTML = "";
 

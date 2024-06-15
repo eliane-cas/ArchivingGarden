@@ -69,7 +69,8 @@ margin-bottom: 8px;
 #welcometo p{
     margin-left: 37.07px;
     margin-right: 24.93px;
-    margin-bottom: 13.07px;
+    margin-bottom: 13.07px;width: 517.9px;
+    height: 96.98px;
     font-family: 'ABCDiatype-Regular', sans-serif;
 font-size: 11px;
 font-weight: 400;
@@ -80,19 +81,18 @@ text-align: left;
 #thedate{
     position: absolute;
     left: 552.57px;
-    top: 229.45px;
-    width: 214.25px;
-height: 64.38px;
+    top: 229.45px;width: 147.966px;
+    height: 52.861px;
 background: #7B4B29;
 border-radius: 19px;
 
 }
 #hiddenDate{
     display: none;
-    color: var(--BLUE, #007AFF);
+    color: #FFF;
     font-family: 'ABCDiatype-Regular', sans-serif;
-font-size: 32px;
-font-style: normal;
+    font-size: 24.615px;
+    font-style: normal;
 font-weight: 400;
 text-align: center;
 margin-top: 15px;
@@ -102,7 +102,7 @@ margin-top: 15px;
     display: block;
 }
 #thedate:hover{
-    background-color: #BAECB7;
+    background-color: #FA123B;
 }
 
 #thedate:hover .sub-card-subtitle{
@@ -119,7 +119,7 @@ margin-top: 15px;
     font-style: normal;
     font-weight: 400;
     margin-left: 33.31px;
-    margin-top: 12.74px;
+    margin-top: 6.74px;
 }
 #thedate #date{
     display: block;
@@ -442,13 +442,16 @@ background-position: center;
 }
 
 #archiveOfTheDay{
+    display: block;
     position: absolute;width: 474px;
     height: 340.52px;
     top: 484.49px;
     right: 41px;
     background-color: #15D076;
     border-radius: 19px;
-
+}
+#archiveOfTheDay:hover{
+background-color: #D4FD7D;
 }
 
 #archiveOfTheDay .sub-card-subtitle{
@@ -462,6 +465,9 @@ margin-left: 42px;
 
 #archiveOfTheDay .card-title{
     margin-left: 42px;
+    color: #000;
+
+
 }
 
 #archiveOfTheDay .sub-card-subtitle::before{
@@ -476,13 +482,23 @@ margin-left: 42px;
 }
 
 #archiveOfTheDay #archiveOfDay{
-   
+   margin-left: 22px;
 display: flex;
 justify-content: center;
 align-items: center;
-
+width: 433.143px;
+height: 245.071px;
+background-image: url('/images/archive_of_the_day_greem.png');
+background-size: cover;
+background-repeat: no-repeat;
+position: absolute;
+  bottom: 22px;
+  right: 22px;
 }
-
+#archiveOfTheDay:hover #archiveOfDay{
+ background-image: url('/images/archive_of_the_day_yellow.png');
+ background-position-x: 0.3px;
+ }
 #archiveOfTheDay #archiveOfDay img{
     border-radius: 6.13px;
 
@@ -584,6 +600,7 @@ bottom: 40.13px;
     position: relative;
     width: 100%;
     height: 1613.14px;
+    overflow-x: hidden;
 }
 
 #home0{
@@ -647,11 +664,13 @@ height: 393.582px;
     background-repeat: no-repeat; 
 }
 
+
 #section2-img:hover{
     background-image: url('/images/home7hover.png');
     background-position: center;
     background-size: cover; 
     background-repeat: no-repeat; 
+    background-position-y: -4.8px;
 }
 
 .section2-h3{
@@ -665,6 +684,19 @@ height: 393.582px;
     line-height: 19px; /* 118.75% */
     text-transform: uppercase;
     margin-bottom: 23px;
+}
+
+.book{
+    width: 458.337px;
+height: 434.036px;
+position: absolute;
+top: 93px;
+right: 9.8px;
+transform: translateX(100vw);
+transition: transform 3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.book-active{
+    transform: translateX(0); 
 }
 
 .section-title{
@@ -681,7 +713,7 @@ height: 393.582px;
     position: absolute;
     width: calc(100% - 73.11px - 69.41px);
     left: 69.41px;
-    top: 734px;
+    top: 760px;
     display: flex;
     justify-content: space-between;
 }
@@ -697,10 +729,10 @@ line-height: 30.477px; /* 217.694% */
 
 #imgTimeline{
     position: absolute;
-    top: 940px;
-    right: 73.58px;
-    width: 535.578px;
-    height: 556.601px;
+    top: 1010px;
+    right: 273.71px;
+    width: 386.518px;
+height: 401.979px;
 }
 
 #imgTimeline:hover{
@@ -715,15 +747,12 @@ line-height: 30.477px; /* 217.694% */
   }
   @keyframes fadeInScaleUp {
     0% {
-      opacity: 0;
       transform: translateY(10px) scale(0.95);
     }
     50% {
-      opacity: 0.5;
       transform: translateY(-10px) scale(1.05);
     }
     100% {
-      opacity: 1;
       transform: translateY(0) scale(1);
     }
   }
@@ -731,7 +760,7 @@ line-height: 30.477px; /* 217.694% */
 .timeCard{
    position: absolute;
     left: 123px;
-    top: 965px;
+    top: 988px;
     width: 328px;
 height: 267px;
 border-radius: 22px;
@@ -1130,6 +1159,14 @@ color: #007AFF;
     position: relative;
     height: 1400px;  
 }
+#mask1{
+    position: absolute;
+    top: -100px;
+    background-color: #FAFAFA;
+    z-index: -1;
+    width: 100%;
+    height: 209px;
+}
 
 #section4title{
 position: absolute;
@@ -1151,6 +1188,13 @@ top: 0px;
     height: 162.42px;
     top: 159.28px;
     left: 97.93px;
+    transition: transform 1.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+    transform: translateY(-220px);
+    z-index: -2;
+}
+.phrase-active{
+    transform: translateY(0);
 }
 .phrase > span{
     display: inline-block;
@@ -1205,20 +1249,34 @@ background: #747D03;
 background: #BAECB7;
 }
 
-#chair{
+.chair{
 position: absolute;
-    top: 1070px;
+    top: -346px;
     left: 56.42px;
-    z-index: 2;
+    z-index: -2;
+    transform: translateY(430px);
+    transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.chair-active{
+    transform: translateY(0);
 }
 #section5{
     height:912px;
     border-radius: 52px;
     position: relative;
     width: 100%;
-    z-index: 1;
     background: #FFF;
+    z-index: 1;
 
+
+}
+#mask2{
+    position: absolute;
+    top: 67px;
+    z-index: -1;
+    background: #FFF;
+    height: 440px;
+    width: 100%;
 
 }
 
@@ -1770,13 +1828,15 @@ text-transform: capitalize;
 
 #contact{
     position: absolute;
-    top: 47px;
+    top: 50px;
     left: 356px;
     color: #000;
     font-family: 'ABCDiatype-Regular';
 font-size: 12px;
 font-style: normal;
 font-weight: 700;
+height: 28.9px;
+line-height: 29px;
 text-transform: capitalize;
 }
 
