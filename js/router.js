@@ -16,7 +16,7 @@ const routes = [
     {
         path: '/prueba',
         template: '/html/prueba.html',
-        title: "Home Page",
+        title: "",
         description: "This is the home page",
         scripts: [
             '/js/svgIntersection2.js'

@@ -7,7 +7,11 @@ if (document.readyState === 'complete') {
 }
 function initializePaperJS() {
     var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = true;
+
     paper.setup(canvas);
+
 
     // Asegúrate de que la vista de Paper.js use las dimensiones fijas del canvas, independientemente del zoom
     paper.view.setViewSize(canvas.offsetWidth, canvas.offsetHeight);
@@ -117,13 +121,13 @@ function initializePaperJS() {
     window.addEventListener('resize', function () {
         var canvas = document.getElementById('myCanvas');
         canvas.width = window.innerWidth;
-        // Mantiene la altura fija como antes
+        // Mantiene la altura fija como ante
         paper.view.setViewSize(canvas.width, 750); // Usa siempre la altura fija
         adjustContentPosition(); // Reajusta el contenido inmediatamente
-        updateMousePosition(); // Función hipotética para actualizar posiciones basadas en el último punto del mouse conocido
     });
 
     function adjustContentPosition() {
+
         var words = paper.project.activeLayer;
         var maxSVGWidth = 1400;
         var viewportScale = paper.view.bounds.width / words.bounds.width;
@@ -137,21 +141,6 @@ function initializePaperJS() {
         yesGroup.position.y = desiredYesY;
 
         // Asegúrate de que cualquier ajuste de posición que dependa del mouse también se actualice
-        triggerMouseBasedAdjustments();
     }
-
-    function triggerMouseBasedAdjustments() {
-        // Asume que tienes alguna lógica que necesitas ejecutar que normalmente se dispara con eventos del mouse
-        // Esta función debería simular o invocar esas actualizaciones como si se hubiera movido el mouse
-        if (lastKnownMousePosition.x !== undefined && lastKnownMousePosition.y !== undefined) {
-            // Simula un evento mousemove si es necesario
-            var fakeEvent = {
-                clientX: lastKnownMousePosition.x,
-                clientY: lastKnownMousePosition.y
-            };
-            handleMouseMove(fakeEvent); // Esta debería ser tu función que maneja los movimientos del mouse
-        }
-    }
-
 
 }
