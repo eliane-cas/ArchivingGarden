@@ -1689,6 +1689,8 @@ position: absolute;
 top: 142px;
     left: 50%; /* Centra el H1 horizontalmente respecto al contenedor */
     transform: translateX(-50%); /* Ajusta la posición horizontal exacta al centro */
+    display: inline-block;
+    word-wrap: break-word;
 }
 #section6-p{
     position: absolute;

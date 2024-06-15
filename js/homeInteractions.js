@@ -76,6 +76,7 @@ function mapa() {
     });
 }
 function scrollAnimations() {
+    var typed = false;
     document.addEventListener('scroll', function () {
         var element1 = document.querySelector('.book');
         var position1 = element1.getBoundingClientRect();
@@ -106,7 +107,35 @@ function scrollAnimations() {
         } else {
             element3.classList.remove('chair-active');
         }
+
+        var element4 = document.querySelector('.section6-h1');
+        var position4 = element3.getBoundingClientRect();
+
+        // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
+        if (position4.top < window.innerHeight && position4.bottom >= 0 && !typed) {
+            typed = true;
+            type();
+        }
     });
+}
+
+
+function type() {
+    const text = "Thinking of your own archival project?";
+    const typingContainer = document.getElementById('section6-h1');
+    let index = 0;
+    let cursorHtml = '<span class="cursor">|</span>';
+    function typeLetter() {
+        if (index < text.length) {
+            typingContainer.innerHTML = text.substring(0, index + 1) + cursorHtml;
+            index++;
+            setTimeout(typeLetter, 150);
+        } else {
+            typingContainer.innerHTML = text; // Opcional: elimina el cursor al final
+        }
+    }
+
+    typeLetter();
 }
 function main() {
     mapa();
