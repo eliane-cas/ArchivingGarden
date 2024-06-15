@@ -82,7 +82,7 @@ function scrollAnimations() {
         var position1 = element1.getBoundingClientRect();
 
         // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
-        if (position1.top < window.innerHeight - 40 && position1.bottom >= 0) {
+        if (position1.top < window.innerHeight && position1.bottom >= 0) {
             element1.classList.add('book-active');
         } else {
             element1.classList.remove('book-active');
@@ -108,8 +108,8 @@ function scrollAnimations() {
             element3.classList.remove('chair-active');
         }
 
-        var element4 = document.querySelector('.section6-h1');
-        var position4 = element3.getBoundingClientRect();
+        var element4 = document.querySelector('#section6-h1');
+        var position4 = element4.getBoundingClientRect();
 
         // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
         if (position4.top < window.innerHeight && position4.bottom >= 0 && !typed) {
@@ -129,7 +129,7 @@ function type() {
         if (index < text.length) {
             typingContainer.innerHTML = text.substring(0, index + 1) + cursorHtml;
             index++;
-            setTimeout(typeLetter, 150);
+            setTimeout(typeLetter, 120);
         } else {
             typingContainer.innerHTML = text; // Opcional: elimina el cursor al final
         }
