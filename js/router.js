@@ -8,8 +8,8 @@ const routes = [
         scripts: [
             '/js/setsvgs.js',
             '/js/lineFix.js',
-            '/js/homeInteractions.js',
-            '/js/svgIntersection.js'
+            '/js/homeInteractions.js'
+            // '/js/svgIntersection.js'
         ],
         styles: ['/css/homepage.css']
     },
@@ -58,7 +58,7 @@ const routes = [
     {
         path: '/info',
         template: '/html/info2.html',
-        title: "Info",
+        title: "Information",
         description: "Information page",
         scripts: [],
         styles: ['/css/info.css']
@@ -209,6 +209,7 @@ const locationHandler = async () => {
     }
     await loadScripts(route.scripts);
 
+    /*
     if (pathSegments === "/" || pathSegments === "#/") {
         // Eliminar el script de Paper.js del head
         const script = document.getElementById('paperScript');
@@ -223,7 +224,7 @@ const locationHandler = async () => {
             console.error('Error al cargar el script de Paper.js:', error);
         }
     }
-
+*/
 };
 
 function loadScript(src) {
