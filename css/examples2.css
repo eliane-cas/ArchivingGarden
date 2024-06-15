@@ -1,4 +1,7 @@
-
+html,body{
+    background-color: #D4FD7D;
+    height: 100%;
+}
 main{
     width: 100%;
 
@@ -50,6 +53,9 @@ font-weight: 400;
 line-height: 19px;
 text-align: left;
 margin-bottom: 30px;
+color: var(--BLUE, #007AFF);
+
+
 
 }
 
@@ -61,6 +67,9 @@ font-weight: 400;
 line-height: 17px;
 text-align: left;
 margin-bottom: 185.5px;
+color: var(--BLUE, #007AFF);
+
+
 
 }
 
@@ -75,6 +84,9 @@ text-decoration: underline;
 margin-bottom: 85px;
 display: inline-block;
 margin-right: 119.69px;
+color: var(--BLUE, #007AFF);
+
+
 }
 .example{
     width: 467.956px;
@@ -117,8 +129,11 @@ font-family: 'ABCDiatype-Regular', sans-serif;
     font-weight: 400;
     line-height: 19px;
     text-align: left;
-    color: black;
+    color: var(--BLUE, #007AFF);
+
+
     text-decoration: underline;
+
 }
 .draggable-container {
     overflow: auto;

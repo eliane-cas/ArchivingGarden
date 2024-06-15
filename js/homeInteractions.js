@@ -76,47 +76,52 @@ function mapa() {
     });
 }
 function scrollAnimations() {
-    var typed = false;
-    document.addEventListener('scroll', function () {
-        var element1 = document.querySelector('.book');
-        var position1 = element1.getBoundingClientRect();
+    try {
+        var typed = false;
+        document.addEventListener('scroll', function () {
+            var element1 = document.querySelector('.book');
+            var position1 = element1.getBoundingClientRect();
 
-        // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
-        if (position1.top < window.innerHeight && position1.bottom >= 0) {
-            element1.classList.add('book-active');
-        } else {
-            element1.classList.remove('book-active');
-        }
-        var element2 = document.querySelector('.phrase');
-        var position2 = element2.getBoundingClientRect();
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
+            if (position1.top < window.innerHeight && position1.bottom >= 0) {
+                element1.classList.add('book-active');
+            } else {
+                element1.classList.remove('book-active');
+            }
+            var element2 = document.querySelector('.phrase');
+            var position2 = element2.getBoundingClientRect();
 
-        // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
-        if (position2.top < window.innerHeight - 300 && position2.bottom >= 0) {
-            element2.classList.add('phrase-active');
-        } else {
-            element2.classList.remove('phrase-active');
-        }
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
+            if (position2.top < window.innerHeight - 300 && position2.bottom >= 0) {
+                element2.classList.add('phrase-active');
+            } else {
+                element2.classList.remove('phrase-active');
+            }
 
 
-        var element3 = document.querySelector('.chair');
-        var position3 = element3.getBoundingClientRect();
+            var element3 = document.querySelector('.chair');
+            var position3 = element3.getBoundingClientRect();
 
-        // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
-        if (position3.top < window.innerHeight && position3.bottom >= 0) {
-            element3.classList.add('chair-active');
-        } else {
-            element3.classList.remove('chair-active');
-        }
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
+            if (position3.top < window.innerHeight && position3.bottom >= 0) {
+                element3.classList.add('chair-active');
+            } else {
+                element3.classList.remove('chair-active');
+            }
 
-        var element4 = document.querySelector('#section6-h1');
-        var position4 = element4.getBoundingClientRect();
+            var element4 = document.querySelector('#section6-h1');
+            var position4 = element4.getBoundingClientRect();
 
-        // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
-        if (position4.top < window.innerHeight && position4.bottom >= 0 && !typed) {
-            typed = true;
-            type();
-        }
-    });
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
+            if (position4.top < window.innerHeight - 300 && position4.bottom >= 0 && !typed) {
+                typed = true;
+                type();
+            }
+        });
+    } catch (error) {
+
+    }
+
 }
 
 
