@@ -6,13 +6,14 @@ if (document.readyState === 'complete') {
     document.addEventListener('DOMContentLoaded', initializePaperJS);
 }
 function initializePaperJS() {
+    var canvas = document.getElementById('myCanvas');
+    paper.setup(canvas);
 
-    paper.setup('myCanvas');
-    let canvas = document.querySelector('#myCanvas');
-    // Import SVG
-    var words = paper.project.importSVG(document.getElementById('intersect'), {
-        expandShapes: true, // This option ensures all shapes are converted to paths
-    });
+    // Asegúrate de que la vista de Paper.js use las dimensiones fijas del canvas, independientemente del zoom
+    paper.view.setViewSize(canvas.offsetWidth, canvas.offsetHeight);
+    // Continúa con la importación del SVG y demás configuraciones
+    var words = paper.project.importSVG(document.getElementById('intersect2'), { expandShapes: true });
+
 
     words.visible = true;
 
@@ -33,7 +34,7 @@ function initializePaperJS() {
     words.scale(0.9);
 
     // Center horizontally and set vertical position for the static group
-    var desiredYesY = 400; // Set your desired vertical position here for yesGroup
+    var desiredYesY = paper.view.center.y; // Moverá el grupo 10% hacia abajo desde el centro
     yesGroup.position = new paper.Point(paper.view.center.x, desiredYesY);
 
     // Set initial position for the moving group
@@ -82,7 +83,7 @@ function initializePaperJS() {
         var noGroup = paper.project.getItem({ name: 'no' });  // Asume que noGroup es el grupo que quieres mover
         if (noGroup) {
             // Restringe el movimiento dentro de un área específica del canvas
-            var minY = paper.view.size.height * 0.30;
+            var minY = paper.view.size.height * 0.25;
             var maxY = paper.view.size.height * 0.75;
 
             // Ajustar y si está fuera de los límites
@@ -96,7 +97,7 @@ function initializePaperJS() {
 
 
     tool.onMouseMove = function (event) {
-        if (event.point.y < paper.view.size.height * 0.75 && event.point.y > paper.view.size.height * 0.30) {
+        if (event.point.y < paper.view.size.height * 0.75 && event.point.y > paper.view.size.height * 0.25) {
             noGroup.position = event.point;
             for (var i = 0; i < yesGroup.children.length; i++) {
                 for (var j = 0; j < noGroup.children.length; j++) {
@@ -113,19 +114,44 @@ function initializePaperJS() {
             }
         }
     };
+    window.addEventListener('resize', function () {
+        var canvas = document.getElementById('myCanvas');
+        canvas.width = window.innerWidth;
+        // Mantiene la altura fija como antes
+        paper.view.setViewSize(canvas.width, 750); // Usa siempre la altura fija
+        adjustContentPosition(); // Reajusta el contenido inmediatamente
+        updateMousePosition(); // Función hipotética para actualizar posiciones basadas en el último punto del mouse conocido
+    });
 
+    function adjustContentPosition() {
+        var words = paper.project.activeLayer;
+        var maxSVGWidth = 1400;
+        var viewportScale = paper.view.bounds.width / words.bounds.width;
+        var maxScale = maxSVGWidth / words.bounds.width;
+        var scale = Math.min(viewportScale, maxScale) * 0.9;
+        words.scale(scale / words.scaling.x);
+        words.position.x = paper.view.center.x;
 
-    function showIntersections(path1, path2) {
-        if ((path1 instanceof paper.Path || path1 instanceof paper.CompoundPath) && (path2 instanceof paper.Path || path2 instanceof paper.CompoundPath)) {
-            var intersections = path1.getIntersections(path2);
-            for (var i = 0; i < intersections.length; i++) {
-                new paper.Path.Circle({
-                    center: intersections[i].point,
-                    radius: 5,
-                    fillColor: '#009dec'
-                }).removeOnMove();
-            }
+        // Ajusta la posición y como antes
+        var desiredYesY = 375;
+        yesGroup.position.y = desiredYesY;
+
+        // Asegúrate de que cualquier ajuste de posición que dependa del mouse también se actualice
+        triggerMouseBasedAdjustments();
+    }
+
+    function triggerMouseBasedAdjustments() {
+        // Asume que tienes alguna lógica que necesitas ejecutar que normalmente se dispara con eventos del mouse
+        // Esta función debería simular o invocar esas actualizaciones como si se hubiera movido el mouse
+        if (lastKnownMousePosition.x !== undefined && lastKnownMousePosition.y !== undefined) {
+            // Simula un evento mousemove si es necesario
+            var fakeEvent = {
+                clientX: lastKnownMousePosition.x,
+                clientY: lastKnownMousePosition.y
+            };
+            handleMouseMove(fakeEvent); // Esta debería ser tu función que maneja los movimientos del mouse
         }
     }
-}
 
+
+}

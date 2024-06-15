@@ -14,6 +14,16 @@ const routes = [
         styles: ['/css/homepage.css']
     },
     {
+        path: '/prueba',
+        template: '/html/prueba.html',
+        title: "Home Page",
+        description: "This is the home page",
+        scripts: [
+            '/js/svgIntersection2.js'
+        ],
+        styles: ['/css/homepage.css']
+    },
+    {
         path: '/how',
         template: '/html/howto.html',
         title: "How to archive your work digitally",
@@ -225,6 +235,20 @@ const locationHandler = async () => {
         }
     }
 */
+    if (pathSegments === "/prueba" || pathSegments === "#/prueba") {
+        // Eliminar el script de Paper.js del head
+        const script = document.getElementById('paperScript');
+        if (script) {
+            script.parentNode.removeChild(script);
+        }
+        // Cargar el nuevo script de Paper.js
+        try {
+            await loadScript('https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js');
+            await loadScript('/js/svgIntersection2.js');
+        } catch (error) {
+            console.error('Error al cargar el script de Paper.js:', error);
+        }
+    }
 };
 
 function loadScript(src) {

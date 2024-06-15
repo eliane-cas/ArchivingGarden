@@ -1650,17 +1650,12 @@ height: 77px;
 
 
 #myCanvas {
-    position: absolute;
-    width: 100%;
-    max-width: 1718px;
-    height: 750px;
+    width: 100%; /* Ancho completo, pero la altura permanecerá constante */
+    height: 650px; /* Altura fija */
+    border: 3px solid black;
     display: block;
-    top: 333px;
-    margin: 0 auto; /* Centrarse horizontalmente */top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
 }
-
 
 #digitalGarden-text{
     width: 246px;
