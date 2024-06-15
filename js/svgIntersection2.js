@@ -39,7 +39,7 @@ function initializePaperJS() {
 
     // Set initial position for the moving group
     var initialRelativeX = 0.5; // 25% from the left of the canvas width
-    var fixedNoY = 275; // Set your desired fixed vertical position here for noGroup
+    var fixedNoY = 150; // Set your desired fixed vertical position here for noGroup
     var initialX = paper.view.bounds.width * initialRelativeX;
     noGroup.position = new paper.Point(initialX, fixedNoY);
 
