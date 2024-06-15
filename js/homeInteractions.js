@@ -142,9 +142,35 @@ function type() {
 
     typeLetter();
 }
+function poster() {
+    const container = document.getElementById('poster');
+    let isRotating = false;
+    let hasHovered = false;
+
+    container.addEventListener('mouseover', function () {
+        if (!isRotating) {
+            isRotating = true;
+            this.style.transition = 'transform 2s';
+            this.style.transform = 'rotateZ(-360deg)';
+
+            setTimeout(() => {
+                if (!hasHovered) {
+                    const extraElement = this.querySelector('.extra-element');
+                    extraElement.classList.add('show');
+                    hasHovered = true;
+                }
+                isRotating = false;
+                // Resetea la rotación para futuros hovers
+                this.style.transition = 'none';
+                this.style.transform = 'rotateZ(0deg)';
+            }, 2000);
+        }
+    });
+}
 function main() {
     mapa();
     timeline();
+    poster();
     scrollAnimations();
 
     var imagen1 = document.getElementById('home0');

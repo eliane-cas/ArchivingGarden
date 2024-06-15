@@ -10,12 +10,80 @@
     height: 825px;
 }
 #poster{
+    display: block;
     position: absolute;
 width: 208.578px;
 height: 208.578px;
 left: 323.7px;
 top: 473.8px;
+background-image: url("/images/Group 485.png");
+background-size: cover;
+transition: transform 2s;
+cursor: pointer;
+
 }
+#poster > div{
+    position: relative;
+}
+
+.extra-element {
+    display: none;
+    position: absolute;
+    top: 62px; /* Inicia más arriba para el efecto de caída */
+    right: -103px;
+    background-color: white;
+    padding: 5px;
+    opacity: 0;
+    transform: scale(0.5); /* Inicia a mitad de tamaño */
+    transition: all 0.6s ease-out; /* Transición más larga para efectos visibles */
+    width: 162.54px;
+height: 29.459px;
+border-radius: 12px;
+background: var(--GRAY_LIGHT, #E6E6E6);
+color: var(--RED, #FA123B);
+font-family: 'ABCDiatype-Regular', sans-serif;
+font-size: 15.716px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 118.75% */
+text-align: center;
+padding-left: 10px;
+  }
+  
+.extra-element::before{
+    content: ""; 
+    position: absolute;
+
+    top: 10px;
+    left: 6px;
+    width: 8px;
+    height: 8px; 
+    background-color: red;
+    border-radius: 50%; 
+}
+  .extra-element.show {
+    display: block;
+    opacity: 1;
+    transform: translate(0) scale(1);
+    animation: pop-in 0.6s ease-in-out;
+  }
+  
+  @keyframes pop-in {
+    0% {
+      transform: scale(0.5);
+        transform:translateY(10px);
+    }
+    50% {
+                transform:translateY(20);
+      transform: scale(1.2) ;
+    }
+    100% {
+           transform: translateY(0);
+  
+      transform: scale(1) ;
+    }
+  }
+
 
 #archiveLogo{
     background-image: url('/images/home1.svg');
