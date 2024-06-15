@@ -9,7 +9,13 @@
     margin-top: 50.51px;
     height: 825px;
 }
-
+#poster{
+    position: absolute;
+width: 208.578px;
+height: 208.578px;
+left: 323.7px;
+top: 473.8px;
+}
 
 #archiveLogo{
     background-image: url('/images/home1.svg');
