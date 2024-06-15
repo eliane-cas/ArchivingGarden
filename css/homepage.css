@@ -10,13 +10,12 @@
     height: 825px;
 }
 #poster{
-    display: block;
     position: absolute;
 width: 208.578px;
 height: 208.578px;
 left: 323.7px;
 top: 473.8px;
-background-image: url("/images/Group 485.png");
+background-image: url("/images/poster.svg");
 background-size: cover;
 transition: transform 2s;
 cursor: pointer;
@@ -996,20 +995,21 @@ z-index: 0;
 .card {
     width: 42.434px;
     height: 199px;
-    border-radius: 19px;
+    border-radius: 50px;
     background: #000;
     display: flex;
     justify-content: flex-start; /* Alinea el contenido desde la parte superior */
     align-items: center;
     position: relative; /* Permite el posicionamiento absoluto de los hijos */
     cursor: pointer;
-    transition: width 0.3s ease; /* Solo expande el ancho */
+    transition: width 0.3s ease, border-radius 0.5s ease; /* Transiciones para width y border-radius */
+    
     overflow: hidden; /* Evita que el contenido desborde visualmente */
 }
 
 .card-circle {
     position: absolute;
-    bottom: 5.45px; /* Anclado al fondo de la tarjeta */
+    bottom: 5px; /* Anclado al fondo de la tarjeta */
     left: 21.3px; /* Centrado horizontalmente */
     transform: translateX(-50%); /* Centra exactamente en medio horizontalmente */
     width: 32.775px;
@@ -1023,6 +1023,7 @@ z-index: 0;
     justify-content: center;
     align-items: center;
     transition: opacity 0.3s ease; /* Transición suave de desvanecimiento */
+    
 }
 
 .yellow { background-color: #D4FD7D; }
@@ -1062,6 +1063,8 @@ input:checked + label .card-circle {
 
 input:checked + label {
     width: 278px; /* Expande el contenedor cuando está seleccionado */
+    border-radius: 19px;
+
 }
 .line1{
   position:absolute;
