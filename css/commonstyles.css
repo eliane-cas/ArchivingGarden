@@ -153,7 +153,9 @@ font-style: normal;
 font-weight: 400;
 text-decoration-line: underline;
 font-family: 'ABCDiatype-Regular', sans-serif;
-
+}
+#contribute:hover{
+  color: #007AFF;
 }
 /*
 .header{

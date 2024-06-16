@@ -4,7 +4,7 @@ if (document.readyState === 'complete') {
     document.addEventListener('DOMContentLoaded', main);
 }
 
-var movementRange = 150;
+var movementRange = 75;
 
 function main() {
     const canvas = document.getElementById('myCanvas');
@@ -28,7 +28,6 @@ function main() {
 
                 // Inicialmente centrar el grupo "yes"
                 centerGroup(yesGroup);
-                centerGroup(noGroup);
 
                 // Ajustar al cargar
                 adjustCanvasAndSVG();
@@ -119,8 +118,8 @@ function main() {
     function adjustCanvasAndSVG() {
         if (!window.svg) return;
 
-        const maxWidth = 1200; // Ancho máximo del canvas que podemos tener
-        const maxHeight = 700; // Altura máxima del canvas
+        const maxWidth = 1448; // Ancho máximo del canvas que podemos tener
+        const maxHeight = 750; // Altura máxima del canvas
         const padding = 20; // Espacio de padding lateral
 
         const availableWidth = Math.min(window.innerWidth - 2 * padding, maxWidth);

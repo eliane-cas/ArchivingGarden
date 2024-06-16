@@ -8,8 +8,8 @@ const routes = [
         scripts: [
             '/js/setsvgs.js',
             '/js/lineFix.js',
-            '/js/homeInteractions.js'
-            // '/js/svgIntersection.js'
+            '/js/homeInteractions.js',
+            '/js/svgIntersection2.js'
         ],
         styles: ['/css/homepage.css']
     },
@@ -219,7 +219,7 @@ const locationHandler = async () => {
     }
     await loadScripts(route.scripts);
 
-    /*
+
     if (pathSegments === "/" || pathSegments === "#/") {
         // Eliminar el script de Paper.js del head
         const script = document.getElementById('paperScript');
@@ -229,12 +229,13 @@ const locationHandler = async () => {
         // Cargar el nuevo script de Paper.js
         try {
             await loadScript('https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js');
-            await loadScript('/js/svgIntersection.js');
+            await loadScript('/js/svgIntersection2.js');
         } catch (error) {
             console.error('Error al cargar el script de Paper.js:', error);
         }
     }
-*/
+
+
     if (pathSegments === "/prueba" || pathSegments === "#/prueba") {
         // Eliminar el script de Paper.js del head
         const script = document.getElementById('paperScript');

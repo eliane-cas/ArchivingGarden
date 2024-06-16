@@ -83,7 +83,7 @@ function scrollAnimations() {
             var position1 = element1.getBoundingClientRect();
 
             // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
-            if (position1.top < window.innerHeight - 100 && position1.bottom >= 0) {
+            if (position1.top < window.innerHeight && position1.bottom >= 0) {
                 element1.classList.add('book-active');
             } else {
                 element1.classList.remove('book-active');

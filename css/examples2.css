@@ -84,8 +84,11 @@ text-decoration: underline;
 margin-bottom: 85px;
 display: inline-block;
 margin-right: 119.69px;
-color: var(--BLUE, #007AFF);
+color: #007AFF;
 
+}
+.left-container a:hover{
+color: black;
 
 }
 .example{
@@ -134,6 +137,9 @@ font-family: 'ABCDiatype-Regular', sans-serif;
 
     text-decoration: underline;
 
+}
+#special:hover{
+    color: black;
 }
 .draggable-container {
     overflow: auto;
