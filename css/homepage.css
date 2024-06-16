@@ -1698,7 +1698,6 @@ height: 77px;
     transform: translateX(-50%);
     /* Altura fija para el canvas */
     /* Para mejor visualización del SVG */
-    margin-bottom: 1000px;
 }
 #digitalGarden-text{
     width: 246px;

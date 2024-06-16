@@ -81,7 +81,7 @@ function main() {
     }
 
     function showIntersections(path1, path2) {
-        var minDistance = 10;
+        var minDistance = 40;
         var circles = [];
 
         var intersections = path1.getIntersections(path2);
@@ -113,7 +113,7 @@ function main() {
     function adjustCanvasAndSVG() {
         if (!window.svg) return;
 
-        const maxWidth = 1400; // Ancho máximo del canvas que podemos tener
+        const maxWidth = 1200; // Ancho máximo del canvas que podemos tener
         const maxHeight = 600; // Altura máxima del canvas
         const padding = 20; // Espacio de padding lateral
 
