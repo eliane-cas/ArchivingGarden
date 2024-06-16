@@ -1647,16 +1647,28 @@ height: 77px;
 #digitalGarden:hover #digitalGarden-inner {
     transform: rotateY(-180deg);
 }
-
-
+/*
 #myCanvas {
-    width: 100%; /* Ancho completo, pero la altura permanecerá constante */
-    height: 650px; /* Altura fija */
+    width: 100%; 
+    height: 650px; 
     border: 3px solid black;
     display: block;
     margin: 0 auto;
 }
-
+*/
+#myCanvas {
+    
+    margin: auto;
+    margin-top: 1000px;
+    display: block;
+    max-width: 1400px;
+    width: 100%;
+    height: 700px;
+    /* Altura fija para el canvas */
+    background: white;
+    /* Para mejor visualización del SVG */
+    margin-bottom: 1000px;
+}
 #digitalGarden-text{
     width: 246px;
     position: absolute;

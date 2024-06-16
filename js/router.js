@@ -15,7 +15,7 @@ const routes = [
     },
     {
         path: '/prueba',
-        template: '/html/prueba.html',
+        template: '/html/prueba3.html',
         title: "",
         description: "This is the home page",
         scripts: [
