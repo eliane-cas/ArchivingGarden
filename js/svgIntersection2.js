@@ -119,7 +119,7 @@ function main() {
         if (!window.svg) return;
 
         const maxWidth = 1448; // Ancho máximo del canvas que podemos tener
-        const maxHeight = 750; // Altura máxima del canvas
+        const maxHeight = 700; // Altura máxima del canvas
         const padding = 20; // Espacio de padding lateral
 
         const availableWidth = Math.min(window.innerWidth - 2 * padding, maxWidth);
