@@ -3,12 +3,11 @@ if (document.readyState === 'complete') {
 } else {
     document.addEventListener('DOMContentLoaded', main);
 }
-
-var movementRange = 75;
-
+var movementRange = 150;
 function main() {
     const canvas = document.getElementById('myCanvas');
     paper.setup(canvas);
+
     let yesGroup, noGroup; // Definir aquí para tener acceso en todo el ámbito de la función
 
     // Importar el SVG desde una ubicación específica
@@ -28,12 +27,12 @@ function main() {
 
                 // Inicialmente centrar el grupo "yes"
                 centerGroup(yesGroup);
-
+                centerGroup(noGroup);
                 // Ajustar al cargar
-                adjustCanvasAndSVG();
+                adjustCanvasAndSVG()
                 var centerY = paper.view.center.y;
+                // Máximo movimiento hacia arriba y hacia abajo desde el centro
 
-                // Evento de movimiento del ratón
                 canvas.addEventListener('mousemove', function (event) {
                     var rect = canvas.getBoundingClientRect();
                     var mouseX = event.clientX - rect.left;
@@ -46,7 +45,6 @@ function main() {
                     updateIntersections();
                 });
 
-                // Evento de scroll
                 window.addEventListener('scroll', function () {
                     var elementUnderMouse = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
                     if (elementUnderMouse && elementUnderMouse.id === 'myCanvas') {
@@ -64,10 +62,7 @@ function main() {
                 console.log('Error cargando los grupos:', yesGroup, noGroup);
             }
 
-            window.addEventListener('resize', function () {
-                adjustCanvasAndSVG();
-                updateIntersections();
-            });
+            window.addEventListener('resize', adjustCanvasAndSVG);
         }
     });
 
@@ -86,7 +81,7 @@ function main() {
     }
 
     function showIntersections(path1, path2) {
-        var minDistance = 50;
+        var minDistance = 10;
         var circles = [];
 
         var intersections = path1.getIntersections(path2);
@@ -118,8 +113,8 @@ function main() {
     function adjustCanvasAndSVG() {
         if (!window.svg) return;
 
-        const maxWidth = 1200; // Ancho máximo del canvas que podemos tener
-        const maxHeight = 700; // Altura máxima del canvas
+        const maxWidth = 1400; // Ancho máximo del canvas que podemos tener
+        const maxHeight = 600; // Altura máxima del canvas
         const padding = 20; // Espacio de padding lateral
 
         const availableWidth = Math.min(window.innerWidth - 2 * padding, maxWidth);
@@ -146,4 +141,6 @@ function main() {
     function centerGroup(group) {
         group.position = new paper.Point(paper.view.bounds.width / 2, paper.view.bounds.height / 2);
     }
-}
+
+};
+
