@@ -26,8 +26,8 @@ function main() {
                 noGroup.applyMatrix = true;
 
                 // Inicialmente centrar el grupo "yes"
-                centerGroup(yesGroup);
-                centerGroup(noGroup);
+                centerGroup(yesGroup, true);
+                centerGroup(noGroup, false);
                 // Ajustar al cargar
                 adjustCanvasAndSVG()
                 var centerY = paper.view.center.y;
@@ -132,14 +132,19 @@ function main() {
         canvas.style.height = `${availableHeight}px`;
         paper.view.viewSize = new paper.Size(availableWidth, availableHeight);
         paper.view.draw(); // Redibujar para aplicar los cambios
-        centerGroup(yesGroup);
+        centerGroup(yesGroup, false);
+        centerGroup(noGroup, true);
 
         // Actualizar el rango de movimiento basado en la nueva altura del canvas
         movementRange = paper.view.size.height / 4; // Un cuarto de la altura del canvas como rango de movimiento
     }
 
-    function centerGroup(group) {
-        group.position = new paper.Point(paper.view.bounds.width / 2, paper.view.bounds.height / 2);
+    function centerGroup(group, center) {
+        if (!center) {
+            group.position = new paper.Point(paper.view.bounds.width / 2, paper.view.bounds.height / 2);
+        } else {
+            group.position = new paper.Point(paper.view.bounds.width / 2, paper.view.bounds.height / 4);
+        }
     }
 
 };

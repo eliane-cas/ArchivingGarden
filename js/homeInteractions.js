@@ -88,6 +88,17 @@ function scrollAnimations() {
             } else {
                 element1.classList.remove('book-active');
             }
+
+            var grass = document.querySelector('.archivalGrass');
+            var grassPos = grass.getBoundingClientRect();
+
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
+            if (grassPos.top < window.innerHeight && grassPos.bottom >= 0) {
+                grass.classList.add('archival-grass-active');
+            } else {
+                grass.classList.remove('archival-grass-active');
+            }
+
             var element2 = document.querySelector('.phrase');
             var position2 = element2.getBoundingClientRect();
 
