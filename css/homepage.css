@@ -1364,6 +1364,13 @@ position: absolute;
     transform: translateY(430px);
     transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
+.archivalGrass{
+    position: absolute;
+        top: -597px;
+        right: 0px;
+        z-index: 5;
+height: 502.479px;
+    }
 .chair-active{
     transform: translateY(0);
 }
@@ -1686,6 +1693,7 @@ height: 77px;
     margin: 0 auto;
 }
 */
+
 #myCanvas {
     position: absolute;
     top: 430px;
