@@ -140,6 +140,7 @@ function main() {
     }
 
     function centerGroup(group, center) {
+
         if (!center) {
             group.position = new paper.Point(paper.view.bounds.width / 2, paper.view.bounds.height / 2);
         } else {
