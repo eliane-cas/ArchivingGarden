@@ -4,17 +4,16 @@ function enableVerticalDragScroll() {
     let startY;
     let scrollTop;
 
-    if (!container) return; // Si no existe el contenedor, salimos de la función
+    if (!container) return;
 
     container.addEventListener('mousedown', (e) => {
-        // Asegura que el evento solo se active para el botón principal del ratón (usualmente el izquierdo)
         if (e.button !== 0) return;
 
         isDown = true;
         startY = e.pageY - container.offsetTop;
         scrollTop = container.scrollTop;
-        container.classList.add('active'); // Cambia el cursor
-        e.preventDefault(); // Evita que el evento del mouse afecte otros tipos de desplazamiento
+        container.classList.add('active');
+        e.preventDefault();
     });
 
     container.addEventListener('mouseleave', () => {
@@ -32,7 +31,7 @@ function enableVerticalDragScroll() {
         e.preventDefault();
         const y = e.pageY - container.offsetTop;
         const deltaY = y - startY;
-        const walk = deltaY * 2; // Ajusta este factor para cambiar la sensibilidad
+        const walk = deltaY * 2;
         container.scrollTop = scrollTop - walk;
     });
 }

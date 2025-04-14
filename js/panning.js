@@ -136,29 +136,25 @@ loadHTMLContent();
 
 var isScrollingWithinBounds = true;
 
-//document.addEventListener('DOMContentLoaded', function () {
 console.log("fds");
 var container = document.querySelector('.horizontal-container');
 var inner = document.querySelector('.horizontal-page');
 
-// Create a new instance of Hammer on the container
 var hammer = new Hammer(container);
 
-// Configura la posición inicial deseada en X
-var initialPosX = -1990; // Desplazamiento hacia la izquierda en px
+var initialPosX = -1990;
 
 var posX = initialPosX, posY = 0,
     lastPosX = posX, lastPosY = posY,
     velocityX = 0, velocityY = 0,
-    maxPosX = 0, // El máximo en X es 0, que es el borde derecho del contenedor
-    minPosX = -1 * (inner.offsetWidth - container.offsetWidth), // El mínimo en X es el borde izquierdo
-    maxPosY = 0, // El máximo en Y es 0, que es el borde inferior visible del contenedor
-    minPosY = -1 * (inner.offsetHeight - container.offsetHeight), // El mínimo en Y es el borde superior visible
-    deceleration = 0.05, // Aumentado la fricción
-    scaleFactor = 0.5, // Factor de escala para hacer el movimiento más lento
+    maxPosX = 0,
+    minPosX = -1 * (inner.offsetWidth - container.offsetWidth),
+    maxPosY = 0,
+    minPosY = -1 * (inner.offsetHeight - container.offsetHeight),
+    deceleration = 0.05,
+    scaleFactor = 0.5,
     animationFrameId;
 
-// Establece la transformación inicial basada en la posición inicial
 inner.style.transform = `translate(${initialPosX}px, 0px)`;
 
 hammer.get('pan').set({ direction: Hammer.DIRECTION_ALL });
@@ -166,7 +162,6 @@ hammer.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 hammer.on('panstart', function (e) {
     lastPosX = posX;
     lastPosY = posY;
-    // Detiene cualquier animación actual
     cancelAnimationFrame(animationFrameId);
 });
 
@@ -178,17 +173,15 @@ hammer.on('panmove', function (e) {
 });
 
 hammer.on('panend', function (e) {
-    velocityX = e.velocityX * 20; // Reduce la velocidad inicial de la inercia
+    velocityX = e.velocityX * 20;
     velocityY = e.velocityY * 20;
 
-    // Inicia el efecto de momentum
     (function momentum() {
         posX += velocityX;
         posY += velocityY;
         velocityX *= (1 - deceleration);
         velocityY *= (1 - deceleration);
 
-        // Detiene el movimiento cuando la velocidad es muy baja
         if (Math.abs(velocityX) > 0.1 || Math.abs(velocityY) > 0.1) {
             posX = Math.max(Math.min(posX, maxPosX), minPosX);
             posY = Math.max(Math.min(posY, maxPosY), minPosY);
@@ -205,13 +198,12 @@ hammer.on('panend', function (e) {
 container.addEventListener('wheel', function (e) {
     e.preventDefault();
 
-    var scrollThreshold = 0.1; // Umbral de sensibilidad del scroll para determinar la intención
+    var scrollThreshold = 0.1;
     var scrollDeltaY = e.deltaY;
 
-    // Verifica si el movimiento predominante es vertical y si se encuentra en los límites del contenedor
     if (Math.abs(scrollDeltaY) > scrollThreshold) {
         if ((scrollDeltaY > 0 && posY <= minPosY) || (scrollDeltaY < 0 && posY >= maxPosY)) {
-            window.scrollBy(0, scrollDeltaY); // Hace scroll de la página
+            window.scrollBy(0, scrollDeltaY);
             return;
         }
     }

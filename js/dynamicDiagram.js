@@ -6,40 +6,29 @@ export class DynamicDiagram {
         this.width = container.clientWidth;
         this.height = container.clientHeight;
 
-        // Asegúrate de que el contenedor tiene dimensiones válidas
         if (this.width === 0 || this.height === 0) {
             console.log(this.width, this.hieght);
             console.error("El contenedor debe tener una anchura y altura mayores a cero");
-            return;  // Retorna si el contenedor no tiene tamaño válido
+            return;
         }
         this.data = data;
         this.positions = positions;
 
-        // Configuración inicial de center a null para evitar uso no intencionado
         center.x = null;
         center.y = null;
 
-        // Ajustar center.x basado exclusivamente en positions.left o positions.right
         if (positions.left !== null) {
             center.x = positions.left;
         }
-        if (positions.right !== null) { // Asegura que right solo se use si left no está definido
+        if (positions.right !== null) {
             center.x = this.width - positions.right;
         }
 
-        // Ajustar center.y basado en positions.top
         if (positions.top !== null) {
             center.y = positions.top;
         }
 
-        // Si después de intentar establecer con positions aún son null, usa el centro
-        /*
-          if (center.x === null) {
-              center.x = this.width / 2;
-          }
-          if (center.y === null) {
-              center.y = this.height / 2;
-          }*/
+
 
         this.center = center;
         this.isDragging = false;
@@ -72,15 +61,15 @@ export class DynamicDiagram {
         });
 
         this.data.nodes.forEach(node => {
-            if (node.type === 'main-node') { // Nodo principal en el centro
-                node.fx = this.center.x; // Fijar la posición x
-                node.fy = this.center.y; // Fijar la posición y
+            if (node.type === 'main-node') {
+                node.fx = this.center.x;
+                node.fy = this.center.y;
             }
         });
         const linkForce = d3.forceLink(this.data.links)
             .id(d => d.id)
             .distance(d => d.distance)
-            .strength(1); // Aumenta la fuerza para mantener más firmemente la distancia
+            .strength(1);
 
         this.simulation = d3.forceSimulation(this.data.nodes)
             .force("link", d3.forceLink(this.data.links).id(d => d.id).distance(d => d.distance).strength(1))
@@ -135,13 +124,11 @@ export class DynamicDiagram {
                 d.width = bbox.width;
                 d.height = bbox.height;
 
-                // Centrar el nodo en el SVG
                 d3.select(this)
                     .attr("x", d.x - d.width / 2)
                     .attr("y", d.y - d.height / 2);
             });
 
-            // Ajusta las posiciones de los enlaces
             link
                 .attr("x1", d => d.source.x)
                 .attr("y1", d => d.source.y)
@@ -149,7 +136,6 @@ export class DynamicDiagram {
                 .attr("y2", d => d.target.y);
         }
 
-        // Llama a updateNodePositions cuando añadas nodos o actualices el contenido
         updateNodePositions();
         this.simulation.on("tick", () => {
 
@@ -197,7 +183,7 @@ export class DynamicDiagram {
     dragstarted(event) {
         if (!event.active) this.simulation.alphaTarget(0.3).restart();
         event.subject.fx = event.subject.x;
-        event.subject.fy = event.subject.y;     // Solo ajustar los enlaces si el nodo principal está siendo arrastrado
+        event.subject.fy = event.subject.y;
 
 
     }
@@ -207,12 +193,10 @@ export class DynamicDiagram {
         if (event.subject.type === 'main-node') {
             this.data.links.forEach(link => {
                 if (link.source.id === event.subject.id || link.target.id === event.subject.id) {
-                    // Reducir la distancia de los enlaces gradualmente
                     link.distance *= 0.9986;  // Reduce la distancia en un 5% por ejemplo
                 }
             });
 
-            // Actualizar las fuerzas de enlace para reflejar los cambios en la distancia
             this.simulation.force("link").distance(link => link.distance);
             this.simulation.alpha(0.3).restart(); // Reactivar la simulación para que los cambios tengan efecto
         }
@@ -225,10 +209,8 @@ export class DynamicDiagram {
             event.subject.fx = event.x; // Mantén el nodo principal en la posición arrastrada
             event.subject.fy = event.y;
         } else {
-            // Libera otros nodos para moverse dinámicamente según la simulación
             event.subject.fx = null;
             event.subject.fy = null;
-            // Actualizar las distancias de los enlaces asociados al nodo arrastrado
             this.data.links.forEach(link => {
                 if (link.source.id === event.subject.id || link.target.id === event.subject.id) {
                     const sourceNode = this.data.nodes.find(node => node.id === link.source.id);
@@ -236,7 +218,7 @@ export class DynamicDiagram {
                     const dx = targetNode.x - sourceNode.x;
                     const dy = targetNode.y - sourceNode.y;
                     const currentDistance = Math.sqrt(dx * dx + dy * dy) + 35;
-                    link.distance = currentDistance; // Solo actualizar la distancia real sin añadir extra
+                    link.distance = currentDistance;
                 }
             });
 

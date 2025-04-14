@@ -8,7 +8,6 @@ let lastPosY = 0;
 let posX = 0;
 let posY = 0;
 
-// Inicializa Hammer.js en el contenedor en lugar de directamente en el contenido
 const mc = new Hammer.Manager(container);
 const pinch = new Hammer.Pinch();
 const pan = new Hammer.Pan({ threshold: 0, pointers: 0 });
@@ -43,7 +42,7 @@ function updateTransform() {
 
 container.addEventListener('wheel', function (e) {
     e.preventDefault();
-    const rect = container.getBoundingClientRect(); // Asegúrate de usar las dimensiones y posición del contenedor
+    const rect = container.getBoundingClientRect();
     const zoomFactor = 0.1;
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;

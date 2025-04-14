@@ -100,7 +100,6 @@ function loadStyles(styles) {
 
 
 async function loadScripts(scripts) {
-    // Eliminar cualquier script anterior
     document.querySelectorAll('script[data-route-script]').forEach(script => {
         script.parentNode.removeChild(script);
     });
@@ -109,9 +108,9 @@ async function loadScripts(scripts) {
         try {
             await new Promise((resolve, reject) => {
                 const scriptElement = document.createElement('script');
-                scriptElement.src = script + '?v=' + Date.now();  // Añadir timestamp para forzar la recarga
+                scriptElement.src = script + '?v=' + Date.now();
                 scriptElement.type = 'module';
-                scriptElement.dataset.routeScript = 'active'; // Marcar el script para posible eliminación
+                scriptElement.dataset.routeScript = 'active';
                 scriptElement.onload = resolve;
                 scriptElement.onerror = reject;
                 document.body.appendChild(scriptElement);
@@ -152,7 +151,6 @@ const locationHandler = async () => {
         styles: []
     };
 
-    // Limpiar el contenido existente
     document.getElementById("app").innerHTML = '';
     document.title = route.title;
 
@@ -164,11 +162,9 @@ const locationHandler = async () => {
         currentPage.innerHTML = "";
 
     }
-    // Quitar estilos antiguos y cargar nuevos
     document.querySelectorAll('link[rel="stylesheet"]:not(#common-styles)').forEach(link => link.remove());
     await loadStyles(route.styles);
 
-    // Cargar nuevo contenido HTML después de que los estilos estén listos
     const html = await fetch(route.template).then(response => response.text());
     document.getElementById("app").innerHTML = html;
     window.scrollTo(0, 0);
@@ -210,7 +206,6 @@ const locationHandler = async () => {
     }
 
 
-    // Manejar la barra de navegación de categorías
     const nav = document.querySelector(".category-navbar");
     if (pathSegments !== "/useful-links/categories" && pathSegments !== "/useful-links/categories/all-links") {
         nav.classList.add("hidden");
@@ -221,12 +216,10 @@ const locationHandler = async () => {
 
 
     if (pathSegments === "/" || pathSegments === "#/") {
-        // Eliminar el script de Paper.js del head
         const script = document.getElementById('paperScript');
         if (script) {
             script.parentNode.removeChild(script);
         }
-        // Cargar el nuevo script de Paper.js
         try {
             await loadScript('https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js');
             await loadScript('/js/svgIntersection2.js');
