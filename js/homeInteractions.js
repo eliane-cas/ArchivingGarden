@@ -1,6 +1,6 @@
 function iniciarRotacion(imagen) {
     imagen.style.animation = 'none';
-    imagen.offsetHeight;
+    imagen.offsetHeight; // Fuerza reflow
     imagen.style.animation = '';
     imagen.style.animation = 'rotar 2s ease-in-out forwards';
     setTimeout(() => iniciarRotacion(imagen), 3000);
@@ -8,7 +8,7 @@ function iniciarRotacion(imagen) {
 
 function tonteria(imagen) {
     imagen.style.animation = 'none';
-    imagen.offsetHeight;
+    imagen.offsetHeight; // Fuerza reflow
     imagen.style.animation = '';
     imagen.style.animation = 'rotar 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
     setTimeout(() => tonteria(imagen), 3000);
@@ -18,6 +18,7 @@ function timeline() {
     const yearSpans = document.querySelectorAll('.year');
     const allCards = document.querySelectorAll('.timeCard');
 
+    // Initially hide all cards except the first and set the first year as active
     allCards.forEach(card => card.classList.add('hidden'));
     allCards[0].classList.remove('hidden');
     allCards[0].style.display = 'block';
@@ -28,13 +29,14 @@ function timeline() {
         span.onclick = function () {
             allCards.forEach(card => {
                 card.classList.add('hidden');
-                card.style.display = 'none';
+                card.style.display = 'none'; // Hide card
             });
 
             const selectedCard = document.querySelector(`.timeCard[data-year="${this.dataset.year.trim()}"]`);
             if (selectedCard) {
                 selectedCard.classList.remove('hidden');
-                selectedCard.style.display = 'block';
+                selectedCard.style.display = 'block'; // Show card and ensure it’s visible
+                // Force restart of animation
                 selectedCard.style.animation = 'none';
                 requestAnimationFrame(() => {
                     selectedCard.style.animation = '';
@@ -53,19 +55,22 @@ function timeline() {
 function mapa() {
     const firstItem = document.querySelector('#section5-numbers span');
     if (firstItem) {
-        firstItem.classList.add('active-eco');
+        firstItem.classList.add('active-eco'); // Ensures first item is active
         document.getElementById('ecosystems').textContent = firstItem.getAttribute('data-text');
         document.getElementById('ecosystems').style.backgroundColor = firstItem.getAttribute('data-color');
     }
     document.querySelectorAll('#section5-numbers span').forEach(item => {
         item.addEventListener('click', function () {
+            // Remove active class from all and add to the clicked one
             document.querySelectorAll('#section5-numbers span').forEach(innerItem => {
                 innerItem.classList.remove('active-eco');
             });
             item.classList.add('active-eco');
 
+            // Change the content of the ecosystems container
             document.getElementById('ecosystems').textContent = item.getAttribute('data-text');
 
+            // Change the background color of the ecosystems container
             document.getElementById('ecosystems').style.backgroundColor = item.getAttribute('data-color');
         });
     });
@@ -77,6 +82,7 @@ function scrollAnimations() {
             var element1 = document.querySelector('.book');
             var position1 = element1.getBoundingClientRect();
 
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
             if (position1.top < window.innerHeight && position1.bottom >= 0) {
                 element1.classList.add('book-active');
             } else {
@@ -86,6 +92,7 @@ function scrollAnimations() {
             var grass = document.querySelector('.archivalGrass');
             var grassPos = grass.getBoundingClientRect();
 
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
             if (grassPos.top < window.innerHeight && grassPos.bottom >= 0) {
                 grass.classList.add('archival-grass-active');
             } else {
@@ -95,6 +102,7 @@ function scrollAnimations() {
             var element2 = document.querySelector('.phrase');
             var position2 = element2.getBoundingClientRect();
 
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
             if (position2.top < window.innerHeight - 300 && position2.bottom >= 0) {
                 element2.classList.add('phrase-active');
             } else {
@@ -105,6 +113,7 @@ function scrollAnimations() {
             var element3 = document.querySelector('.chair');
             var position3 = element3.getBoundingClientRect();
 
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
             if (position3.top < window.innerHeight && position3.bottom >= 0) {
                 element3.classList.add('chair-active');
             } else {
@@ -114,6 +123,7 @@ function scrollAnimations() {
             var element4 = document.querySelector('#section6-h1');
             var position4 = element4.getBoundingClientRect();
 
+            // Activar la animación cuando la parte inferior del elemento esté por entrar en la pantalla
             if (position4.top < window.innerHeight - 300 && position4.bottom >= 0 && !typed) {
                 typed = true;
                 type();
@@ -137,7 +147,7 @@ function type() {
             index++;
             setTimeout(typeLetter, 120);
         } else {
-            typingContainer.innerHTML = text;
+            typingContainer.innerHTML = text; // Opcional: elimina el cursor al final
         }
     }
 
@@ -161,6 +171,7 @@ function poster() {
                     hasHovered = true;
                 }
                 isRotating = false;
+                // Resetea la rotación para futuros hovers
                 this.style.transition = 'none';
                 this.style.transform = 'rotateZ(0deg)';
             }, 2000);
@@ -219,11 +230,11 @@ function main() {
         title.style.color = estilos[indice].colorTexto;
     }
 
-    actualizarEstilos();
+    actualizarEstilos();  // Inicializar los estilos y contenidos al cargar
 
     contenedor.addEventListener('click', function () {
-        indice = (indice + 1) % estilos.length;
-        actualizarEstilos();
+        indice = (indice + 1) % estilos.length; // Incrementa el índice y vuelve a 0 si alcanza el final
+        actualizarEstilos();  // Actualizar los estilos y contenidos en cada clic
     });
 }
 

@@ -8,8 +8,9 @@ function main() {
     const canvas = document.getElementById('myCanvas');
     paper.setup(canvas);
 
-    let yesGroup, noGroup;
+    let yesGroup, noGroup; // Definir aquí para tener acceso en todo el ámbito de la función
 
+    // Importar el SVG desde una ubicación específica
     paper.project.importSVG('/images/goodInternet.svg', {
         expandShapes: true,
         onLoad: function (svg) {
@@ -24,10 +25,13 @@ function main() {
                 yesGroup.applyMatrix = true;
                 noGroup.applyMatrix = true;
 
+                // Inicialmente centrar el grupo "yes"
                 centerGroup(yesGroup, true);
                 centerGroup(noGroup, false);
+                // Ajustar al cargar
                 adjustCanvasAndSVG()
                 var centerY = paper.view.center.y;
+                // Máximo movimiento hacia arriba y hacia abajo desde el centro
 
                 canvas.addEventListener('mousemove', function (event) {
                     var rect = canvas.getBoundingClientRect();
@@ -35,6 +39,7 @@ function main() {
                     var mouseY = event.clientY - rect.top;
                     var newY = Math.min(Math.max(mouseY, centerY - movementRange), centerY + movementRange);
 
+                    // Asignar solo la posición y del grupo 'no', permitiendo que x se mueva libremente
                     noGroup.position = new paper.Point(mouseX, newY);
 
                     updateIntersections();
@@ -99,17 +104,18 @@ function main() {
             }
         });
 
+        // Limpiar círculos viejos y redibujar los nuevos
         circles.forEach(function (circle) {
-            circle.addTo(paper.project.activeLayer);
+            circle.addTo(paper.project.activeLayer);  // Asegurarse de que los círculos se añaden al layer activo
         });
     }
 
     function adjustCanvasAndSVG() {
         if (!window.svg) return;
 
-        const maxWidth = 1200;
-        const maxHeight = 600;
-        const padding = 20;
+        const maxWidth = 1200; // Ancho máximo del canvas que podemos tener
+        const maxHeight = 600; // Altura máxima del canvas
+        const padding = 20; // Espacio de padding lateral
 
         const availableWidth = Math.min(window.innerWidth - 2 * padding, maxWidth);
         const availableHeight = Math.min(window.innerHeight - 2 * padding, maxHeight);
@@ -125,11 +131,12 @@ function main() {
         canvas.style.width = `${availableWidth}px`;
         canvas.style.height = `${availableHeight}px`;
         paper.view.viewSize = new paper.Size(availableWidth, availableHeight);
-        paper.view.draw();
+        paper.view.draw(); // Redibujar para aplicar los cambios
         centerGroup(yesGroup, false);
         centerGroup(noGroup, true);
 
-        movementRange = paper.view.size.height / 4;
+        // Actualizar el rango de movimiento basado en la nueva altura del canvas
+        movementRange = paper.view.size.height / 4; // Un cuarto de la altura del canvas como rango de movimiento
     }
 
     function centerGroup(group, center) {

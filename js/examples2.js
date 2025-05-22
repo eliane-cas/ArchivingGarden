@@ -1,44 +1,53 @@
-function enableVerticalDragScroll() {
-    const container = document.querySelector('.draggable-container');
-    let isDown = false;
-    let startY;
-    let scrollTop;
+async function main() {
+    const data = await fetch('/data/examples.json')
+        .then(response => response.json());
 
-    if (!container) return;
+    let list = groupItems(data.items, 6);
 
-    container.addEventListener('mousedown', (e) => {
-        if (e.button !== 0) return;
+    list.forEach((group) => {
+        const groupContainer = document.createElement("div");
+        groupContainer.classList.add("groupContainer");
 
-        isDown = true;
-        startY = e.pageY - container.offsetTop;
-        scrollTop = container.scrollTop;
-        container.classList.add('active');
-        e.preventDefault();
-    });
+        group.forEach((example) => {
+            const div = document.createElement("a");
+            div.classList.add("exampleContainer");
+            div.href = example.link;
 
-    container.addEventListener('mouseleave', () => {
-        isDown = false;
-        container.classList.remove('active');
-    });
+            const imgBox = document.createElement("div");
+            imgBox.classList.add("exampleImagebox");
 
-    container.addEventListener('mouseup', () => {
-        isDown = false;
-        container.classList.remove('active');
-    });
 
-    container.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const y = e.pageY - container.offsetTop;
-        const deltaY = y - startY;
-        const walk = deltaY * 2;
-        container.scrollTop = scrollTop - walk;
+            const img = document.createElement("div");
+            img.classList.add("exampleImage");
+            img.style.backgroundImage = `url(${example.image})`;
+            imgBox.appendChild(img);
+
+            const link = document.createElement("a");
+            link.classList.add("exampleLink");
+            link.textContent = example.title;
+            link.href = example.link;
+
+            div.appendChild(imgBox);
+            div.appendChild(link);
+
+            groupContainer.appendChild(div);
+        });
+
+        document.getElementById("examples").appendChild(groupContainer);
+
     });
 }
 
+function groupItems(items, size) {
+    let grouped = []
+    for (let i = 0; i < items.length; i += size) {
+        grouped.push(items.slice(i, i + size));
+    }
+    return grouped;
+}
 
 if (document.readyState === 'complete') {
-    enableVerticalDragScroll();
+    main();
 } else {
-    document.addEventListener('DOMContentLoaded', enableVerticalDragScroll);
+    document.addEventListener('DOMContentLoaded', main);
 }

@@ -2,7 +2,7 @@ import { DynamicDiagram } from "/js/DynamicDiagram.js";
 
 export async function initCategoryPage() {
     const urlParams = new URLSearchParams(window.location.hash.split('?')[1]);
-    let categoryName = urlParams.get('category').replace(/_/g, ' ');
+    let categoryName = urlParams.get('category').replace(/_/g, ' ');  // Reemplaza los guiones bajos con espacios
 
     if (categoryName == "Code and Develop") {
         categoryName = "Code & Develop";
@@ -14,6 +14,7 @@ export async function initCategoryPage() {
         if (!imagen.classList.contains('hidden')) {
             imagen.classList.add('hidden');
         }
+        // Correcto acceso al atributo data-category usando dataset.category
         if (imagen.dataset.category == categoryName) {
             imagen.classList.remove('hidden');
             let menu_items = document.querySelectorAll(".category-navbar a");
@@ -27,9 +28,11 @@ export async function initCategoryPage() {
     let menu_item = document.querySelector(`[category-name="${categoryName}"]`);
     menu_item.classList.add("category-active");
 
+    // Obtener los datos del archivo JSON
     const data = await fetch('/data/links.json')
         .then(response => response.json());
 
+    // Buscar el objeto correcto en el arreglo que coincida con la categoría
     const categoryData = data.find(item => item["main-node"] === categoryName);
 
     if (!categoryData) {

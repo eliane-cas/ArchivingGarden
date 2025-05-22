@@ -3,7 +3,7 @@ const routes = [
     {
         path: '/',
         template: '/html/home_page.html',
-        title: "Home Page",
+        title: "Archiving Garden",
         description: "This is the home page",
         scripts: [
             '/js/setsvgs.js',
@@ -33,20 +33,20 @@ const routes = [
     },
     {
         path: '/examples',
-        template: '/html/examples2.html',
+        template: '/html/examples3.html',
         title: "Examples",
         description: "Examples",
         scripts: ['/js/examples2.js'],
-        styles: ['/css/examples2.css']
+        styles: ['/css/examples3.css']
     },
 
     {
         path: '/useful-links',
-        template: '/html/usefulLinks.html',
+        template: '/html/usefulLinks2.html',
         title: "Useful Links",
         description: "Useful links and resources",
         scripts: ['https://d3js.org/d3.v7.min.js', '/js/linksMenu.js'],
-        styles: ['/css/usefulLinks.css']
+        styles: ['/css/usefulLinks2.css']
     },
     {
         path: '/useful-links/categories',
@@ -54,7 +54,7 @@ const routes = [
         title: "Useful Links",
         description: "Useful links and resources",
         scripts: ['https://d3js.org/d3.v7.min.js', 'js/category.js'],
-        styles: ['/css/usefulLinks.css']
+        styles: ['/css/usefulLinks2.css']
     },
     {
         path: '/useful-links/categories/all-links',
@@ -108,9 +108,9 @@ async function loadScripts(scripts) {
         try {
             await new Promise((resolve, reject) => {
                 const scriptElement = document.createElement('script');
-                scriptElement.src = script + '?v=' + Date.now();
+                scriptElement.src = script + '?v=' + Date.now();  // Añadir timestamp para forzar la recarga
                 scriptElement.type = 'module';
-                scriptElement.dataset.routeScript = 'active';
+                scriptElement.dataset.routeScript = 'active'; // Marcar el script para posible eliminación
                 scriptElement.onload = resolve;
                 scriptElement.onerror = reject;
                 document.body.appendChild(scriptElement);
@@ -154,17 +154,23 @@ const locationHandler = async () => {
     document.getElementById("app").innerHTML = '';
     document.title = route.title;
 
-    const currentPage = document.getElementById("current-page");
 
-    if (!(pathSegments === "/" || pathSegments === "#/")) {
-        currentPage.innerHTML = route.title;
+    // Manejar la barra de navegación de categorías
+    const nav = document.querySelector(".category-navbar");
+    console.log(pathSegments);
+    if ((pathSegments !== "/useful-links/categories" && pathSegments !== "/useful-links/categories/all-links") || pathSegments == "/useful-links") {
+        console.log("yes");
+        nav.classList.add("hidden");
     } else {
-        currentPage.innerHTML = "";
+        console.log("no");
 
+        nav.classList.remove("hidden");
     }
+    // Quitar estilos antiguos y cargar nuevos
     document.querySelectorAll('link[rel="stylesheet"]:not(#common-styles)').forEach(link => link.remove());
     await loadStyles(route.styles);
 
+    // Cargar nuevo contenido HTML después de que los estilos estén listos
     const html = await fetch(route.template).then(response => response.text());
     document.getElementById("app").innerHTML = html;
     window.scrollTo(0, 0);
@@ -206,20 +212,16 @@ const locationHandler = async () => {
     }
 
 
-    const nav = document.querySelector(".category-navbar");
-    if (pathSegments !== "/useful-links/categories" && pathSegments !== "/useful-links/categories/all-links") {
-        nav.classList.add("hidden");
-    } else {
-        nav.classList.remove("hidden");
-    }
     await loadScripts(route.scripts);
 
 
     if (pathSegments === "/" || pathSegments === "#/") {
+        // Eliminar el script de Paper.js del head
         const script = document.getElementById('paperScript');
         if (script) {
             script.parentNode.removeChild(script);
         }
+        // Cargar el nuevo script de Paper.js
         try {
             await loadScript('https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js');
             await loadScript('/js/svgIntersection2.js');
