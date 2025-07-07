@@ -531,7 +531,7 @@
     "position": {
       "left": 350,
       "right": null,
-      "top": 450
+      "top": 600
     },
     "allposition": {
       "left": 200,
@@ -603,6 +603,105 @@
         "distance": 480,
         "class": "link",
         "url": "https://www.materialpalette.com/"
+      },
+      {
+        "id": "Abc Dinamo↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 2.61799,
+        "distance": 120,
+        "class": "link",
+        "url": "https://abcdinamo.com/typefaces/diatype"
+      },
+      {
+        "id": "Smuss Type Kiosk ↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 3.35,
+        "distance": 200,
+        "class": "link",
+        "url": "https://typekiosk.smuss.studio"
+      },
+      {
+        "id": "Type Foundry Directory ↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 3.52,
+        "distance": 300,
+        "class": "link",
+        "url": "https://typefoundry.directory/"
+      },
+      {
+        "id": "Klim↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 3.83,
+        "distance": 330,
+        "class": "link",
+        "url": "https://klim.co.nz"
+      },
+      {
+        "id": "Grilli Type↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 4.06,
+        "distance": 340,
+        "class": "link",
+        "url": "https://www.grillitype.com"
+      },
+      {
+        "id": "Google Fonts ↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 4.36,
+        "distance": 250,
+        "class": "link",
+        "url": "https://fonts.google.com/"
+      },
+      {
+        "id": "OTF to WOFF Converter↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 5.23,
+        "distance": 220,
+        "class": "link",
+        "url": "https://cloudconvert.com/otf-to-woff"
+      },
+      {
+        "id": "Use & Modify↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 5.75,
+        "distance": 300,
+        "class": "link",
+        "url": "https://usemodify.com/?ref=fuse-kiwi"
+      },
+      {
+        "id": "Suva Type Foundry↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 5.96,
+        "distance": 290,
+        "class": "link",
+        "url": "https://www.suvatypefoundry.ee/?ref=fuse-kiwi"
+      },
+      {
+        "id": "TypeNetwork↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 0,
+        "distance": 270,
+        "class": "link",
+        "url": "https://typenetwork.com/"
+      },
+      {
+        "id": "AllCaps↗",
+        "group": 2,
+        "type": "child-node",
+        "angle": 0.34,
+        "distance": 200,
+        "class": "link",
+        "url": "https://www.allcapstype.com/"
       }
     ],
     "links": [
@@ -611,13 +710,40 @@
       { "source": "Creative Tools", "target": "Color Designer↗", "value": 1 },
       { "source": "Creative Tools", "target": "Tixy.Land↗", "value": 1 },
       { "source": "Creative Tools", "target": "Boockup↗", "value": 1 },
-      { "source": "Creative Tools", "target": "Material Palette↗", "value": 1 }
+      { "source": "Creative Tools", "target": "Material Palette↗", "value": 1 },
+      { "source": "Creative Tools", "target": "Abc Dinamo↗", "value": 1 },
+      {
+        "source": "Creative Tools",
+        "target": "Smuss Type Kiosk ↗",
+        "value": 1
+      },
+      {
+        "source": "Creative Tools",
+        "target": "Type Foundry Directory ↗",
+        "value": 1
+      },
+      { "source": "Creative Tools", "target": "Klim↗", "value": 1 },
+      { "source": "Creative Tools", "target": "Grilli Type↗", "value": 1 },
+      { "source": "Creative Tools", "target": "Google Fonts ↗", "value": 1 },
+      {
+        "source": "Creative Tools",
+        "target": "OTF to WOFF Converter↗",
+        "value": 1
+      },
+      { "source": "Creative Tools", "target": "Use & Modify↗", "value": 1 },
+      {
+        "source": "Creative Tools",
+        "target": "Suva Type Foundry↗",
+        "value": 1
+      },
+      { "source": "Creative Tools", "target": "TypeNetwork↗", "value": 1 },
+      { "source": "Creative Tools", "target": "AllCaps↗", "value": 1 }
     ],
 
     "position": {
       "left": 650,
       "right": null,
-      "top": 160
+      "top": 360
     },
     "allposition": {
       "left": 650,
