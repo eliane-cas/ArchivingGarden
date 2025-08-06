@@ -11,8 +11,8 @@ html {
 .examplesText {
   display: flex;
   width: 346px;
-  height: 186px;
-  padding: 19px 20px 19px 20px;
+  height: 183px;
+  padding: 19px 19px 19px 20px;
   flex-direction: column;
   align-items: flex-start;
   border-radius: 15px;
@@ -23,6 +23,11 @@ html {
   z-index: 100;
 }
 
+.exampleTag {
+  top: 19px;
+  left: 20px;
+}
+
 .textTag {
   display: flex;
   align-items: center;
@@ -30,45 +35,54 @@ html {
 .textTag svg {
   margin-top: -1px;
 }
-.textTag p {
+
+.textTag {
   font-family: "ABCDiatype-Regular", sans-serif;
   color: rgba(0, 0, 0, 0.5);
   font-size: 11px;
   font-style: normal;
   position: relative;
-
-  margin-left: 13.86px;
+  text-box-trim: trim-both;
+  /* 
+  margin-left: 13.86px; */
 }
-.textTag p::before {
+.textTag::before {
   content: "";
   width: 7.858px;
   height: 7.858px;
   border-radius: 100%;
   background-color: black;
-  position: absolute;
-  top: 1.2px;
-  left: -13.85px;
+  /* position: absolute; */
+  margin-right: 6px;
+  margin-top: -3px;
+  /* top: 1.2px;
+  left: -13.85px; */
 }
 .textTitle {
   margin-top: 3.72px;
   margin-left: 13.86px;
   font-family: "ABCDiatype-Regular", sans-serif;
+  font-family: "ABCDiatype-Regular", sans-serif;
   font-size: 14px;
+  line-height: 18.66px;
   font-style: normal;
   text-transform: capitalize;
+  text-box-trim: trim-both;
 }
 .textParagraph {
-  width: 280.462px;
-  height: 112.476px;
+  /* width: 280.462px;
+  height: 112.476px; */
   color: #000;
   font-family: "ABCDiatype-Regular", sans-serif;
-
+  margin-left: 12.5px;
+  /* margin-left: 13.86px; */
+  margin-top: 14.9px;
+  /* margin-top: 17.24px; */
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 14.734px; /* 122.784% */
-  margin-top: 17.24px;
-  margin-left: 13.58px;
+  text-box-trim: trim-both;
+  line-height: 14.73px; /* 122.784% */
 }
 
 /*----------------------------------*/
@@ -91,7 +105,7 @@ html {
 }
 
 #Useful:hover .useful-links {
-  transform: scale(1.2);
+  transform: scale(1.05);
   transform-origin: center center;
 }
 #Useful {
@@ -99,7 +113,7 @@ html {
 }
 #Useful span {
   position: absolute;
-  top: 55%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #000;
@@ -108,7 +122,9 @@ html {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20.975px; /* 149.82% */
+  line-height: 18.66px;
+  text-align: center;
+  width: 70%;
 }
 
 .useful-links {
@@ -230,13 +246,24 @@ main h2 {
 }
 
 .category-navbar a {
-  padding-left: 12px;
-  padding-right: 12px;
   text-align: center;
   color: #fff;
   border-radius: 19.551px;
   background: #ff5e30;
   min-width: 140px;
+  height: 24px;
+  padding: 7px 12px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-tab-short {
+  width: 140px;
+}
+.category-tab-long {
+  width: 160px;
 }
 
 .category-navbar a:hover {
@@ -258,14 +285,14 @@ main h2 {
 #creative1 {
   /* top: 498px;
   left: 396px; */
-  width: 604.716px;
-  height: 374.07px;
+  /* width: 604.716px;
+  height: 374.07px; */
 }
 #creative2 {
   /* top: 562px;
   left: 963px; */
-  width: 374.461px;
-  height: 271.685px;
+  /* width: 374.461px;
+  height: 271.685px; */
 }
 #reading {
   right: 26px;
@@ -302,23 +329,23 @@ main h2 {
 #code1 {
   /* right: 467.62px;
   top: 389.94px; */
-  left: 26px;
+  /* left: 26px;
   width: 343px;
-  height: 300px;
+  height: 300px; */
 }
 #code2 {
   /* right: 53.78px;
   top: 257.21px; */
-  z-index: -2;
+  /* z-index: -2;
   width: 515.288px;
   height: 565.462px;
-  flex-shrink: 0;
+  flex-shrink: 0; */
 }
 #potential1 {
   /* left: 84.12px;
   top: 363.66px; */
-  width: 593.265px;
-  height: 533.404px;
+  /* width: 593.265px;
+  height: 533.404px; */
 }
 #contribute {
   display: block;
@@ -366,11 +393,13 @@ main h2 {
 
 .to-start-wrapper {
   position: absolute;
+  display: flex;
+  align-items: center;
   z-index: 9999;
   width: 201px;
   height: 72px;
-  bottom: 20%;
-  left: 53%;
+  top: 250px;
+  left: 52%;
   padding: 18px;
   background: linear-gradient(
     150.58deg,
@@ -389,9 +418,27 @@ main h2 {
   border-radius: 19.55px;
   font-size: 12px;
   font-family: "ABCDiatype-Regular", sans-serif;
-  font-family: 400;
+  font-weight: 400;
   text-align: center;
   line-height: 18.66px;
   color: black;
   text-transform: capitalize;
+  width: 163px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+.to-start p {
+  vertical-align: baseline;
+  line-height: 1;
+  transform: translateY(10%);
+}
+
+.to-start:hover {
+  background: #9d9d9d;
+  color: #fafafa;
 }

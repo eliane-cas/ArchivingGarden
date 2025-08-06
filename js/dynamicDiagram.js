@@ -135,7 +135,7 @@ export class DynamicDiagram {
       .html((d) => {
         if (d.class === "category") {
           return `<div  id="Useful"><img src="${
-            d.imgUrl || "../images/folder_grey.png"
+            d.imgUrl || "../images/grey_folder.png"
           }" 
                                   class="node-content useful-links" 
                                   alt="${d.id}" /><span>${d.id}</span></div>`;

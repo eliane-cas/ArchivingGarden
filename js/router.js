@@ -43,7 +43,7 @@ const routes = [
     template: "/html/usefulLinks2.html",
     title: "Useful Links",
     description: "Useful links and resources",
-    // scripts: ['https://d3js.org/d3.v7.min.js', '/js/linksMenu.js'],
+
     styles: ["/css/usefulLinks2.css"],
   },
   {

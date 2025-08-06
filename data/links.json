@@ -1,275 +1,5 @@
 [
   {
-    "main-node": "Web Typography",
-    "nodes": [
-      {
-        "id": "Web Typography",
-        "group": 1,
-        "type": "main-node",
-        "distance": 0,
-        "class": "category",
-        "linkStart": "bottom"
-      },
-      {
-        "id": "Abc Dinamo↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 2.61799,
-        "distance": 120,
-        "class": "link",
-        "url": "https://abcdinamo.com/typefaces/diatype"
-      },
-      {
-        "id": "Smuss Type Kiosk ↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 3.35,
-        "distance": 200,
-        "class": "link",
-        "url": "https://typekiosk.smuss.studio"
-      },
-      {
-        "id": "Type Foundry Directory ↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 3.52,
-        "distance": 300,
-        "class": "link",
-        "url": "https://typefoundry.directory/"
-      },
-      {
-        "id": "Klim↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 3.83,
-        "distance": 330,
-        "class": "link",
-        "url": "https://klim.co.nz"
-      },
-      {
-        "id": "Grilli Type↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 4.06,
-        "distance": 340,
-        "class": "link",
-        "url": "https://www.grillitype.com"
-      },
-      {
-        "id": "Google Fonts ↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 4.36,
-        "distance": 250,
-        "class": "link",
-        "url": "https://fonts.google.com/"
-      },
-      {
-        "id": "OTF to WOFF Converter↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 5.23,
-        "distance": 220,
-        "class": "link",
-        "url": "https://cloudconvert.com/otf-to-woff"
-      },
-      {
-        "id": "Use & Modify↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 5.75,
-        "distance": 300,
-        "class": "link",
-        "url": "https://usemodify.com/?ref=fuse-kiwi"
-      },
-      {
-        "id": "Suva Type Foundry↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 5.96,
-        "distance": 290,
-        "class": "link",
-        "url": "https://www.suvatypefoundry.ee/?ref=fuse-kiwi"
-      },
-      {
-        "id": "TypeNetwork↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 0,
-        "distance": 270,
-        "class": "link",
-        "url": "https://typenetwork.com/"
-      },
-      {
-        "id": "AllCaps↗",
-        "group": 2,
-        "type": "child-node",
-        "angle": 0.34,
-        "distance": 200,
-        "class": "link",
-        "url": "https://www.allcapstype.com/"
-      }
-    ],
-    "links": [
-      { "source": "Web Typography", "target": "Abc Dinamo↗", "value": 1 },
-      {
-        "source": "Web Typography",
-        "target": "Smuss Type Kiosk ↗",
-        "value": 1
-      },
-      {
-        "source": "Web Typography",
-        "target": "Type Foundry Directory ↗",
-        "value": 1
-      },
-      { "source": "Web Typography", "target": "Klim↗", "value": 1 },
-      { "source": "Web Typography", "target": "Grilli Type↗", "value": 1 },
-      { "source": "Web Typography", "target": "Google Fonts ↗", "value": 1 },
-      {
-        "source": "Web Typography",
-        "target": "OTF to WOFF Converter↗",
-        "value": 1
-      },
-      { "source": "Web Typography", "target": "Use & Modify↗", "value": 1 },
-      {
-        "source": "Web Typography",
-        "target": "Suva Type Foundry↗",
-        "value": 1
-      },
-      { "source": "Web Typography", "target": "TypeNetwork↗", "value": 1 },
-      { "source": "Web Typography", "target": "AllCaps↗", "value": 1 }
-    ],
-
-    "position": {
-      "left": 470,
-      "right": null,
-      "top": 470
-    },
-    "allposition": {
-      "left": 450,
-      "right": null,
-      "top": 500
-    }
-  },
-  {
-    "mainnode": "Useful links",
-    "main-node": "Useful links",
-    "nodes": [
-      {
-        "id": "Useful links",
-        "group": 1,
-        "type": "main-node",
-        "distance": 0,
-        "class": "useful-links",
-        "linkStart": "bottom"
-      },
-      {
-        "id": "Web Typography",
-        "group": 2,
-        "type": "child-node",
-        "angle": 2.5,
-        "distance": 800,
-        "class": "category",
-        "url": "#/useful-links/categories?category=Web_Typography"
-      },
-      {
-        "id": "Code & Develop",
-        "group": 2,
-        "type": "child-node",
-        "angle": 2.33,
-        "distance": 460,
-        "class": "category",
-        "url": "#/useful-links/categories?category=Code_and_Develop"
-      },
-      {
-        "id": "Potential Archiving Platforms",
-        "group": 2,
-        "type": "child-node",
-        "angle": 1.85,
-        "distance": 440,
-        "class": "category",
-        "url": "#/useful-links/categories?category=Potential_Archiving_Platforms"
-      },
-      {
-        "id": "Creative Tools",
-        "group": 2,
-        "type": "child-node",
-        "angle": 1.3,
-        "distance": 430,
-        "class": "category",
-        "url": "#/useful-links/categories?category=Creative_Tools"
-      },
-      {
-        "id": "Reading Materials",
-        "group": 2,
-        "type": "child-node",
-        "angle": 0.6,
-        "distance": 300,
-        "class": "category",
-        "url": "#/useful-links/categories?category=Reading_Materials"
-      },
-      {
-        "id": "AI Tools",
-        "group": 2,
-        "type": "child-node",
-        "angle": 0.43,
-        "distance": 700,
-        "class": "category",
-        "url": "#/useful-links/categories?category=Ai_Tools"
-      },
-      {
-        "id": "Resource",
-        "group": 2,
-        "type": "child-node",
-        "angle": 2.9,
-        "distance": 360,
-        "class": "category",
-        "url": "#/useful-links/categories?category=Resource"
-      }
-    ],
-    "links": [
-      {
-        "source": "Useful links",
-        "target": "Web Typography",
-        "value": 1
-      },
-      {
-        "source": "Useful links",
-        "target": "Code & Develop",
-        "value": 1
-      },
-      {
-        "source": "Useful links",
-        "target": "Potential Archiving Platforms",
-        "value": 1
-      },
-      {
-        "source": "Useful links",
-        "target": "Creative Tools",
-        "value": 1
-      },
-      {
-        "source": "Useful links",
-        "target": "Reading Materials",
-        "value": 1
-      },
-      {
-        "source": "Useful links",
-        "target": "AI Tools",
-        "value": 1
-      },
-      {
-        "source": "Useful links",
-        "target": "Resource",
-        "value": 1
-      }
-    ],
-    "position": {
-      "x": 777,
-      "y": 188.49
-    }
-  },
-  {
     "main-node": "Resource",
     "nodes": [
       {
@@ -281,7 +11,7 @@
         "linkStart": "left"
       },
       {
-        "id": "Shortcut ↗",
+        "id": "Shortcut",
         "group": 2,
         "type": "child-node",
         "angle": 2.14675,
@@ -290,7 +20,7 @@
         "url": "https://www.figma.com/de-de/blog/?fuid=1249459823379417791"
       },
       {
-        "id": "Figma Community↗",
+        "id": "Figma Community",
         "group": 2,
         "type": "child-node",
         "angle": 2.3911,
@@ -299,7 +29,7 @@
         "url": "https://www.figma.com/community"
       },
       {
-        "id": "Muuri Docs ↗",
+        "id": "Muuri Docs",
         "group": 2,
         "type": "child-node",
         "angle": 2.77507,
@@ -308,7 +38,7 @@
         "url": "https://docs.muuri.dev/"
       },
       {
-        "id": "FigJam ↗",
+        "id": "FigJam",
         "group": 2,
         "type": "child-node",
         "angle": 2.61799,
@@ -317,7 +47,7 @@
         "url": "https://www.figma.com/figjam/?fuid=1249459823379417791"
       },
       {
-        "id": "Web Design Museum ↗",
+        "id": "Web Design Museum",
         "group": 2,
         "type": "child-node",
         "angle": 3.10669,
@@ -326,7 +56,7 @@
         "url": "https://www.webdesignmuseum.org/gallery/year/1996"
       },
       {
-        "id": "Super Hi ↗",
+        "id": "Super Hi",
         "group": 2,
         "type": "child-node",
         "angle": 3.31613,
@@ -335,7 +65,7 @@
         "url": "https://www.superhi.com/catalog"
       },
       {
-        "id": "Image Atlas ↗",
+        "id": "Image Atlas",
         "group": 2,
         "type": "child-node",
         "angle": 3.63028,
@@ -344,7 +74,7 @@
         "url": "https://imageatlas.org/search?countries=RU%2CKR%2CSY%2CKP%2CSA%2CBO%2CIL%2CSE%2CGB%2CIR%2CAF%2CBR%2CNZ%2CCN%2CFR%2CDE%2CEG%2CUS%2CUA%2CIN%2CES&q=Internet%20"
       },
       {
-        "id": "fiverr ↗",
+        "id": "fiverr",
         "group": 2,
         "type": "child-node",
         "angle": 3.82227,
@@ -354,14 +84,14 @@
       }
     ],
     "links": [
-      { "source": "Resource", "target": "Shortcut ↗", "value": 1 },
-      { "source": "Resource", "target": "Figma Community↗", "value": 1 },
-      { "source": "Resource", "target": "Muuri Docs ↗", "value": 1 },
-      { "source": "Resource", "target": "FigJam ↗", "value": 1 },
-      { "source": "Resource", "target": "Web Design Museum ↗", "value": 1 },
-      { "source": "Resource", "target": "Super Hi ↗", "value": 1 },
-      { "source": "Resource", "target": "Image Atlas ↗", "value": 1 },
-      { "source": "Resource", "target": "fiverr ↗", "value": 1 }
+      { "source": "Resource", "target": "Shortcut", "value": 1 },
+      { "source": "Resource", "target": "Figma Community", "value": 1 },
+      { "source": "Resource", "target": "Muuri Docs", "value": 1 },
+      { "source": "Resource", "target": "FigJam", "value": 1 },
+      { "source": "Resource", "target": "Web Design Museum", "value": 1 },
+      { "source": "Resource", "target": "Super Hi", "value": 1 },
+      { "source": "Resource", "target": "Image Atlas", "value": 1 },
+      { "source": "Resource", "target": "fiverr", "value": 1 }
     ],
     "position": {
       "left": null,
@@ -386,7 +116,7 @@
         "linkStart": "bottom"
       },
       {
-        "id": "How To Tell The Story Of Your Creative Work↗",
+        "id": "How To Tell The Story Of Your Creative Work",
         "group": 2,
         "type": "child-node",
         "angle": 6.12611,
@@ -395,7 +125,7 @@
         "url": "https://thecreativeindependent.com/guides/how-to-tell-the-story-of-your-creative-work/"
       },
       {
-        "id": "The Elements of Typographic Style Applied to the Web↗",
+        "id": "The Elements of Typographic Style Applied to the Web",
         "group": 2,
         "type": "child-node",
         "angle": 5.89921,
@@ -404,7 +134,7 @@
         "url": "http://webtypography.net/toc/"
       },
       {
-        "id": "Web Design As Architecture↗",
+        "id": "Web Design As Architecture",
         "group": 2,
         "type": "child-node",
         "angle": 4.57276,
@@ -413,7 +143,7 @@
         "url": "http://www--arc.com/"
       },
       {
-        "id": "Material Design is a political choice↗",
+        "id": "Material Design is a political choice",
         "group": 2,
         "type": "child-node",
         "angle": 5.42797,
@@ -422,7 +152,7 @@
         "url": "https://www.imaginarycloud.com/blog/material-design-is-a-political-choice/"
       },
       {
-        "id": "What Is A Website?↗",
+        "id": "What Is A Website?",
         "group": 2,
         "type": "child-node",
         "angle": 5.60251,
@@ -431,7 +161,7 @@
         "url": "https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/"
       },
       {
-        "id": "To Mend a Broken Internet, Create Online Parks↗",
+        "id": "To Mend a Broken Internet, Create Online Parks",
         "group": 2,
         "type": "child-node",
         "angle": 5.70723,
@@ -440,7 +170,7 @@
         "url": "https://www.wired.com/story/to-mend-a-broken-internet-create-online-parks/"
       },
       {
-        "id": "On Trying New Things↗",
+        "id": "On Trying New Things",
         "group": 2,
         "type": "child-node",
         "angle": 5.11381,
@@ -449,7 +179,7 @@
         "url": "https://thecreativeindependent.com/people/musician-and-graphic-designer-karl-kuehn-on-trying-new-things/"
       },
       {
-        "id": "On Maintaining A Personal Archive↗",
+        "id": "On Maintaining A Personal Archive",
         "group": 2,
         "type": "child-node",
         "angle": 5.34071,
@@ -458,7 +188,7 @@
         "url": "https://thecreativeindependent.com/people/artist-and-researcher-akeema-zane-on-maintaining-a-personal-archive/"
       },
       {
-        "id": "The Right To Design↗",
+        "id": "The Right To Design",
         "group": 2,
         "type": "child-node",
         "angle": 4.71239,
@@ -467,7 +197,7 @@
         "url": "https://urgentpedagogies.iaspis.se/the-right-to-design-2/"
       },
       {
-        "id": "How To Prioritize Your Project Ideas↗",
+        "id": "How To Prioritize Your Project Ideas",
         "group": 2,
         "type": "child-node",
         "angle": 4.99164,
@@ -479,52 +209,52 @@
     "links": [
       {
         "source": "Reading Materials",
-        "target": "How To Tell The Story Of Your Creative Work↗",
+        "target": "How To Tell The Story Of Your Creative Work",
         "value": 1
       },
       {
         "source": "Reading Materials",
-        "target": "The Elements of Typographic Style Applied to the Web↗",
+        "target": "The Elements of Typographic Style Applied to the Web",
         "value": 1
       },
       {
         "source": "Reading Materials",
-        "target": "Web Design As Architecture↗",
+        "target": "Web Design As Architecture",
         "value": 1
       },
       {
         "source": "Reading Materials",
-        "target": "Material Design is a political choice↗",
+        "target": "Material Design is a political choice",
         "value": 1
       },
       {
         "source": "Reading Materials",
-        "target": "What Is A Website?↗",
+        "target": "What Is A Website?",
         "value": 1
       },
       {
         "source": "Reading Materials",
-        "target": "To Mend a Broken Internet, Create Online Parks↗",
+        "target": "To Mend a Broken Internet, Create Online Parks",
         "value": 1
       },
       {
         "source": "Reading Materials",
-        "target": "On Trying New Things↗",
+        "target": "On Trying New Things",
         "value": 1
       },
       {
         "source": "Reading Materials",
-        "target": "On Maintaining A Personal Archive↗",
+        "target": "On Maintaining A Personal Archive",
         "value": 1
       },
       {
         "source": "Reading Materials",
-        "target": "The Right To Design↗",
+        "target": "The Right To Design",
         "value": 1
       },
       {
         "source": "Reading Materials",
-        "target": "How To Prioritize Your Project Ideas↗",
+        "target": "How To Prioritize Your Project Ideas",
         "value": 1
       }
     ],
@@ -551,7 +281,7 @@
         "linkStart": "bottom"
       },
       {
-        "id": "Tools - Dia↗",
+        "id": "Tools - Dia",
         "group": 2,
         "type": "child-node",
         "angle": 2.9147,
@@ -560,7 +290,7 @@
         "url": "https://thecreativeindependent.com/guides/how-to-tell-the-story-of-your-creative-work/https://www.tools.dia.tv/index.html"
       },
       {
-        "id": "CSS Gradient ↗",
+        "id": "CSS Gradient",
         "group": 2,
         "type": "child-node",
         "angle": 2.70526,
@@ -569,7 +299,7 @@
         "url": "https://cssgradient.io/"
       },
       {
-        "id": "Color Designer↗",
+        "id": "Color Designer",
         "group": 2,
         "type": "child-node",
         "angle": 2.54818,
@@ -578,7 +308,7 @@
         "url": "https://colordesigner.io/"
       },
       {
-        "id": "Tixy.Land↗",
+        "id": "Tixy.Land",
         "group": 2,
         "type": "child-node",
         "angle": 0.558505,
@@ -587,7 +317,7 @@
         "url": "https://tixy.land/"
       },
       {
-        "id": "Boockup↗",
+        "id": "Boockup",
         "group": 2,
         "type": "child-node",
         "angle": 0.279253,
@@ -596,7 +326,7 @@
         "url": "https://boockup.marco.land/"
       },
       {
-        "id": "Material Palette↗",
+        "id": "Material Palette",
         "group": 2,
         "type": "child-node",
         "angle": 0.122173,
@@ -605,7 +335,7 @@
         "url": "https://www.materialpalette.com/"
       },
       {
-        "id": "Abc Dinamo↗",
+        "id": "Abc Dinamo",
         "group": 2,
         "type": "child-node",
         "angle": 2.61799,
@@ -614,7 +344,7 @@
         "url": "https://abcdinamo.com/typefaces/diatype"
       },
       {
-        "id": "Smuss Type Kiosk ↗",
+        "id": "Smuss Type Kiosk",
         "group": 2,
         "type": "child-node",
         "angle": 3.35,
@@ -623,7 +353,7 @@
         "url": "https://typekiosk.smuss.studio"
       },
       {
-        "id": "Type Foundry Directory ↗",
+        "id": "Type Foundry Directory",
         "group": 2,
         "type": "child-node",
         "angle": 3.52,
@@ -632,7 +362,7 @@
         "url": "https://typefoundry.directory/"
       },
       {
-        "id": "Klim↗",
+        "id": "Klim",
         "group": 2,
         "type": "child-node",
         "angle": 3.83,
@@ -641,7 +371,7 @@
         "url": "https://klim.co.nz"
       },
       {
-        "id": "Grilli Type↗",
+        "id": "Grilli Type",
         "group": 2,
         "type": "child-node",
         "angle": 4.06,
@@ -650,7 +380,7 @@
         "url": "https://www.grillitype.com"
       },
       {
-        "id": "Google Fonts ↗",
+        "id": "Google Fonts",
         "group": 2,
         "type": "child-node",
         "angle": 4.36,
@@ -659,7 +389,7 @@
         "url": "https://fonts.google.com/"
       },
       {
-        "id": "OTF to WOFF Converter↗",
+        "id": "OTF to WOFF Converter",
         "group": 2,
         "type": "child-node",
         "angle": 5.23,
@@ -668,7 +398,7 @@
         "url": "https://cloudconvert.com/otf-to-woff"
       },
       {
-        "id": "Use & Modify↗",
+        "id": "Use & Modify",
         "group": 2,
         "type": "child-node",
         "angle": 5.75,
@@ -677,7 +407,7 @@
         "url": "https://usemodify.com/?ref=fuse-kiwi"
       },
       {
-        "id": "Suva Type Foundry↗",
+        "id": "Suva Type Foundry",
         "group": 2,
         "type": "child-node",
         "angle": 5.96,
@@ -686,7 +416,7 @@
         "url": "https://www.suvatypefoundry.ee/?ref=fuse-kiwi"
       },
       {
-        "id": "TypeNetwork↗",
+        "id": "TypeNetwork",
         "group": 2,
         "type": "child-node",
         "angle": 0,
@@ -695,7 +425,7 @@
         "url": "https://typenetwork.com/"
       },
       {
-        "id": "AllCaps↗",
+        "id": "AllCaps",
         "group": 2,
         "type": "child-node",
         "angle": 0.34,
@@ -705,39 +435,39 @@
       }
     ],
     "links": [
-      { "source": "Creative Tools", "target": "Tools - Dia↗", "value": 1 },
-      { "source": "Creative Tools", "target": "CSS Gradient ↗", "value": 1 },
-      { "source": "Creative Tools", "target": "Color Designer↗", "value": 1 },
-      { "source": "Creative Tools", "target": "Tixy.Land↗", "value": 1 },
-      { "source": "Creative Tools", "target": "Boockup↗", "value": 1 },
-      { "source": "Creative Tools", "target": "Material Palette↗", "value": 1 },
-      { "source": "Creative Tools", "target": "Abc Dinamo↗", "value": 1 },
+      { "source": "Creative Tools", "target": "Tools - Dia", "value": 1 },
+      { "source": "Creative Tools", "target": "CSS Gradient", "value": 1 },
+      { "source": "Creative Tools", "target": "Color Designer", "value": 1 },
+      { "source": "Creative Tools", "target": "Tixy.Land", "value": 1 },
+      { "source": "Creative Tools", "target": "Boockup", "value": 1 },
+      { "source": "Creative Tools", "target": "Material Palette", "value": 1 },
+      { "source": "Creative Tools", "target": "Abc Dinamo", "value": 1 },
       {
         "source": "Creative Tools",
-        "target": "Smuss Type Kiosk ↗",
+        "target": "Smuss Type Kiosk",
         "value": 1
       },
       {
         "source": "Creative Tools",
-        "target": "Type Foundry Directory ↗",
+        "target": "Type Foundry Directory",
         "value": 1
       },
-      { "source": "Creative Tools", "target": "Klim↗", "value": 1 },
-      { "source": "Creative Tools", "target": "Grilli Type↗", "value": 1 },
-      { "source": "Creative Tools", "target": "Google Fonts ↗", "value": 1 },
+      { "source": "Creative Tools", "target": "Klim", "value": 1 },
+      { "source": "Creative Tools", "target": "Grilli Type", "value": 1 },
+      { "source": "Creative Tools", "target": "Google Fonts", "value": 1 },
       {
         "source": "Creative Tools",
-        "target": "OTF to WOFF Converter↗",
+        "target": "OTF to WOFF Converter",
         "value": 1
       },
-      { "source": "Creative Tools", "target": "Use & Modify↗", "value": 1 },
+      { "source": "Creative Tools", "target": "Use & Modify", "value": 1 },
       {
         "source": "Creative Tools",
-        "target": "Suva Type Foundry↗",
+        "target": "Suva Type Foundry",
         "value": 1
       },
-      { "source": "Creative Tools", "target": "TypeNetwork↗", "value": 1 },
-      { "source": "Creative Tools", "target": "AllCaps↗", "value": 1 }
+      { "source": "Creative Tools", "target": "TypeNetwork", "value": 1 },
+      { "source": "Creative Tools", "target": "AllCaps", "value": 1 }
     ],
 
     "position": {
@@ -752,10 +482,10 @@
     }
   },
   {
-    "main-node": "Potential Archiving Platforms",
+    "main-node": "Archiving Platforms",
     "nodes": [
       {
-        "id": "Potential Archiving Platforms",
+        "id": "Archiving Platforms",
         "group": 1,
         "type": "main-node",
         "distance": 0,
@@ -763,7 +493,7 @@
         "linkStart": "bottom"
       },
       {
-        "id": "Small Victories↗",
+        "id": "Small Victories",
         "group": 2,
         "type": "child-node",
         "angle": 0.523599,
@@ -772,7 +502,7 @@
         "url": "https://www.smallvictori.es/category/herramientas/"
       },
       {
-        "id": "Pinterest↗",
+        "id": "Pinterest",
         "group": 2,
         "type": "child-node",
         "angle": 0.261799,
@@ -781,7 +511,7 @@
         "url": "https://www.pinterest.es/"
       },
       {
-        "id": "Wix↗",
+        "id": "Wix",
         "group": 2,
         "type": "child-node",
         "angle": 0,
@@ -790,7 +520,7 @@
         "url": "https://es.wix.com/studio"
       },
       {
-        "id": "Are.Na↗",
+        "id": "Are.Na",
         "group": 2,
         "type": "child-node",
         "angle": 5.95195,
@@ -799,7 +529,7 @@
         "url": "https://www.are.na/"
       },
       {
-        "id": "Miro↗",
+        "id": "Miro",
         "group": 2,
         "type": "child-node",
         "angle": 5.89921,
@@ -808,7 +538,7 @@
         "url": "https://miro.com/es/"
       },
       {
-        "id": "Glitch↗",
+        "id": "Glitch",
         "group": 2,
         "type": "child-node",
         "angle": 5.65487,
@@ -817,7 +547,7 @@
         "url": "https://glitch.com/about"
       },
       {
-        "id": "Notion↗",
+        "id": "Notion",
         "group": 2,
         "type": "child-node",
         "angle": 5.58505,
@@ -826,7 +556,7 @@
         "url": "https://www.notion.so/"
       },
       {
-        "id": "Tumblr↗",
+        "id": "Tumblr",
         "group": 2,
         "type": "child-node",
         "angle": 5.37561,
@@ -835,7 +565,7 @@
         "url": "https://www.tumblr.com/"
       },
       {
-        "id": "Are.na API Playground↗",
+        "id": "Are.na API Playground",
         "group": 2,
         "type": "child-node",
         "angle": 5.16617,
@@ -844,7 +574,7 @@
         "url": "https://playground.a-p.space/"
       },
       {
-        "id": "M00d↗",
+        "id": "M00d",
         "group": 2,
         "type": "child-node",
         "angle": 4.88692,
@@ -862,7 +592,7 @@
         "url": "https://beyondloom.com/decker/index.html"
       },
       {
-        "id": "Figma↗",
+        "id": "Figma",
         "group": 2,
         "type": "child-node",
         "angle": 5.06145,
@@ -871,7 +601,7 @@
         "url": "https://www.figma.com/"
       },
       {
-        "id": "Readymag↗",
+        "id": "Readymag",
         "group": 2,
         "type": "child-node",
         "angle": 4.71239,
@@ -880,7 +610,7 @@
         "url": "https://readymag.com/examples"
       },
       {
-        "id": "Google Sheets↗",
+        "id": "Google Sheets",
         "group": 2,
         "type": "child-node",
         "angle": 4.4855,
@@ -889,7 +619,7 @@
         "url": "https://docs.google.com/spreadsheets/d/1511COQikA071zKD2AYVljDNqoryEBTBxOHL5twINyYk/edit#gid=0"
       },
       {
-        "id": "Instagram↗",
+        "id": "Instagram",
         "group": 2,
         "type": "child-node",
         "angle": 4.38078,
@@ -898,7 +628,7 @@
         "url": "https://www.instagram.com/"
       },
       {
-        "id": "Cargo↗",
+        "id": "Cargo",
         "group": 2,
         "type": "child-node",
         "angle": 4.60767,
@@ -907,7 +637,7 @@
         "url": "https://cargo.site/"
       },
       {
-        "id": "Plaza↗",
+        "id": "Plaza",
         "group": 2,
         "type": "child-node",
         "angle": 4.17134,
@@ -916,7 +646,7 @@
         "url": "https://www.plaza.computer/"
       },
       {
-        "id": "Hyper↗",
+        "id": "Hyper",
         "group": 2,
         "type": "child-node",
         "angle": 3.90954,
@@ -927,93 +657,93 @@
     ],
     "links": [
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Small Victories↗",
+        "source": "Archiving Platforms",
+        "target": "Small Victories",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Pinterest↗",
+        "source": "Archiving Platforms",
+        "target": "Pinterest",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Wix↗",
+        "source": "Archiving Platforms",
+        "target": "Wix",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Are.Na↗",
+        "source": "Archiving Platforms",
+        "target": "Are.Na",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Miro↗",
+        "source": "Archiving Platforms",
+        "target": "Miro",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Glitch↗",
+        "source": "Archiving Platforms",
+        "target": "Glitch",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Notion↗",
+        "source": "Archiving Platforms",
+        "target": "Notion",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Tumblr↗",
+        "source": "Archiving Platforms",
+        "target": "Tumblr",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Are.na API Playground↗",
+        "source": "Archiving Platforms",
+        "target": "Are.na API Playground",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "M00d↗",
+        "source": "Archiving Platforms",
+        "target": "M00d",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
+        "source": "Archiving Platforms",
         "target": "Decker",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Figma↗",
+        "source": "Archiving Platforms",
+        "target": "Figma",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Readymag↗",
+        "source": "Archiving Platforms",
+        "target": "Readymag",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Google Sheets↗",
+        "source": "Archiving Platforms",
+        "target": "Google Sheets",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Instagram↗",
+        "source": "Archiving Platforms",
+        "target": "Instagram",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Cargo↗",
+        "source": "Archiving Platforms",
+        "target": "Cargo",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Plaza↗",
+        "source": "Archiving Platforms",
+        "target": "Plaza",
         "value": 1
       },
       {
-        "source": "Potential Archiving Platforms",
-        "target": "Hyper↗",
+        "source": "Archiving Platforms",
+        "target": "Hyper",
         "value": 1
       }
     ],
@@ -1041,7 +771,7 @@
         "linkStart": "bottom"
       },
       {
-        "id": "Github.Com↗",
+        "id": "Github.Com",
         "group": 2,
         "type": "child-node",
         "angle": 1.37881,
@@ -1051,7 +781,7 @@
       },
 
       {
-        "id": "Raster Simple Grid System↗",
+        "id": "Raster Simple Grid System",
         "group": 2,
         "type": "child-node",
         "angle": 1.16937,
@@ -1060,7 +790,7 @@
         "url": "https://rsms.me/raster/"
       },
       {
-        "id": "Javascript.Info↗",
+        "id": "Javascript.Info",
         "group": 2,
         "type": "child-node",
         "angle": 0.802851,
@@ -1069,7 +799,7 @@
         "url": "https://javascript.info/"
       },
       {
-        "id": "Doka.Guide↗",
+        "id": "Doka.Guide",
         "group": 2,
         "type": "child-node",
         "angle": 0.523599,
@@ -1078,7 +808,7 @@
         "url": "https://doka.guide/"
       },
       {
-        "id": "Beaker↗",
+        "id": "Beaker",
         "group": 2,
         "type": "child-node",
         "angle": 0.191986,
@@ -1087,7 +817,7 @@
         "url": "https://staltz.com/beaker-frontend-dev-dream-browser/#0"
       },
       {
-        "id": "WXT↗",
+        "id": "WXT",
         "group": 2,
         "type": "child-node",
         "angle": 5.96903,
@@ -1096,7 +826,7 @@
         "url": "https://wxt.dev/"
       },
       {
-        "id": "Sandbox↗",
+        "id": "Sandbox",
         "group": 2,
         "type": "child-node",
         "angle": 5.72468,
@@ -1108,37 +838,37 @@
     "links": [
       {
         "source": "Ai Tools",
-        "target": "Github.Com↗",
+        "target": "Github.Com",
         "value": 1
       },
       {
         "source": "Ai Tools",
-        "target": "Raster Simple Grid System↗",
+        "target": "Raster Simple Grid System",
         "value": 1
       },
       {
         "source": "Ai Tools",
-        "target": "Javascript.Info↗",
+        "target": "Javascript.Info",
         "value": 1
       },
       {
         "source": "Ai Tools",
-        "target": "Doka.Guide↗",
+        "target": "Doka.Guide",
         "value": 1
       },
       {
         "source": "Ai Tools",
-        "target": "Beaker↗",
+        "target": "Beaker",
         "value": 1
       },
       {
         "source": "Ai Tools",
-        "target": "WXT↗",
+        "target": "WXT",
         "value": 1
       },
       {
         "source": "Ai Tools",
-        "target": "Sandbox↗",
+        "target": "Sandbox",
         "value": 1
       }
     ],
@@ -1154,10 +884,10 @@
     }
   },
   {
-    "main-node": "Code & Develop",
+    "main-node": "Code & Dev",
     "nodes": [
       {
-        "id": "Code & Develop",
+        "id": "Code & Dev",
         "group": 1,
         "type": "main-node",
         "distance": 0,
@@ -1165,7 +895,7 @@
         "linkStart": "right"
       },
       {
-        "id": "Github.Com↗",
+        "id": "Github.Com",
         "group": 2,
         "type": "child-node",
         "angle": 1.37881,
@@ -1174,7 +904,7 @@
         "url": "https://github.com/"
       },
       {
-        "id": "Raster Simple Grid System↗",
+        "id": "Raster Simple Grid System",
         "group": 2,
         "type": "child-node",
         "angle": 1.16937,
@@ -1183,7 +913,7 @@
         "url": "https://rsms.me/raster/"
       },
       {
-        "id": "Javascript.Info↗",
+        "id": "Javascript.Info",
         "group": 2,
         "type": "child-node",
         "angle": 0.802851,
@@ -1192,7 +922,7 @@
         "url": "https://javascript.info/"
       },
       {
-        "id": "Doka.Guide↗",
+        "id": "Doka.Guide",
         "group": 2,
         "type": "child-node",
         "angle": 0.523599,
@@ -1201,7 +931,7 @@
         "url": "https://doka.guide/"
       },
       {
-        "id": "Beaker↗",
+        "id": "Beaker",
         "group": 2,
         "type": "child-node",
         "angle": 0.191986,
@@ -1210,7 +940,7 @@
         "url": "https://staltz.com/beaker-frontend-dev-dream-browser/#0"
       },
       {
-        "id": "WXT↗",
+        "id": "WXT",
         "group": 2,
         "type": "child-node",
         "angle": 5.96903,
@@ -1219,7 +949,7 @@
         "url": "https://wxt.dev/"
       },
       {
-        "id": "Sandbox↗",
+        "id": "Sandbox",
         "group": 2,
         "type": "child-node",
         "angle": 5.72468,
@@ -1229,17 +959,17 @@
       }
     ],
     "links": [
-      { "source": "Code & Develop", "target": "Github.Com↗", "value": 1 },
+      { "source": "Code & Dev", "target": "Github.Com", "value": 1 },
       {
-        "source": "Code & Develop",
-        "target": "Raster Simple Grid System↗",
+        "source": "Code & Dev",
+        "target": "Raster Simple Grid System",
         "value": 1
       },
-      { "source": "Code & Develop", "target": "Javascript.Info↗", "value": 1 },
-      { "source": "Code & Develop", "target": "Doka.Guide↗", "value": 1 },
-      { "source": "Code & Develop", "target": "Beaker↗", "value": 1 },
-      { "source": "Code & Develop", "target": "WXT↗", "value": 1 },
-      { "source": "Code & Develop", "target": "Sandbox↗", "value": 1 }
+      { "source": "Code & Dev", "target": "Javascript.Info", "value": 1 },
+      { "source": "Code & Dev", "target": "Doka.Guide", "value": 1 },
+      { "source": "Code & Dev", "target": "Beaker", "value": 1 },
+      { "source": "Code & Dev", "target": "WXT", "value": 1 },
+      { "source": "Code & Dev", "target": "Sandbox", "value": 1 }
     ],
     "position": {
       "left": 170,
