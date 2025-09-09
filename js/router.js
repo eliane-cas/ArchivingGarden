@@ -1,4 +1,15 @@
 const pageTitle = "Archiving_Garden";
+
+// Define route-to-cleanup mappings
+const cleanupMap = {
+  "/useful-links/categories": async () => {
+    const module = await import("/js/category.js");
+    if (module.destroyCategoryPage) {
+      module.destroyCategoryPage();
+    }
+  },
+};
+
 const routes = [
   {
     path: "/",
@@ -37,13 +48,11 @@ const routes = [
     scripts: ["/js/examples2.js"],
     styles: ["/css/examples3.css"],
   },
-
   {
     path: "/useful-links",
     template: "/html/usefulLinks2.html",
     title: "Useful Links",
     description: "Useful links and resources",
-
     styles: ["/css/usefulLinks2.css"],
   },
   {
@@ -62,7 +71,6 @@ const routes = [
     scripts: ["https://d3js.org/d3.v7.min.js", "/js/allLinks.js"],
     styles: ["/css/allLinks.css"],
   },
-
   {
     path: "/info",
     template: "/html/info2.html",
@@ -80,6 +88,8 @@ const routes = [
     styles: ["/css/shop.css"],
   },
 ];
+
+let currentRoute = null;
 
 function loadStyles(styles) {
   return Promise.all(
@@ -140,9 +150,22 @@ function setupLazyLoading() {
 
   lazyImages.forEach((img) => observer.observe(img));
 }
+
 const locationHandler = async () => {
   const location = window.location.hash.replace("#", "") || "/";
   const pathSegments = location.split("?")[0];
+
+  const previousRoute = currentRoute;
+  currentRoute = pathSegments;
+
+  // ✅ CLEANUP if leaving a route that needs cleanup
+  if (
+    previousRoute &&
+    previousRoute !== pathSegments &&
+    cleanupMap[previousRoute]
+  ) {
+    await cleanupMap[previousRoute]();
+  }
 
   const route = routes.find((r) => r.path === pathSegments) || {
     template: "/html/404.html",
@@ -157,19 +180,16 @@ const locationHandler = async () => {
 
   // Manejar la barra de navegación de categorías
   const nav = document.querySelector(".category-navbar");
-  console.log(pathSegments);
   if (
     (pathSegments !== "/useful-links/categories" &&
       pathSegments !== "/useful-links/categories/all-links") ||
     pathSegments == "/useful-links"
   ) {
-    console.log("yes");
     nav.classList.add("hidden");
   } else {
-    console.log("no");
-
     nav.classList.remove("hidden");
   }
+
   // Quitar estilos antiguos y cargar nuevos
   document
     .querySelectorAll('link[rel="stylesheet"]:not(#common-styles)')
@@ -227,12 +247,10 @@ const locationHandler = async () => {
   }
 
   if (pathSegments === "/prueba" || pathSegments === "#/prueba") {
-    // Eliminar el script de Paper.js del head
     const script = document.getElementById("paperScript");
     if (script) {
       script.parentNode.removeChild(script);
     }
-    // Cargar el nuevo script de Paper.js
     try {
       await loadScript(
         "https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"
@@ -250,10 +268,10 @@ function loadScript(src) {
     script.src = src;
     script.onload = resolve;
     script.onerror = reject;
-
     document.body.appendChild(script);
   });
 }
+
 function displayCategoryName(categoryName) {
   const categoryDisplay = document.getElementById("category-name");
   if (categoryDisplay) {

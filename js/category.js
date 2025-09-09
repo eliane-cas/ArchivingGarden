@@ -1,54 +1,68 @@
 import { DynamicDiagram } from "/js/DynamicDiagram.js";
 
+let diagramInstance = null;
+
 export async function initCategoryPage() {
   const urlParams = new URLSearchParams(window.location.hash.split("?")[1]);
-  let categoryName = urlParams.get("category").replace(/_/g, " "); // Reemplaza los guiones bajos con espacios
 
-  if (categoryName == "Code and Dev") {
-    categoryName = "Code & Dev";
+  let categoryName = urlParams.get("category");
+  if (categoryName) {
+    categoryName = categoryName.replace(/_/g, " ");
+    if (categoryName === "Code and Dev") {
+      categoryName = "Code & Dev";
+    }
+  } else {
+    console.warn("No category specified in URL.");
+    return;
   }
 
-  var imagenes = document.querySelectorAll(".categoryImage");
-  imagenes.forEach(function (imagen) {
+  const imagenes = document.querySelectorAll(".categoryImage");
+  imagenes.forEach((imagen) => {
     if (!imagen.classList.contains("hidden")) {
       imagen.classList.add("hidden");
     }
-    // Correcto acceso al atributo data-category usando dataset.category
     if (imagen.dataset.category == categoryName) {
       imagen.classList.remove("hidden");
-      let menu_items = document.querySelectorAll(".category-navbar a");
+      const menu_items = document.querySelectorAll(".category-navbar a");
       menu_items.forEach((item) => {
-        if (item.classList.contains("category-active")) {
-          item.classList.remove("category-active");
-        }
+        item.classList.remove("category-active");
       });
     }
   });
-  let menu_item = document.querySelector(`[category-name="${categoryName}"]`);
-  menu_item.classList.add("category-active");
 
-  // Obtener los datos del archivo JSON
+  const menu_item = document.querySelector(`[category-name="${categoryName}"]`);
+  if (menu_item) {
+    menu_item.classList.add("category-active");
+  } else {
+    console.warn(`No menu item found for category: ${categoryName}`);
+  }
+
   const data = await fetch("/data/links.json").then((response) =>
     response.json()
   );
 
-  // Buscar el objeto correcto en el arreglo que coincida con la categoría
   const categoryData = data.find((item) => item["main-node"] === categoryName);
 
-  if (!categoryData) {
-    return;
-  }
+  if (!categoryData) return;
 
   generateCategoryDiagram(categoryData);
 }
 
 function generateCategoryDiagram(categoryData) {
-  let positions = {
+  if (diagramInstance && typeof diagramInstance.destroy === "function") {
+    diagramInstance.destroy();
+  } else if (diagramInstance) {
+    const container = document.querySelector("#app");
+    if (container) container.innerHTML = "";
+  }
+
+  const positions = {
     left: categoryData.position.left,
     right: categoryData.position.right,
     top: categoryData.position.top,
   };
-  new DynamicDiagram(
+
+  diagramInstance = new DynamicDiagram(
     "#app",
     categoryData,
     { x: null, y: null },
@@ -61,4 +75,31 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initCategoryPage);
 } else {
   initCategoryPage();
+}
+
+// ✅ Proper cleanup function for the router to call
+export function destroyCategoryPage() {
+  console.log("destroyCategory function is called");
+  if (diagramInstance && typeof diagramInstance.destroy === "function") {
+    diagramInstance.destroy();
+  } else if (diagramInstance) {
+    const container = document.querySelector("#app");
+    if (container) container.innerHTML = "";
+  }
+
+  diagramInstance = null;
+
+  // Optionally remove active class from menu
+  const active = document.querySelector(".category-navbar a.category-active");
+  if (active) {
+    active.classList.remove("category-active");
+  }
+
+  // Hide all category images again (just in case)
+  const imagenes = document.querySelectorAll(".categoryImage");
+  imagenes.forEach((imagen) => {
+    if (!imagen.classList.contains("hidden")) {
+      imagen.classList.add("hidden");
+    }
+  });
 }

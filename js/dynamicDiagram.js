@@ -40,7 +40,8 @@ export class DynamicDiagram {
     this.setup();
 
     // Redimensionar el diagrama cuando cambia el tamaño de la ventana
-    window.addEventListener("resize", () => this.resize());
+    this._boundResizeHandler = () => this.resize();
+    window.addEventListener("resize", this._boundResizeHandler);
   }
 
   setup() {
@@ -244,9 +245,62 @@ export class DynamicDiagram {
   }
 
   resize() {
-    // Al cambiar el tamaño del contenedor se vuelve a configurar el diagrama,
-    // manteniendo la posición del nodo principal según lo establecido.
-    this.setup();
+    const container = d3.select(this.selector).node();
+    this.width = container.clientWidth;
+    this.height = container.clientHeight;
+
+    // Update the SVG size without recreating it
+    const svg = d3.select(this.selector).select("svg");
+    if (!svg.empty()) {
+      svg.attr("width", this.width).attr("height", this.height);
+    }
+
+    // Update center position based on new container size and positions
+    this.center.x =
+      this.positions.left !== null
+        ? this.positions.left
+        : this.positions.right !== null
+        ? this.width - this.positions.right
+        : this.width / 2;
+
+    this.center.y =
+      this.positions.top !== null ? this.positions.top : this.center.y;
+
+    // Update scale factor
+    this.scale = Math.min(this.width / 1718, this.height / 955);
+
+    // Update link distances based on the new scale
+    this.data.links.forEach((link) => {
+      const sourceNode = this.data.nodes.find(
+        (node) =>
+          node.id ===
+          (typeof link.source === "object" ? link.source.id : link.source)
+      );
+      const targetNode = this.data.nodes.find(
+        (node) =>
+          node.id ===
+          (typeof link.target === "object" ? link.target.id : link.target)
+      );
+
+      if (sourceNode && targetNode) {
+        link.distance =
+          (sourceNode.distance + targetNode.distance) * this.scale;
+      }
+    });
+
+    // Update the force simulation's link distance function
+    this.simulation.force("link").distance((d) => d.distance);
+
+    // Update the fixed positions of main nodes
+    this.data.nodes.forEach((node) => {
+      if (node.type === "main-node") {
+        node.fx = this.center.x;
+        node.fy = this.center.y;
+      }
+    });
+
+    // Restart simulation with a little alpha to animate adjustment
+    this.simulation.alpha(0.3).restart();
   }
 
   dragstarted(event) {
@@ -300,5 +354,29 @@ export class DynamicDiagram {
       this.simulation.force("link").initialize(this.data.nodes);
       this.simulation.alpha(0.3).restart();
     }
+  }
+
+  destroy() {
+    // Stop the simulation
+    if (this.simulation) {
+      this.simulation.stop();
+      this.simulation.on("tick", null);
+      this.simulation = null;
+    }
+
+    // Remove the SVG from the container
+    const container = d3.select(this.selector);
+    container.select("svg").remove();
+
+    // Clear container innerHTML to remove any leftover content
+    container.node().innerHTML = "";
+
+    // Remove the resize event listener
+    window.removeEventListener("resize", this._boundResizeHandler);
+
+    // Clear references for garbage collection
+    this.data = null;
+    this.positions = null;
+    this.center = null;
   }
 }

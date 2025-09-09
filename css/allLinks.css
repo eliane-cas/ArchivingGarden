@@ -66,11 +66,11 @@ svg {
 #all-links-background {
   position: fixed;
   z-index: -1;
-  width: 928.756px;
-  height: 556.083px;
-  top: 221.47px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 602px;
+  height: 386px;
+  top: 284.5px;
+  left: 339px;
+  /* transform: translateX(-50%); */
 }
 
 .category-navbar {

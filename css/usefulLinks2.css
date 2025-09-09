@@ -283,11 +283,12 @@ main h2 {
 }
 
 #creative1 {
-  /* top: 498px;
-  left: 396px; */
-  /* width: 604.716px;
-  height: 374.07px; */
+  top: 449.99px;
+  left: 25.01px;
+  width: 315px;
+  height: 480px;
 }
+
 #creative2 {
   /* top: 562px;
   left: 963px; */
@@ -327,25 +328,26 @@ main h2 {
 }
 
 #code1 {
-  /* right: 467.62px;
-  top: 389.94px; */
-  /* left: 26px;
-  width: 343px;
-  height: 300px; */
+  /* right: 467.62px; */
+  top: 336.94px;
+  left: 479.5px;
+  width: 321px;
+  height: 283px;
 }
-#code2 {
-  /* right: 53.78px;
-  top: 257.21px; */
-  /* z-index: -2;
+/* #code2 {
+  right: 53.78px;
+  top: 257.21px;
+  z-index: -2;
   width: 515.288px;
   height: 565.462px;
-  flex-shrink: 0; */
-}
+  flex-shrink: 0;
+} */
+
 #potential1 {
-  /* left: 84.12px;
-  top: 363.66px; */
-  /* width: 593.265px;
-  height: 533.404px; */
+  left: 25.01px;
+  top: 428.99px;
+  width: 357px;
+  height: 501px;
 }
 #contribute {
   display: block;
